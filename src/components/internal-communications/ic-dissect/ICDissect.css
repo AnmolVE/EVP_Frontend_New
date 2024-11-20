@@ -1,0 +1,48 @@
+.ic-dissect {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 25rem 1fr;
+  gap: 3rem;
+}
+
+.ic-dissect-left-nav {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-right: 0.1px solid #a3a0a0;
+}
+
+.ic-dissect-left-nav-tab {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0 0.5rem 20%;
+  cursor: pointer;
+}
+
+.ic-dissect-left-nav-tab:hover {
+  background-color: #e1ebee;
+}
+
+.ic-dissect-left-nav-tab.active {
+  background-color: #e1ebee;
+}
+
+.ic-dissect-left-nav-tab-content {
+  width: 100%;
+}
+
+.ic-dissect-left-nav-tab-content p {
+  font-family: "Roboto";
+  font-size: 1.6rem;
+}
+
+.ic-dissect-main-content {
+  height: 100%;
+  width: 100%;
+}

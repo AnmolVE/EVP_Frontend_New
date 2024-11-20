@@ -1,0 +1,80 @@
+.ic-designPrinciples-main-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 6rem 1fr 2.5rem;
+  gap: 2rem;
+}
+
+.ic-designPrinciples-header {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ic-designPrinciples-header-paraHeading {
+  font-family: "Roboto";
+  font-size: 3rem;
+  color: #247d97;
+}
+
+.ic-designPrinciples-header-para {
+  font-family: "Roboto";
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.ic-designPrinciples-content {
+  height: 29rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: #f7f6f6;
+}
+
+.ic-designPrinciples-content-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ic-designPrinciples-content-fields label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.ic-designPrinciples-content-fields textarea {
+  width: 100%;
+  min-height: 6rem;
+  border: 1px solid #dddcdc;
+  border-radius: 4px;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+  color: #918e8e;
+  padding: 0.5rem;
+  resize: vertical;
+  overflow-y: hidden;
+}
+
+.ic-designPrinciples-button {
+  width: 10%;
+  height: 100%;
+}
+
+.ic-designPrinciples-button button {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}

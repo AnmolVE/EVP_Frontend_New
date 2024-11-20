@@ -1,0 +1,99 @@
+.audienceWiseMessaging-main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.audienceWiseMessaging-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.audienceWiseMessaging-para-heading {
+  font-family: "Roboto";
+  font-size: 3rem;
+  color: #247d97;
+}
+
+.audienceWiseMessaging-para {
+  font-family: "Roboto";
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.audienceWiseMessaging-information {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: #f7f6f6;
+  overflow-y: auto;
+}
+
+.audienceWiseMessaging-information-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.audienceWiseMessaging-information-fields label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.audienceWiseMessaging-information-fields textarea {
+  width: 100%;
+  min-height: 6rem;
+  border: 1px solid #dddcdc;
+  border-radius: 4px;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+  color: #918e8e;
+  padding: 0.5rem;
+  resize: vertical;
+  overflow-y: hidden;
+}
+
+.audienceWiseMessaging-buttons {
+  width: 10%;
+}
+
+.audienceWiseMessaging-buttons button {
+  width: 100%;
+  height: 2.5rem;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 1440px) {
+  .audienceWiseMessaging-information {
+    max-height: 21rem;
+  }
+
+  .audienceWiseMessaging-main-container {
+    grid-template-rows: 6rem 1fr 2rem;
+  }
+
+  .audienceWiseMessaging-para-heading {
+    font-size: 2.5rem;
+  }
+
+  .audienceWiseMessaging-para {
+    font-size: 2rem;
+  }
+
+  .audienceWiseMessaging-information-fields textarea {
+    min-height: 3rem;
+    font-size: 1.4rem;
+  }
+}

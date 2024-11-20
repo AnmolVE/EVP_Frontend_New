@@ -1,0 +1,9 @@
+.discover-main-container {
+  height: 100%;
+}
+
+@media (max-width: 1440px) {
+  .discover-main-container {
+    max-height: 39rem;
+  }
+}

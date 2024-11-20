@@ -1,0 +1,66 @@
+.evp-definition-main-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.evp-definition-table-container {
+  width: 100%;
+}
+
+.evp-definition-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.evp-definition-table-thead-th,
+.evp-definition-table-tbody-td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+}
+
+.evp-definition-table-thead-th:nth-child(2),
+.evp-definition-table-thead-th:nth-child(3) {
+  width: 40%;
+}
+
+.evp-definition-table-tbody-td {
+  color: #918e8e;
+}
+
+.fixed-column {
+  background-color: #f9f9f9;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #636060;
+}
+
+.evp-definition-buttons {
+  width: 10%;
+  height: 2.5rem;
+}
+
+.evp-definition-buttons button {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 1440px) {
+  .evp-definition-table-container {
+    max-height: 35rem;
+  }
+}

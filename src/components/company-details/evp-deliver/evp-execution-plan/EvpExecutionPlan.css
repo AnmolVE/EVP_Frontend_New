@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.evp-execution-plan-main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.evp-execution-plan-main-container-inside {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.evp-execution-plan-stages-section {
+  display: flex;
+  gap: 1rem;
+}
+
+.evp-execution-plan-touchpoints-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+
+.evp-execution-plan-touchpoints-section-touchpoint {
+  display: flex;
+  gap: 1rem;
+}
+
+.evp-execution-plan-touchpoints-section-data {
+  max-height: 20rem;
+  overflow-y: auto;
+}

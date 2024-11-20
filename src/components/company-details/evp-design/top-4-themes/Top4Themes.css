@@ -1,0 +1,92 @@
+.top-4-themes-main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.top-4-themes-data {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f7f6f6;
+}
+
+.top-4-themes-tabs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.top-4-themes-tab {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.top-4-themes-tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.top-4-themes-tabs-input-1 {
+  min-height: 6rem;
+  width: 100%;
+  border: none;
+  background-color: #fff;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-align: center;
+  align-content: center;
+  padding: 0.5rem;
+  resize: none;
+  overflow: hidden;
+}
+
+.top-4-themes-tabs-input-2 {
+  height: 23rem;
+  width: 100%;
+  border: 1px solid #dddcdc;
+  background-color: #fff;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  color: #918e8e;
+  padding: 1rem;
+  resize: none;
+}
+
+.top-4-themes-buttons {
+  width: 100%;
+}
+
+.top-4-themes-buttons button {
+  width: 10%;
+  height: 2.5rem;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 1440px) {
+  .top-4-themes-main-container {
+    max-height: 35rem;
+  }
+}
+
+@media (max-width: 1440px) {
+  .top-4-themes-main-container {
+    max-height: 40rem;
+  }
+}

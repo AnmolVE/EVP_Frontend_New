@@ -1,0 +1,94 @@
+.industry-trends-main-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  padding: 5rem;
+}
+
+.industry-trends-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 5rem 1fr;
+  gap: 1rem;
+}
+
+.industry-trends-heading h1 {
+  font-family: "Roboto";
+  font-size: 2.5rem;
+}
+
+.industry-trends-below {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.industry-trends-below-left {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 2.5rem;
+  gap: 1rem;
+}
+
+.industry-trends-below-left-top {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.industry-trends-below-left-data {
+  height: 40%;
+  width: 100%;
+  border: 2px solid #dddcdc;
+}
+
+.industry-trends-below-left-data-fields {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  padding: 3rem;
+}
+
+.industry-trends-button {
+  width: 20%;
+  height: 100%;
+}
+
+.industry-trends-button button {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}
+
+.industry-trends-below-right {
+  height: 100%;
+  width: 100%;
+  padding: 4rem;
+  border: 2px solid #dddcdc;
+}
+
+.industry-trends-below-right textarea {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  overflow: auto;
+  resize: none;
+}

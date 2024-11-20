@@ -1,0 +1,49 @@
+.evp-develop-heading {
+  font-family: "Roboto";
+  font-size: 2.5rem;
+  color: #22bfed;
+}
+
+.evp-develop-para {
+  font-family: "Roboto";
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.evp-develop-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 1rem;
+}
+
+.evp-develop-validationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.evp-develop-validation-para {
+  font-family: "Roboto";
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.evp-develop-validation-input textarea {
+  height: 8rem;
+  width: 100%;
+  border: none;
+  background-color: #f5f4f4;
+  padding: 0.5rem;
+  outline: none;
+  resize: none;
+}
+
+.evp-develop-validation-buttons {
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+}

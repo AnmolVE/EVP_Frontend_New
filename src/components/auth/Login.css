@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.adjust {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  margin-top: 5rem;
+  height: 30rem;
+  border-radius: 1rem;
+}
+
+.login-stimulai-img {
+  width: 70%;
+}
+
+.login-stimulai-img img {
+  width: 100%;
+  height: auto;
+  min-width: 100px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 2rem;
+  width: 70%;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.39); */
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+.login-button {
+  width: 45%;
+  height: 3rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: rgb(80, 152, 177, 1);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-container-right {
+  font-size: large;
+  font-weight: 500;
+}

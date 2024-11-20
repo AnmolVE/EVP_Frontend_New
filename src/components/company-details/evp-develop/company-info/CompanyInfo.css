@@ -1,0 +1,267 @@
+.company-info-main-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 7rem 1fr 2rem;
+  gap: 2rem;
+}
+
+.company-info-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.company-info-para-heading {
+  font-family: "Roboto";
+  font-size: 3rem;
+  color: #247d97;
+}
+
+.company-info-para {
+  font-family: "Roboto";
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.company-info-information {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.company-info-information label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.company-info-information-top {
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.company-info-information-top-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f7f6f6;
+}
+
+.company-info-information-top-left-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.company-info-information-top-left-fields textarea {
+  width: 80%;
+  height: 3rem;
+  border: 1px solid #dddcdc;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  color: #918e8e;
+  padding: 0.5rem;
+  resize: vertical;
+  overflow-y: hidden;
+}
+
+.company-info-information-top-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f7f6f6;
+}
+
+.company-info-information-top-middle-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.company-info-information-top-middle-fields textarea {
+  width: 80%;
+  height: 8rem;
+  border: 1px solid #dddcdc;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  color: #918e8e;
+  padding: 0.5rem;
+  resize: vertical;
+  overflow-y: hidden;
+}
+
+.company-info-information-top-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f7f6f6;
+}
+
+.company-info-information-top-right-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.company-info-information-top-right-fields textarea {
+  width: 80%;
+  height: 4rem;
+  border: 1px solid #dddcdc;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  color: #918e8e;
+  padding: 0.5rem;
+  resize: vertical;
+  overflow-y: hidden;
+}
+
+.company-info-information-bottom {
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.company-info-information-bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f7f6f6;
+}
+
+.company-info-information-bottom-left-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.company-info-information-bottom-left-fields textarea {
+  width: 80%;
+  height: 8rem;
+  border: 1px solid #dddcdc;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  color: #918e8e;
+  padding: 0.5rem;
+  resize: vertical;
+  overflow-y: hidden;
+}
+
+.company-info-information-bottom-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f7f6f6;
+}
+
+.company-info-information-bottom-right-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.company-info-information-bottom-right-fields textarea {
+  width: 80%;
+  height: 8rem;
+  border: 1px solid #dddcdc;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  color: #918e8e;
+  padding: 0.5rem;
+  resize: vertical;
+  overflow-y: hidden;
+}
+
+.company-info-buttons {
+  width: 10%;
+  height: 2.5rem;
+}
+
+.company-info-buttons button {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}
+
+.company-info-buttons button:hover {
+  background-color: #e1ebee;
+  color: black;
+}
+
+/* .company-info-information {
+  height: 100%;
+  max-height: 25rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: #f7f6f6;
+  overflow-y: auto;
+} */
+
+/* .company-info-information-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+} */
+
+/* .company-info-information-fields label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+} */
+
+/* .company-info-information-fields textarea {
+  width: 100%;
+  min-height: 6rem;
+  border: 1px solid #dddcdc;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+  color: #918e8e;
+  padding: 0.5rem;
+  resize: vertical;
+  overflow-y: hidden;
+} */
+
+@media (max-width: 1440px) {
+  .company-info-information {
+    max-height: 21rem;
+  }
+
+  .company-info-main-container {
+    grid-template-rows: 6rem 1fr 2rem;
+  }
+
+  .company-info-para-heading {
+    font-size: 2.5rem;
+  }
+
+  .company-info-para {
+    font-size: 2rem;
+  }
+
+  .company-info-information-fields textarea {
+    min-height: 3rem;
+    font-size: 1.4rem;
+  }
+}

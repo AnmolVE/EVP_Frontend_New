@@ -1,0 +1,193 @@
+.features-area {
+  position: relative;
+  z-index: 1;
+}
+
+.features-area-inner-style .single-features {
+  margin-bottom: 40px;
+}
+
+.single-features {
+  text-align: center;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: all 0.6s ease;
+  margin-bottom: 30px;
+}
+.single-features i {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  position: relative;
+  border: 2px dotted #1dd3f8;
+  border-radius: 50%;
+  font-size: 40px;
+  color: #1dd3f8;
+  animation: border-transform 7s linear infinite alternate forwards;
+  transition: all 0.6s ease;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  display: inline-block;
+  color: #1dd3f8;
+}
+.single-features h3 {
+  margin-bottom: 12px;
+}
+.single-features p {
+  margin-bottom: 10px;
+}
+.single-features .read-more-icon {
+  color: #212121;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  width: 40px;
+  margin: auto;
+}
+.single-features .read-more-icon span {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: inline-block;
+  font-weight: 600;
+  transition: all 0.6s ease;
+}
+.single-features:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}
+.single-features:hover i {
+  background-color: #1dd3f8;
+  color: #ffffff;
+}
+.single-features:hover .read-more-icon span {
+  background-color: #1dd3f8;
+  color: #ffffff;
+}
+
+.col-lg-4:nth-child(1) .single-features {
+  border-radius: 4px 0 0 4px;
+  position: relative;
+}
+.col-lg-4:nth-child(1) .single-features::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.col-lg-4:nth-child(2) .single-features {
+  border-right: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+}
+.col-lg-4:nth-child(3) .single-features {
+  border-radius: 0 4px 4px 0;
+  position: relative;
+}
+.col-lg-4:nth-child(3) .single-features::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 767px) {
+  .single-features {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 19px;
+  }
+  .single-features i {
+    margin-bottom: 20px;
+  }
+  .single-features p {
+    margin-bottom: 20px;
+  }
+  .features-area-inner-style .single-features {
+    margin-bottom: 40px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .single-features {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 19px;
+  }
+  .single-features i {
+    margin-bottom: 20px;
+  }
+  .single-features p {
+    margin-bottom: 20px;
+  }
+  .features-area-inner-style .single-features {
+    margin-bottom: 40px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .features-area .single-features {
+    padding: 20px;
+  }
+  .features-area .single-features p {
+    margin-bottom: 20px;
+  }
+  .features-area .container {
+    max-width: 930px;
+  }
+  .features-area .single-features {
+    padding: 20px;
+  }
+  .features-area .single-features p {
+    margin-bottom: 20px;
+  }
+  .single-features h3 {
+    font-size: 20px;
+  }
+}
+
+@keyframes border-transform {
+  0%,
+  100% {
+    border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+  }
+  14% {
+    border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+  }
+  28% {
+    border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+  }
+  42% {
+    border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+  }
+  56% {
+    border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+  }
+  70% {
+    border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+  }
+  84% {
+    border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+  }
+}

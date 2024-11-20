@@ -1,0 +1,217 @@
+.talent-insights-home-main-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  padding: 5rem;
+}
+
+.talent-insights-home-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 5rem 1fr;
+  gap: 1rem;
+}
+
+.talent-insights-home-heading h1 {
+  font-family: "Roboto";
+  font-size: 2.5rem;
+}
+
+.talent-insights-home-below {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30rem 1fr;
+  gap: 2rem;
+}
+
+.talent-insights-home-below-left {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 2.5rem;
+  gap: 1rem;
+}
+
+.talent-insights-home-below-left-top {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.talent-insights-home-below-left-data {
+  height: 100%;
+  width: 100%;
+  border: 2px solid #dddcdc;
+}
+
+.talent-insights-home-below-left-data-fields {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  padding: 3rem;
+}
+
+.talent-insights-home-button {
+  width: 20%;
+  height: 100%;
+}
+
+.talent-insights-home-button button {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}
+
+.talent-insights-home-below-right {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid #dddcdc;
+}
+
+.talent-insights-home-below-right-first {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.talent-insights-home-below-right-first-top {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 6rem 1fr;
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-home-below-right-first-top-image {
+  height: 100%;
+  width: 30%;
+}
+
+.talent-insights-home-below-right-first-top-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.talent-insights-home-below-right-first-top-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.talent-insights-home-below-right-first-bottom {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-home-below-right-first-bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.talent-insights-home-below-right-second {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.talent-insights-home-below-right-second-top {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-home-below-right-second-top-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.talent-insights-home-below-right-second-middle {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-home-below-right-second-middle-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.talent-insights-home-below-right-second-bottom {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-home-below-right-second-bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.talent-insights-home-below-right-third {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.talent-insights-home-below-right-third-top {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-home-below-right-third-top-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.talent-insights-home-below-right-third-middle {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-home-below-right-third-middle-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.talent-insights-home-below-right-third-bottom {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-home-below-right-third-bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+span {
+  font-family: "Roboto";
+}

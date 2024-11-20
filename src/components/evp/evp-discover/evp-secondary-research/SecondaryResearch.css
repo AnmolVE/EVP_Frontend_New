@@ -1,0 +1,122 @@
+.evp-secondaryResearch {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 20rem;
+  gap: 2rem;
+}
+
+.evp-secondaryResearch-mainContainer {
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.evp-secondaryResearch-heading {
+  font-family: "Roboto";
+  font-size: 2.5rem;
+  color: #22bfed;
+}
+
+.evp-secondaryResearch-para {
+  font-family: "Roboto";
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.evp-secondaryResearch-dataGather {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.evp-secondaryResearch-uploadContainer {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.evp-secondaryResearch-uploadContainer p {
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.evp-secondaryResearch-uploadContainer input {
+  height: 3rem;
+  width: 100%;
+  border: none;
+  background-color: #f5f4f4;
+  padding-left: 1rem;
+  outline: none;
+}
+
+.evp-secondaryResearch-button {
+  display: flex;
+  justify-content: center;
+}
+
+.about-area-four .about-content h2 {
+  color: #ffffff;
+}
+.about-area-four .about-content p {
+  color: #e7e7e7;
+}
+.about-area-four .about-content ul li {
+  color: #e7e7e7;
+}
+
+.pt-100 {
+  padding-top: 100px;
+}
+
+.about-content {
+  margin-top: -8px;
+}
+.about-content span {
+  font-size: 14px;
+  color: #1dd3f8;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.about-content h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.about-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px 0 0;
+}
+.about-content ul li {
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #212121;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 10px;
+}
+.about-content ul li:last-child {
+  margin-bottom: 0;
+}
+.about-content ul li i {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  color: #1dd3f8;
+  font-size: 14px;
+  background-color: #d7eef8;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50%;
+  text-align: center;
+}
+.about-content .default-btn {
+  margin-top: 30px;
+}

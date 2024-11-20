@@ -1,0 +1,98 @@
+.survey-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 45px;
+  gap: 0.5rem;
+  padding: 2rem;
+}
+
+.survey-middle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.survey-middle-create {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.survey-middle-create p {
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.survey-middle-create input {
+  height: 3rem;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: 2px solid #dddcdc;
+}
+
+.survey-middle-create a {
+  font-size: 0.9rem;
+}
+
+.survey-middle-add {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.survey-middle-add p {
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.survey-documents {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.survey-file-display-area {
+  width: 65%;
+  min-height: 2.5rem;
+  max-height: 10rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.survey-file-name {
+  font-size: 1rem;
+  color: #655c5c;
+  font-weight: 500;
+}
+
+.survey-footer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.survey-footer button {
+  height: 100%;
+  width: 30%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}

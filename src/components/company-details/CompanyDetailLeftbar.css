@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+.company-detail-below-firstContainer {
+  height: 37rem;
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  border-right: 0.1px solid #a3a0a0;
+  position: sticky;
+  top: 240px;
+}
+
+.company-detail-below-firstContainer p {
+  font-family: "Roboto";
+  font-size: 1.6rem;
+}
+
+.company-detail-below-firstContainer p:hover {
+  cursor: pointer;
+}
+
+.company-detail-below-firstContainer-list-items span {
+  font-family: "Roboto";
+  color: green;
+}
+
+.company-detail-below-firstContainer-evp-journey {
+  padding-left: 23%;
+}
+
+.company-detail-below-firstContainer-list-items {
+  padding-left: 23%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.8rem;
+}
+
+.company-detail-below-firstContainer-evp-journey-progress-bar {
+  width: 70%;
+  height: 10px;
+  margin-top: 0.5rem;
+  background-color: #b3b0b0;
+}
+
+.company-detail-below-firstContainer-evp-journey-progress-bar span {
+  display: block;
+  width: 50%;
+  height: 100%;
+  background-color: #716e6e;
+}
+
+/* .active {
+  background-color: #e1ebee;
+} */
+
+.company-detail-below-firstContainer-list-items:hover {
+  background-color: #e1ebee;
+}
+
+@media (max-width: 1024px) {
+  .company-detail-below-firstContainer {
+    gap: 0.5rem;
+  }
+
+  .company-detail-below-firstContainer-list-items {
+    padding-left: 18%;
+  }
+
+  .company-detail-below-firstContainer p {
+    font-size: 1.4rem;
+  }
+}

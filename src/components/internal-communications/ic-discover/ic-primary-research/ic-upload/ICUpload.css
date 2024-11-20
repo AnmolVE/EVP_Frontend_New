@@ -1,0 +1,98 @@
+.ic-upload-main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+}
+
+.ic-upload-container {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.ic-upload-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ic-upload-header-para-heading {
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.ic-upload-header-para {
+  width: 70%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.ic-upload-documents {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ic-upload-file-display-area {
+  width: 100%;
+  min-height: 2.5rem;
+  max-height: 8rem;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.ic-upload-file-svg {
+  height: 100%;
+  width: 100%;
+  align-content: center;
+}
+
+.ic-upload-files {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.ic-upload-file-name {
+  font-size: 1rem;
+  color: #655c5c;
+  font-weight: 500;
+}
+
+.ic-upload-button {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ic-upload-button button {
+  height: 100%;
+  width: 65%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}

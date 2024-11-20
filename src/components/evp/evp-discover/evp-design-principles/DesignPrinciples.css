@@ -1,0 +1,57 @@
+.evp-designPrinciples {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 20rem;
+  gap: 2rem;
+}
+
+.evp-designPrinciples-mainContainer {
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.evp-designPrinciples-heading {
+  font-family: "Roboto";
+  font-size: 2.5rem;
+  color: #22bfed;
+}
+
+.evp-designPrinciples-para {
+  font-family: "Roboto";
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.evp-designPrinciples-questions {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.evp-designPrinciples-question {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.evp-designPrinciples-question label {
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.evp-designPrinciples-question textarea {
+  height: 8rem;
+  width: 100%;
+  border: none;
+  background-color: #f5f4f4;
+  padding: 1rem;
+  outline: none;
+}
+
+.evp-designPrinciples-button {
+  display: flex;
+  justify-content: center;
+}

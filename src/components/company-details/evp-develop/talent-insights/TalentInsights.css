@@ -1,0 +1,86 @@
+.talent-insights-main-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.talent-insights-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.talent-insights-para-heading {
+  font-family: "Roboto";
+  font-size: 3rem;
+  color: #247d97;
+}
+
+.talent-insights-para {
+  font-family: "Roboto";
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.talent-insights-table-container {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.talent-insights-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.talent-insights-table-thead-th,
+.talent-insights-table-tbody-td {
+  border-top: 2px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+}
+
+.talent-insights-table-tbody-td {
+  color: #918e8e;
+}
+
+.talent-insights-table tbody tr:nth-child(odd) {
+  background-color: #f7f6f6;
+}
+
+.talent-insights-fixed-column {
+  padding-left: 1.5rem;
+}
+
+.talent-insights-buttons {
+  width: 10%;
+}
+
+.talent-insights-buttons button {
+  width: 100%;
+  height: 2.5rem;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 1440px) {
+  .talent-insights-table-container {
+    height: 20rem;
+  }
+
+  .talent-insights-para-heading {
+    font-size: 2.5rem;
+  }
+
+  .talent-insights-para {
+    font-size: 2rem;
+  }
+}

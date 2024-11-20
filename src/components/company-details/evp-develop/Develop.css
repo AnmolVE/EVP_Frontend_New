@@ -1,0 +1,9 @@
+.develop-main-container {
+  height: 100%;
+}
+
+@media (max-width: 1440px) {
+  .develop-main-container {
+    max-height: 39rem;
+  }
+}

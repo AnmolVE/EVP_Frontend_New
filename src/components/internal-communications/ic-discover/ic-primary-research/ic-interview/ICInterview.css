@@ -1,0 +1,122 @@
+.ic-interview-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 45px;
+  justify-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.ic-interview-middle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ic-interview-middle-add {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ic-interview-middle-add p {
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.ic-interview-middle-add-information-area {
+  height: 100%;
+  max-height: 15rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ic-interview-middle-add-information {
+  height: 3rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 30px;
+  gap: 0.5rem;
+}
+
+.ic-interview-middle-add-information input {
+  height: 3rem;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: 2px solid #dddcdc;
+}
+
+.ic-interview-middle-add-information-button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ic-interview-middle-add-information-button button {
+  height: 55%;
+  width: 100%;
+  font-family: "Roboto";
+  font-size: 2rem;
+  font-weight: 500;
+  color: #6f6d6d;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ic-interview-middle-calendly {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ic-interview-middle-calendly-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ic-interview-middle-calendly-schedule p {
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.ic-interview-middle-calendly-schedule input {
+  height: 3rem;
+  width: 80%;
+  padding: 0.5rem;
+  border: 2px solid #dddcdc;
+}
+
+.ic-interview-middle-calendly-link a {
+  font-size: 0.9rem;
+}
+
+.ic-interview-footer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ic-interview-footer button {
+  height: 100%;
+  width: 30%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}
