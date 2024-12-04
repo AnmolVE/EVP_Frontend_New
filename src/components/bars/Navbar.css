@@ -20,6 +20,11 @@
       }
     }
 
+    .navbar-area {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
     .navbar-nav {
       .nav-item {
         position: relative;

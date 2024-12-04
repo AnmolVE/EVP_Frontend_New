@@ -20,10 +20,13 @@ import Attribute10 from "./evp/attributes-of-a-great-place/attribute10.png";
 import Attribute11 from "./evp/attributes-of-a-great-place/attribute11.png";
 import Attribute12 from "./evp/attributes-of-a-great-place/attribute12.png";
 
-import MessagingHierarchyImg1 from "../images/evp/messaging-hierarchy/messaging_hierarchy1.png";
-import MessagingHierarchyImg2 from "../images/evp/messaging-hierarchy/messaging_hierarchy2.png";
-import MessagingHierarchyImg3 from "../images/evp/messaging-hierarchy/messaging_hierarchy3.png";
-import MessagingHierarchyImg4 from "../images/evp/messaging-hierarchy/messaging_hierarchy4.png";
+import SingleAttribute1 from "./evp/single-attribute/single_attribute1.jpg";
+import SingleAttribute2 from "./evp/single-attribute/single_attribute2.png";
+
+import evpStatementImg1 from "../images/evp/evp-statement/evp_statement1.png";
+import evpStatementImg2 from "../images/evp/evp-statement/evp_statement2.png";
+import evpStatementImg3 from "../images/evp/evp-statement/evp_statement3.png";
+import evpStatementImg4 from "../images/evp/evp-statement/evp_statement4.png";
 
 import embedment1 from "./evp/evp-embedment/embedment1.png";
 import embedment2 from "./evp/evp-embedment/embedment2.png";
@@ -50,10 +53,12 @@ export {
   Attribute10,
   Attribute11,
   Attribute12,
-  MessagingHierarchyImg1,
-  MessagingHierarchyImg2,
-  MessagingHierarchyImg3,
-  MessagingHierarchyImg4,
+  SingleAttribute1,
+  SingleAttribute2,
+  evpStatementImg1,
+  evpStatementImg2,
+  evpStatementImg3,
+  evpStatementImg4,
   embedment1,
   embedment2,
   embedment3,

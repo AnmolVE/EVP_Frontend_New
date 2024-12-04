@@ -1,0 +1,34 @@
+.upload-area {
+  width: 100%;
+  min-height: 2.5rem;
+  max-height: 8rem;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.upload-svg {
+  height: 100%;
+  width: 100%;
+  align-content: center;
+}
+
+.uploaded-files {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.uploaded-file-name {
+  font-size: 1rem;
+  color: #655c5c;
+  font-weight: 500;
+}

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchDataForSelectedItem } from "../../features/inputfields/inputfieldsSlice";
+
+import "./EVP.css";
 
 import Navbar from "../bars/Navbar";
 import Footer from "../bars/Footer";
-
-import "./EVP.css";
 import PrimaryResearch from "./evp-discover/evp-primary-research/PrimaryResearch";
 import CompanyDataset from "./evp-develop/evp-company-dataset/CompanyDataset";
 import AttributesOfAGreatPlace from "./evp-develop/evp-attributes-of-a-great-place/AttributesOfAGreatPlace";
@@ -17,12 +19,63 @@ import EvpPromise from "./evp-design/evp-promise/EvpPromise";
 import DesignPrinciples from "./evp-discover/evp-design-principles/DesignPrinciples";
 import KeyThemes from "./evp-develop/evp-key-themes/KeyThemes";
 import SecondaryResearch from "./evp-discover/evp-secondary-research/SecondaryResearch";
-import MessagingHierarchy from "./evp-design/evp-messaging-hierarchy/MessagingHierarchy";
-import EVPEmbedment from "./evp-design/evp-embedment/EVPEmbedment";
+import EVPStatement from "./evp-design/evp-statement/EVPStatement";
+import EVPEmbedment from "./evp-deliver/evp-embedment/EVPEmbedment";
+import CreativeDirection from "./evp-design/evp-creative-direction/CreativeDirection";
+import EVPHandbook from "./evp-deliver/evp-handbook/EVPHandbook";
+import EVPAnnouncement from "./evp-deliver/evp-announcement/EVPAnnouncement";
+
+import { fieldNames } from "./evpFields";
 
 function EVP() {
+  const dispatch = useDispatch();
+
+  const loginData = JSON.parse(localStorage.getItem("loginData"));
+  const companyName = loginData.companyName;
+  const accessToken = loginData.access;
+
   const [activeTab, setActiveTab] = useState("DISCOVER");
   const [activeSubTab, setActiveSubTab] = useState("Design Principles");
+
+  useEffect(() => {
+    dispatch(fetchDataForSelectedItem(activeSubTab));
+  }, [activeSubTab]);
+
+  const handleNextClick = () => {
+    const subTabs = fieldNames[activeTab];
+    const currentIndex = subTabs.indexOf(activeSubTab);
+
+    if (currentIndex < subTabs.length - 1) {
+      setActiveSubTab(subTabs[currentIndex + 1]);
+    } else {
+      const tabs = Object.keys(fieldNames);
+      const currentTabIndex = tabs.indexOf(activeTab);
+
+      if (currentTabIndex < tabs.length - 1) {
+        const nextTab = tabs[currentTabIndex + 1];
+        setActiveTab(nextTab);
+        setActiveSubTab(fieldNames[nextTab][0]);
+      }
+    }
+  };
+
+  const handleBackClick = () => {
+    const subTabs = fieldNames[activeTab];
+    const currentIndex = subTabs.indexOf(activeSubTab);
+
+    if (currentIndex > 0) {
+      setActiveSubTab(subTabs[currentIndex - 1]);
+    } else {
+      const tabs = Object.keys(fieldNames);
+      const currentTabIndex = tabs.indexOf(activeTab);
+
+      if (currentTabIndex > 0) {
+        const prevTab = tabs[currentTabIndex - 1];
+        setActiveTab(prevTab);
+        setActiveSubTab(fieldNames[prevTab][fieldNames[prevTab].length - 1]);
+      }
+    }
+  };
 
   return (
     <>
@@ -85,7 +138,9 @@ function EVP() {
                     className={`evp-left-bar-subTabs-tab ${
                       activeSubTab === "Company Dataset" ? "active-sub" : ""
                     }`}
-                    onClick={() => setActiveSubTab("Company Dataset")}
+                    onClick={() => {
+                      setActiveSubTab("Company Dataset");
+                    }}
                   >
                     Company Dataset
                   </div>
@@ -93,7 +148,9 @@ function EVP() {
                     className={`evp-left-bar-subTabs-tab ${
                       activeSubTab === "Key Themes" ? "active-sub" : ""
                     }`}
-                    onClick={() => setActiveSubTab("Key Themes")}
+                    onClick={() => {
+                      setActiveSubTab("Key Themes");
+                    }}
                   >
                     Key Themes
                   </div>
@@ -166,7 +223,7 @@ function EVP() {
                 className="evp-left-bar-mainTabs"
                 onClick={() => {
                   setActiveTab("DESIGN");
-                  setActiveSubTab("Messaging Hierarchy");
+                  setActiveSubTab("EVP Statement");
                 }}
               >
                 <p>DESIGN</p>
@@ -175,11 +232,11 @@ function EVP() {
                 <div className="evp-left-bar-subTabs">
                   <div
                     className={`evp-left-bar-subTabs-tab ${
-                      activeSubTab === "Messaging Hierarchy" ? "active-sub" : ""
+                      activeSubTab === "EVP Statement" ? "active-sub" : ""
                     }`}
-                    onClick={() => setActiveSubTab("Messaging Hierarchy")}
+                    onClick={() => setActiveSubTab("EVP Statement")}
                   >
-                    Messaging Hierarchy
+                    EVP Statement
                   </div>
                   <div
                     className={`evp-left-bar-subTabs-tab ${
@@ -188,14 +245,6 @@ function EVP() {
                     onClick={() => setActiveSubTab("Creative Direction")}
                   >
                     Creative Direction
-                  </div>
-                  <div
-                    className={`evp-left-bar-subTabs-tab ${
-                      activeSubTab === "EVP Embedment" ? "active-sub" : ""
-                    }`}
-                    onClick={() => setActiveSubTab("EVP Embedment")}
-                  >
-                    EVP Embedment
                   </div>
                   <div
                     className={`evp-left-bar-subTabs-tab ${
@@ -246,33 +295,44 @@ function EVP() {
                   </div>
                   <div
                     className={`evp-left-bar-subTabs-tab ${
-                      activeSubTab === "EVP Statement and Pillars"
-                        ? "active-sub"
-                        : ""
+                      activeSubTab === "EVP Embedment" ? "active-sub" : ""
                     }`}
-                    onClick={() => setActiveSubTab("EVP Statement and Pillars")}
+                    onClick={() => setActiveSubTab("EVP Embedment")}
                   >
-                    EVP Statement and Pillars
+                    EVP Embedment
                   </div>
                   <div
                     className={`evp-left-bar-subTabs-tab ${
-                      activeSubTab === "EVP Execution Plan" ? "active-sub" : ""
+                      activeSubTab === "EVP Announcement" ? "active-sub" : ""
                     }`}
-                    onClick={() => setActiveSubTab("EVP Execution Plan")}
+                    onClick={() => setActiveSubTab("EVP Announcement")}
                   >
-                    EVP Execution Plan
+                    EVP Announcement
                   </div>
                 </div>
               ) : null}
             </div>
           </div>
           <div className="evp-content">
-            {activeSubTab === "Design Principles" ? <DesignPrinciples /> : null}
+            {activeSubTab === "Design Principles" ? (
+              <DesignPrinciples
+                companyName={companyName}
+                accessToken={accessToken}
+              />
+            ) : null}
             {activeSubTab === "Primary Research" ? <PrimaryResearch /> : null}
             {activeSubTab === "Secondary Research" ? (
-              <SecondaryResearch />
+              <SecondaryResearch
+                companyName={companyName}
+                accessToken={accessToken}
+              />
             ) : null}
-            {activeSubTab === "Company Dataset" ? <CompanyDataset /> : null}
+            {activeSubTab === "Company Dataset" ? (
+              <CompanyDataset
+                companyName={companyName}
+                accessToken={accessToken}
+              />
+            ) : null}
             {activeSubTab === "Key Themes" ? <KeyThemes /> : null}
             {activeSubTab === "Attributes of a Great Place" ? (
               <AttributesOfAGreatPlace />
@@ -281,26 +341,33 @@ function EVP() {
               <AudienceWiseMessaging />
             ) : null}
             {activeSubTab === "Talent Insights" ? <TalentInsights /> : null}
-            {activeSubTab === "Analysis" ? <Analysis /> : null}
-            {activeSubTab === "Alignment" ? <Alignment /> : null}
-            {activeSubTab === "Messaging Hierarchy" ? (
-              <MessagingHierarchy />
+            {activeSubTab === "Analysis" ? (
+              <Analysis companyName={companyName} accessToken={accessToken} />
             ) : null}
+            {activeSubTab === "Alignment" ? (
+              <Alignment companyName={companyName} accessToken={accessToken} />
+            ) : null}
+            {activeSubTab === "EVP Statement" ? <EVPStatement /> : null}
             {activeSubTab === "Creative Direction" ? (
-              <div>Coming soon...</div>
+              <CreativeDirection />
             ) : null}
-            {activeSubTab === "EVP Embedment" ? <EVPEmbedment /> : null}
             {activeSubTab === "EVP Definition" ? <EvpDefinition /> : null}
             {activeSubTab === "EVP Audit" ? <EVPAudit /> : null}
             {activeSubTab === "EVP Promise" ? <EvpPromise /> : null}
-            {activeSubTab === "EVP Handbook" ? <div>Coming soon...</div> : null}
-            {activeSubTab === "EVP Statement and Pillars" ? (
-              <div>Coming soon...</div>
-            ) : null}
-            {activeSubTab === "EVP Execution Plan" ? (
-              <div>Coming soon...</div>
-            ) : null}
+            {activeSubTab === "EVP Handbook" ? <EVPHandbook /> : null}
+            {activeSubTab === "EVP Embedment" ? <EVPEmbedment /> : null}
+            {activeSubTab === "EVP Announcement" ? <EVPAnnouncement /> : null}
           </div>
+        </div>
+        <div className="evp-backButton">
+          <button className="default-btn" onClick={handleBackClick}>
+            Back
+          </button>
+        </div>
+        <div className="evp-nextButton">
+          <button className="default-btn" onClick={handleNextClick}>
+            Next
+          </button>
         </div>
         {/* <Footer /> */}
       </div>

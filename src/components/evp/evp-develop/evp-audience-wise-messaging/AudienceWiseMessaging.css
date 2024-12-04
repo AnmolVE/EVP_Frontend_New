@@ -108,6 +108,14 @@
   background-repeat: no-repeat;
 }
 
+.two-line-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media only screen and (max-width: 767px) {
   .single-features {
     margin-left: 15px;

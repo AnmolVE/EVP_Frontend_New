@@ -63,3 +63,16 @@
   width: 100%;
   height: auto;
 }
+
+.evp-backButton {
+  /* z-index: 1; */
+  position: fixed;
+  top: 90%;
+  left: 2%;
+}
+
+.evp-nextButton {
+  position: fixed;
+  top: 90%;
+  left: 92%;
+}

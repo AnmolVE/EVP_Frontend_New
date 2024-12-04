@@ -32,12 +32,12 @@
 
 .evp-embedment-tab:hover {
   color: #fff;
-  background-color: #247d97;
+  background-color: #0dcaf0;
 }
 
 .evp-embedment-tab.active {
   color: #fff;
-  background-color: #247d97;
+  background-color: #0dcaf0;
 }
 
 .evp-embedment-tab p {
@@ -75,12 +75,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f7f6f6;
   cursor: pointer;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .evp-embedment-left-box:hover {
-  background-color: #247d97;
+  background-color: #0dcaf0;
   color: #fff;
 }
 
@@ -95,7 +96,8 @@
   grid-template-rows: 1fr 2.5rem;
   gap: 1rem;
   padding: 1rem;
-  background-color: #f7f6f6;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #fff;
 }
 
 .evp-embedment-right-top {

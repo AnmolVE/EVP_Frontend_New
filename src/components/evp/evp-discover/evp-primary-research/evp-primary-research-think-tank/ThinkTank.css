@@ -9,6 +9,12 @@
   font-size: 1.3rem;
 }
 
+.evp-thinkTank-addPeople-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .evp-thinkTank-addPeople-input {
   height: 3rem;
   display: grid;
@@ -19,7 +25,6 @@
 .evp-thinkTank-addPeople-input input {
   border: none;
   background-color: #f5f4f4;
-  padding-left: 1rem;
   outline: none;
 }
 

@@ -1,22 +1,15 @@
-.evp-analysis-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-.evp-analysis-input {
+.evp-alignment-input {
   padding: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.evp-analysis-input p {
+.evp-alignment-input p {
   font-family: "Roboto";
   font-size: 1.2rem;
   font-weight: 400;
 }
 
-.evp-analysis-input textarea {
+.evp-alignment-input textarea {
   height: 25rem;
   width: 100%;
   border: none;
@@ -24,7 +17,7 @@
   outline: none;
 }
 
-.evp-analysis-button {
+.evp-alignment-button {
   display: flex;
   justify-content: end;
 }

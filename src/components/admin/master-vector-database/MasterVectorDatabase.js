@@ -5,8 +5,8 @@ import Loading from "../../utils/loading/Loading";
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function MasterVectorDatabase() {
-  const tokens = JSON.parse(localStorage.getItem("tokens"));
-  const accessToken = tokens.access;
+  const loginData = JSON.parse(localStorage.getItem("loginData"));
+  const accessToken = loginData.access;
   const [fileNames, setFileNames] = useState(["Upload documents"]);
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);

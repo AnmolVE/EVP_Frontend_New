@@ -5,7 +5,7 @@ const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 const apiEndpoints = {
   develop: {
     "Company Dataset": `${REACT_APP_BASE_URL}/companies/`,
-    "Attributes of Great Place": `${REACT_APP_BASE_URL}/attributes-of-great-workplace/`,
+    "Attributes of a Great Place": `${REACT_APP_BASE_URL}/attributes-of-great-workplace/`,
     "Key Themes": `${REACT_APP_BASE_URL}/key-themes/`,
     "Audience Wise Messaging": `${REACT_APP_BASE_URL}/audience-wise-messaging/`,
     "Talent Insights": `${REACT_APP_BASE_URL}/talent-insights/`,
@@ -15,6 +15,7 @@ const apiEndpoints = {
     Alignment: `${REACT_APP_BASE_URL}/alignment/`,
   },
   design: {
+    "EVP Statement": `${REACT_APP_BASE_URL}/evp-statement/`,
     "Creative Direction": `${REACT_APP_BASE_URL}/creative-direction/`,
     "EVP Definition": `${REACT_APP_BASE_URL}/evp-definition/`,
     "EVP Promise": `${REACT_APP_BASE_URL}/evp-promise/`,
@@ -30,12 +31,12 @@ const apiEndpoints = {
 export const fetchDataForSelectedItem = createAsyncThunk(
   "inputFields/fetchDataForSelectedItem",
   async (selectedItem, { rejectWithValue }) => {
-    const companyName = localStorage.getItem("companyName");
+    const loginData = JSON.parse(localStorage.getItem("loginData"));
+    const companyName = loginData.companyName;
+    const accessToken = loginData.access;
     if (!companyName) {
       return rejectWithValue("Company name not found in local storage");
     }
-    const tokens = JSON.parse(localStorage.getItem("tokens"));
-    const accessToken = tokens.access;
     if (!accessToken) {
       return rejectWithValue("Access Token not found in local storage");
     }
@@ -51,12 +52,13 @@ export const fetchDataForSelectedItem = createAsyncThunk(
     }
 
     if (
-      selectedItem === "Attributes of Great Place" ||
+      selectedItem === "Attributes of a Great Place" ||
       selectedItem === "Key Themes" ||
       selectedItem === "Audience Wise Messaging" ||
       selectedItem === "Talent Insights" ||
       selectedItem === "Analysis" ||
       selectedItem === "Alignment" ||
+      selectedItem === "EVP Statement" ||
       selectedItem === "Creative Direction" ||
       selectedItem === "EVP Definition" ||
       selectedItem === "EVP Promise" ||

@@ -1,0 +1,183 @@
+.service-details-wrap .mb-30 {
+  margin-bottom: 30px;
+}
+.service-details-wrap .service-img {
+  margin-bottom: 30px;
+}
+.service-details-wrap h3 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+.service-details-wrap ul {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 0;
+}
+.service-details-wrap ul li {
+  display: inline-block;
+  font-weight: 600;
+  color: #212121;
+  font-size: 14px;
+  padding-left: 30px;
+  position: relative;
+}
+.service-details-wrap ul li i {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  background-color: #1dd3f8;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  position: absolute;
+  top: 5px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+.service-details-wrap ul .paint {
+  margin-right: 30px;
+}
+.service-details-wrap .car-service-list-wrap {
+  margin-bottom: 35px;
+  margin-top: 25px;
+}
+.service-details-wrap .car-service-list-wrap .car-service-list ul {
+  margin: 0;
+}
+.service-details-wrap .car-service-list-wrap .car-service-list ul li {
+  margin-bottom: 15px;
+  display: block;
+}
+.service-details-wrap
+  .car-service-list-wrap
+  .car-service-list
+  ul
+  li:last-child {
+  margin-bottom: 0;
+}
+.service-details-wrap .list-unstyled {
+  margin: 0;
+}
+.service-details-wrap .list-unstyled li {
+  color: #dc3545;
+  padding-left: 0 !important;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+.service-details-wrap #msgSubmit {
+  top: 60px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.service-sidebar-area .service-details-title {
+  background-color: #eeeeee;
+  color: #212121;
+  padding: 15px 20px;
+  margin-bottom: 0;
+}
+.service-sidebar-area .service-card {
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+}
+.service-sidebar-area .service-list {
+  margin-bottom: 30px;
+}
+.service-sidebar-area .service-list:last-child {
+  margin-bottom: 0;
+}
+.service-sidebar-area .service-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.service-sidebar-area .service-list ul li {
+  border-bottom: 1px dashed #eeeeee;
+  padding: 15px 20px;
+  font-weight: 500;
+  transition: all 0.5s;
+}
+.service-sidebar-area .service-list ul li a {
+  color: #212121;
+  display: block;
+}
+.service-sidebar-area .service-list ul li i {
+  float: right;
+  width: 27px;
+  height: 27px;
+  line-height: 27px;
+  background-color: #1dd3f8;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  transition: all 0.5s;
+}
+.service-sidebar-area .service-list ul li:hover {
+  background-color: #1dd3f8;
+  color: #ffffff;
+}
+.service-sidebar-area .service-list ul li:hover i {
+  background-color: #ffffff;
+  color: #1dd3f8;
+}
+.service-sidebar-area .service-list ul li:hover a {
+  color: #ffffff;
+}
+.service-sidebar-area .service-faq .faq-accordion .accordion .accordion-item {
+  box-shadow: none;
+}
+.service-sidebar-area .service-faq .faq-accordion .accordion .accordion-title {
+  font-size: 17px;
+  font-weight: 600;
+}
+.service-sidebar-area
+  .service-faq
+  .faq-accordion
+  .accordion
+  .accordion-title
+  span {
+  top: 11px;
+}
+.service-sidebar-area .paint {
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 767px) {
+  .service-details-wrap .car-service-list-wrap .car-service-list ul li {
+    display: block;
+  }
+  .service-details-wrap .service-img {
+    margin-bottom: 20px;
+  }
+  .service-details-wrap h3 {
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+  .service-list-img {
+    margin-bottom: 30px;
+  }
+  .service-sidebar-area {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .service-details-wrap .car-service-list-wrap .car-service-list ul li {
+    display: block;
+  }
+  .service-sidebar-area {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .service-sidebar-area .service-details-title {
+    font-size: 20px;
+  }
+}

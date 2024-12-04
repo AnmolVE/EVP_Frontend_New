@@ -5,3 +5,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.custom_h2 {
+  font-family: "Roboto";
+  font-size: 2.5rem;
+  color: #22bfed;
+}
+
+.custom_para {
+  font-family: "Roboto";
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.custom_input {
+  padding: 1rem;
+  font-size: 18px;
+}

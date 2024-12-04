@@ -7,7 +7,7 @@ function Survey() {
     <div className="evp-survey">
       <div className="evp-survey-create">
         <p>Survey</p>
-        <input placeholder="Link to Survey" />
+        <input className="custom_input" placeholder="Link to Survey" />
         <a href="https://www.google.com/" target="_blank">
           Create Survey
         </a>
@@ -15,8 +15,8 @@ function Survey() {
       <div className="evp-survey-addPeople">
         <p>Add People</p>
         <div className="evp-survey-addPeople-input">
-          <input placeholder="Name" />
-          <input placeholder="Email" />
+          <input className="custom_input" placeholder="Name" />
+          <input className="custom_input" placeholder="Email" />
         </div>
       </div>
       <div className="evp-survey-button">

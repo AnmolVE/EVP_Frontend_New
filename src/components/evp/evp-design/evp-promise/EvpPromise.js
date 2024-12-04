@@ -1,67 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 import "../Design.css";
 
-const evpPromiseData = [
-  {
-    id: "1",
-    theme: "Theme 1",
-    what_employees_can_expect:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    what_is_expected_of_employees:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
-  },
-  {
-    id: "2",
-    theme: "Theme 1",
-    what_employees_can_expect:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    what_is_expected_of_employees:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
-  },
-  {
-    id: "3",
-    theme: "Theme 1",
-    what_employees_can_expect:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    what_is_expected_of_employees:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
-  },
-  {
-    id: "4",
-    theme: "Theme 1",
-    what_employees_can_expect:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    what_is_expected_of_employees:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
-  },
-  {
-    id: "5",
-    theme: "Theme 1",
-    what_employees_can_expect:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    what_is_expected_of_employees:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
-  },
-  {
-    id: "6",
-    theme: "Theme 1",
-    what_employees_can_expect:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    what_is_expected_of_employees:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
-  },
-];
-
 function EvpPromise() {
+  const { data } = useSelector((store) => store.inputField);
+
+  const [evpPromiseData, setEvpPromiseData] = useState([]);
+
+  useEffect(() => {
+    if (data && Array.isArray(data)) {
+      setEvpPromiseData(data);
+    }
+  }, [data]);
+
   return (
     <div className="evp-promise">
-      <h2 className="evp-develop-heading">EVP Promise</h2>
-      <p className="evp-develop-para">
+      <h2 className="custom_h2">EVP Promise</h2>
+      <p className="custom_para">
         Validate your Definition data before it goes to next step.
       </p>
       <div className="evp-design-container">
-        <table class="table">
+        <table className="table">
           <thead className="table-secondary">
             <tr>
               <th scope="col">Themes</th>
@@ -71,11 +31,11 @@ function EvpPromise() {
           </thead>
           <tbody>
             {evpPromiseData &&
-              evpPromiseData.map((data, index) => (
-                <tr key={data.id}>
-                  <td>{data.theme}</td>
-                  <td>{data.what_employees_can_expect}</td>
-                  <td>{data.what_is_expected_of_employees}</td>
+              evpPromiseData.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.theme}</td>
+                  <td>{item.what_employees_can_expect}</td>
+                  <td>{item.what_is_expected_of_employees}</td>
                 </tr>
               ))}
           </tbody>

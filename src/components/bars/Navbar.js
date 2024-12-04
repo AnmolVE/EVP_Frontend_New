@@ -176,9 +176,9 @@ function Navbar() {
                 </li>
               </ul>
 
-              <div class="others-options">
-                <Link class="default-btn" href="/auth/login/">
-                  Log In <i class="bx bx-log-in-circle"></i>
+              <div className="others-options">
+                <Link className="default-btn" href="/auth/login/">
+                  Log In <i className="bx bx-log-in-circle"></i>
                 </Link>
               </div>
             </div>

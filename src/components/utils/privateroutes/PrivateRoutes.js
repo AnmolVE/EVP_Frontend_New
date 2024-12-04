@@ -2,10 +2,10 @@ import React from "react";
 import { Outlet, Navigate } from "react-router-dom";
 
 function PrivateRoutes({ requiredRole }) {
-  const tokens = JSON.parse(localStorage.getItem("tokens"));
-  const accessToken = tokens?.access;
+  const loginData = JSON.parse(localStorage.getItem("loginData"));
+  const accessToken = loginData?.access;
 
-  const userRole = tokens?.role;
+  const userRole = loginData?.role;
 
   if (!accessToken) {
     return <Navigate to="/login" />;

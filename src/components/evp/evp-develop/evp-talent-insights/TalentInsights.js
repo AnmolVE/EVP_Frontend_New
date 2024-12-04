@@ -1,67 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./TalentInsights.css";
-
-const talentInsightsData = [
-  {
-    area: "Technology",
-    role: "Customer Experience Technology Specialist",
-    location: "Greenwood Village, Colorado, United States",
-    seniority: "Mid",
-    key_motivators:
-      "Higher Salary, Hybrid/Flexible Working arrangement, Flexible Working hours",
-  },
-  {
-    area: "Technology",
-    role: "Customer Experience Technology Specialist",
-    location: "Greenwood Village, Colorado, United States",
-    seniority: "Mid",
-    key_motivators:
-      "Higher Salary, Hybrid/Flexible Working arrangement, Flexible Working hours",
-  },
-  {
-    area: "Technology",
-    role: "Customer Experience Technology Specialist",
-    location: "Greenwood Village, Colorado, United States",
-    seniority: "Mid",
-    key_motivators:
-      "Higher Salary, Hybrid/Flexible Working arrangement, Flexible Working hours",
-  },
-  {
-    area: "Technology",
-    role: "Customer Experience Technology Specialist",
-    location: "Greenwood Village, Colorado, United States",
-    seniority: "Mid",
-    key_motivators:
-      "Higher Salary, Hybrid/Flexible Working arrangement, Flexible Working hours",
-  },
-  {
-    area: "Technology",
-    role: "Customer Experience Technology Specialist",
-    location: "Greenwood Village, Colorado, United States",
-    seniority: "Mid",
-    key_motivators:
-      "Higher Salary, Hybrid/Flexible Working arrangement, Flexible Working hours",
-  },
-  {
-    area: "Technology",
-    role: "Customer Experience Technology Specialist",
-    location: "Greenwood Village, Colorado, United States",
-    seniority: "Mid",
-    key_motivators:
-      "Higher Salary, Hybrid/Flexible Working arrangement, Flexible Working hours",
-  },
-];
+import { useSelector } from "react-redux";
 
 function TalentInsights() {
+  const { data } = useSelector((store) => store.inputField);
+
+  const [talentInsightsData, setTalentInsightsData] = useState([]);
+
+  useEffect(() => {
+    if (data && Array.isArray(data)) {
+      setTalentInsightsData(data);
+    }
+  }, [data]);
+
+  console.log(talentInsightsData);
+
   return (
     <div className="evp-talentInsights">
-      <h2 className="evp-develop-heading">Talent Insights</h2>
-      <p className="evp-develop-para">
-        Validate your Talent Insights dat before it goes to next step.
-      </p>
+      <h2 className="custom_h2">Talent Insights</h2>
       <div className="evp-talentInsights-container">
-        <table class="table">
+        <table className="table">
           <thead className="table-secondary">
             <tr>
               <th scope="col">S.No</th>

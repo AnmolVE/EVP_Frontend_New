@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import "../Develop.css";
@@ -17,11 +19,25 @@ import {
 } from "../../../../assets/images/images";
 
 function AttributesOfAGreatPlace() {
+  const { data } = useSelector((store) => store.inputField);
+
+  const [attributesData, setAttributesData] = useState([]);
+
+  useEffect(() => {
+    if (data) {
+      setAttributesData(data);
+    }
+  }, [data]);
+
+  console.log(attributesData);
+
+  const navigate = useNavigate();
+
   return (
     <div className="evp-develop">
-      <h2 className="evp-develop-heading">Attributes of a Great Place</h2>
-      <p className="evp-develop-para">
-        Validate your attributes data before it goes to next step
+      <h2 className="custom_h2">Attributes of a Great Place</h2>
+      <p className="custom_para">
+        This is how you fare on the key attributes of a great work environment
       </p>
       <section className="news-area">
         <div className="">
@@ -37,10 +53,6 @@ function AttributesOfAGreatPlace() {
                       height={400}
                     />
                   </Link>
-
-                  <div className="dates">
-                    <span>20 February</span>
-                  </div>
                 </div>
 
                 <div className="news-content-wrap">
@@ -48,14 +60,14 @@ function AttributesOfAGreatPlace() {
                     <h3>Culture</h3>
                   </div>
 
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
-                  </p>
+                  <p className="two-line-text">{attributesData.culture}</p>
 
-                  <Link href="/news/news-details" className="read-more">
+                  <div
+                    className="read-more"
+                    onClick={() => navigate("/single-attribute")}
+                  >
                     Read More <i className="bx bx-plus"></i>
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -71,10 +83,6 @@ function AttributesOfAGreatPlace() {
                       height={400}
                     />
                   </Link>
-
-                  <div className="dates">
-                    <span>21 February</span>
-                  </div>
                 </div>
 
                 <div className="news-content-wrap">
@@ -82,14 +90,16 @@ function AttributesOfAGreatPlace() {
                     <h3>Purpose and Values</h3>
                   </div>
 
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                  <p className="two-line-text">
+                    {attributesData.purpose_and_values}
                   </p>
 
-                  <Link href="/news/news-details" className="read-more">
+                  <div
+                    className="read-more"
+                    onClick={() => navigate("/single-attribute")}
+                  >
                     Read More <i className="bx bx-plus"></i>
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -105,10 +115,6 @@ function AttributesOfAGreatPlace() {
                       height={400}
                     />
                   </Link>
-
-                  <div className="dates">
-                    <span>22 February</span>
-                  </div>
                 </div>
 
                 <div className="news-content-wrap">
@@ -116,14 +122,16 @@ function AttributesOfAGreatPlace() {
                     <h3>Benefits and Perks</h3>
                   </div>
 
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                  <p className="two-line-text">
+                    {attributesData.benefits_perks}
                   </p>
 
-                  <Link href="/news/news-details" className="read-more">
+                  <div
+                    className="read-more"
+                    onClick={() => navigate("/single-attribute")}
+                  >
                     Read More <i className="bx bx-plus"></i>
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -139,10 +147,6 @@ function AttributesOfAGreatPlace() {
                       height={400}
                     />
                   </Link>
-
-                  <div className="dates">
-                    <span>23 February</span>
-                  </div>
                 </div>
 
                 <div className="news-content-wrap">
@@ -150,14 +154,16 @@ function AttributesOfAGreatPlace() {
                     <h3>Career Development</h3>
                   </div>
 
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                  <p className="two-line-text">
+                    {attributesData.career_development}
                   </p>
 
-                  <Link href="/news/news-details" className="read-more">
+                  <div
+                    className="read-more"
+                    onClick={() => navigate("/single-attribute")}
+                  >
                     Read More <i className="bx bx-plus"></i>
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -173,10 +179,6 @@ function AttributesOfAGreatPlace() {
                       height={400}
                     />
                   </Link>
-
-                  <div className="dates">
-                    <span>24 February</span>
-                  </div>
                 </div>
 
                 <div className="news-content-wrap">
@@ -184,14 +186,16 @@ function AttributesOfAGreatPlace() {
                     <h3>Office and Facilities</h3>
                   </div>
 
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                  <p className="two-line-text">
+                    {attributesData.office_and_facilities}
                   </p>
 
-                  <Link href="/news/news-details" className="read-more">
+                  <div
+                    className="read-more"
+                    onClick={() => navigate("/single-attribute")}
+                  >
                     Read More <i className="bx bx-plus"></i>
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -207,10 +211,6 @@ function AttributesOfAGreatPlace() {
                       height={400}
                     />
                   </Link>
-
-                  <div className="dates">
-                    <span>25 February</span>
-                  </div>
                 </div>
 
                 <div className="news-content-wrap">
@@ -218,14 +218,16 @@ function AttributesOfAGreatPlace() {
                     <h3>Leadership and Management</h3>
                   </div>
 
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                  <p className="two-line-text">
+                    {attributesData.leadership_and_management}
                   </p>
 
-                  <Link href="/news/news-details" className="read-more">
+                  <div
+                    className="read-more"
+                    onClick={() => navigate("/single-attribute")}
+                  >
                     Read More <i className="bx bx-plus"></i>
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -241,10 +243,6 @@ function AttributesOfAGreatPlace() {
                       height={400}
                     />
                   </Link>
-
-                  <div className="dates">
-                    <span>25 February</span>
-                  </div>
                 </div>
 
                 <div className="news-content-wrap">
@@ -252,14 +250,16 @@ function AttributesOfAGreatPlace() {
                     <h3>Rewards and Recognition</h3>
                   </div>
 
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                  <p className="two-line-text">
+                    {attributesData.rewards_and_recognition}
                   </p>
 
-                  <Link href="/news/news-details" className="read-more">
+                  <div
+                    className="read-more"
+                    onClick={() => navigate("/single-attribute")}
+                  >
                     Read More <i className="bx bx-plus"></i>
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -275,10 +275,6 @@ function AttributesOfAGreatPlace() {
                       height={400}
                     />
                   </Link>
-
-                  <div className="dates">
-                    <span>27 February</span>
-                  </div>
                 </div>
 
                 <div className="news-content-wrap">
@@ -286,14 +282,16 @@ function AttributesOfAGreatPlace() {
                     <h3>Teamwork and Collaboration</h3>
                   </div>
 
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                  <p className="two-line-text">
+                    {attributesData.teamwork_and_collaboration}
                   </p>
 
-                  <Link href="/news/news-details" className="read-more">
+                  <div
+                    className="read-more"
+                    onClick={() => navigate("/single-attribute")}
+                  >
                     Read More <i className="bx bx-plus"></i>
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -309,10 +307,6 @@ function AttributesOfAGreatPlace() {
                       height={400}
                     />
                   </Link>
-
-                  <div className="dates">
-                    <span>28 February</span>
-                  </div>
                 </div>
 
                 <div className="news-content-wrap">
@@ -320,14 +314,16 @@ function AttributesOfAGreatPlace() {
                     <h3>Brand and Reputation</h3>
                   </div>
 
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga veritatis veniam corrupti perferendis minima in.
+                  <p className="two-line-text">
+                    {attributesData.brand_and_reputation}
                   </p>
 
-                  <Link href="/news/news-details" className="read-more">
+                  <div
+                    className="read-more"
+                    onClick={() => navigate("/single-attribute")}
+                  >
                     Read More <i className="bx bx-plus"></i>
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>

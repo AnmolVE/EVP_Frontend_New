@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 
 import {
-  MessagingHierarchyImg1,
-  MessagingHierarchyImg2,
-  MessagingHierarchyImg3,
-  MessagingHierarchyImg4,
+  evpStatementImg1,
+  evpStatementImg2,
+  evpStatementImg3,
+  evpStatementImg4,
 } from "../../../../assets/images/images";
 
-import "./MessagingHierarchy.css";
+import "./EVPStatement.css";
 
 function MessagingHierarchy() {
+  const { data } = useSelector((store) => store.inputField);
+
+  const [evpStatementData, setEvpStatementData] = useState([]);
+
+  useEffect(() => {
+    if (data && Array.isArray(data)) {
+      setEvpStatementData(data);
+    }
+  }, [data]);
+
   const openTabSection = (evt, tabNmae) => {
     let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabs_item");
@@ -30,9 +41,10 @@ function MessagingHierarchy() {
 
   return (
     <div className="evp-messagingHierarchy">
-      <h2 className="evp-design-heading">Messaging Hierarchy</h2>
-      <p className="evp-design-para">
-        Validate your Messaging Hierarchy data before it goes to next step
+      <h2 className="custom_h2">Generate EVP Statement</h2>
+      <p className="custom_para">
+        The EVP will be created on the selected theme - all others will become
+        secondary pillars
       </p>
       <div className="evp-messagingHierarchy-container">
         <div className="industries-area">
@@ -40,38 +52,19 @@ function MessagingHierarchy() {
             <div className="tab industries-list-tab">
               <div className="row align-items-center">
                 <div className="col-lg-3">
-                  {/* Tabs navs */}
                   <ul className="tabs">
-                    <li
-                      className="current"
-                      onClick={(e) => openTabSection(e, "tab1")}
-                    >
-                      <span>
-                        <i className="flaticon-machine-learning"></i>
-                        <h3>Theme 1</h3>
-                      </span>
-                    </li>
-
-                    <li onClick={(e) => openTabSection(e, "tab2")}>
-                      <span>
-                        <i className="flaticon-artificial-intelligence"></i>
-                        <h3>Theme 2</h3>
-                      </span>
-                    </li>
-
-                    <li onClick={(e) => openTabSection(e, "tab3")}>
-                      <span>
-                        <i className="flaticon-health"></i>
-                        <h3>Theme 3</h3>
-                      </span>
-                    </li>
-
-                    <li onClick={(e) => openTabSection(e, "tab4")}>
-                      <span>
-                        <i className="flaticon-automation"></i>
-                        <h3>Theme 4</h3>
-                      </span>
-                    </li>
+                    {evpStatementData &&
+                      evpStatementData.map((item, index) => (
+                        <li
+                          className=""
+                          onClick={(e) => openTabSection(e, `tab${index + 1}`)}
+                        >
+                          <span>
+                            <i className="flaticon-machine-learning"></i>
+                            <h3>{item.tab_name}</h3>
+                          </span>
+                        </li>
+                      ))}
                   </ul>
                 </div>
 
@@ -83,7 +76,7 @@ function MessagingHierarchy() {
                         <div className="col-lg-6">
                           <div className="industries-img left-img">
                             <img
-                              src={MessagingHierarchyImg1}
+                              src={evpStatementImg1}
                               alt="Image"
                               width={370}
                               height={390}
@@ -218,7 +211,7 @@ function MessagingHierarchy() {
                         <div className="col-lg-6">
                           <div className="industries-img right-img">
                             <img
-                              src={MessagingHierarchyImg2}
+                              src={evpStatementImg2}
                               alt="Image"
                               width={550}
                               height={445}
@@ -234,7 +227,7 @@ function MessagingHierarchy() {
                         <div className="col-lg-6">
                           <div className="industries-img left-img">
                             <img
-                              src={MessagingHierarchyImg3}
+                              src={evpStatementImg3}
                               alt="Image"
                               width={620}
                               height={445}
@@ -370,7 +363,7 @@ function MessagingHierarchy() {
                         <div className="col-lg-6">
                           <div className="industries-img right-img">
                             <img
-                              src={MessagingHierarchyImg4}
+                              src={evpStatementImg4}
                               alt="Image"
                               width={526}
                               height={445}

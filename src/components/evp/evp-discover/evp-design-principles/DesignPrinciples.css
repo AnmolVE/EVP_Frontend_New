@@ -10,18 +10,6 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.evp-designPrinciples-heading {
-  font-family: "Roboto";
-  font-size: 2.5rem;
-  color: #22bfed;
-}
-
-.evp-designPrinciples-para {
-  font-family: "Roboto";
-  font-size: 2rem;
-  font-weight: 400;
-}
-
 .evp-designPrinciples-questions {
   width: 100%;
   height: auto;
@@ -47,7 +35,6 @@
   width: 100%;
   border: none;
   background-color: #f5f4f4;
-  padding: 1rem;
   outline: none;
 }
 

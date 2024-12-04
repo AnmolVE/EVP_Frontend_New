@@ -15,6 +15,8 @@ import IndustryTrends from "./components/home/industry-trends/IndustryTrends";
 import EVPJourney from "./components/home/evp-journey/EVPJourney";
 import InternalCommunications from "./components/internal-communications/InternalCommunications";
 import EVP from "./components/evp/EVP";
+import SingleAttribute from "./components/evp/evp-develop/evp-attributes-of-a-great-place/SingleAttribute";
+import SingleAudience from "./components/evp/evp-develop/evp-audience-wise-messaging/SingleAudience";
 
 function App() {
   return (
@@ -26,7 +28,6 @@ function App() {
             <Route element={<CompanyDetail />} path="/company-detail" />
             <Route element={<UserProfile />} path="/user-profile" />
             <Route element={<LandingPage />} path="/home" />
-            <Route element={<EVP />} path="/evp" />
           </Route>
           <Route element={<PrivateRoutes requiredRole="Admin" />}>
             <Route
@@ -40,6 +41,9 @@ function App() {
           <Route element={<TalentInsights />} path="/talent-insights" />
           <Route element={<IndustryTrends />} path="/industry-trends" />
           <Route element={<EVPJourney />} path="/evp-journey" />
+          <Route element={<EVP />} path="evp" />
+          <Route element={<SingleAttribute />} path="single-attribute" />
+          <Route element={<SingleAudience />} path="single-audience" />
           <Route
             element={<InternalCommunications />}
             path="/internal-communications"

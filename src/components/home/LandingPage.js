@@ -11,7 +11,8 @@ function LandingPage() {
 
   const [homePageData, setHomePageData] = useState([]);
 
-  const companyName = localStorage.getItem("companyName");
+  const loginData = JSON.parse(localStorage.getItem("loginData"));
+  const companyName = loginData.companyName;
 
   const fetchData = async () => {
     try {

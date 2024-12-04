@@ -5,16 +5,9 @@
   gap: 2rem;
 }
 
-.evp-primaryResearch-heading {
-  font-family: "Roboto";
-  font-size: 2.5rem;
-  color: #22bfed;
-}
-
-.evp-primaryResearch-para {
-  font-family: "Roboto";
-  font-size: 2rem;
-  font-weight: 400;
+.evp-primaryResearch-mainContainer {
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .evp-primaryResearch-dataGather {
@@ -23,8 +16,6 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .evp-PrimaryResearch-tabs {
@@ -41,11 +32,18 @@
   font-size: 1.3rem;
   color: gray;
   border-bottom: 2px solid #d5d4d4;
+  cursor: pointer;
 }
 
 .evp-PrimaryResearch-tab.active {
   color: #22bfed;
   border-bottom: 2px solid #22bfed;
+}
+
+.evp-primaryResearch-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .evp-primaryResearch-uploadContainer {
@@ -76,4 +74,98 @@
 .evp-primaryResearch-button {
   display: flex;
   justify-content: center;
+}
+
+.evp-primaryResearch-resources {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.evp-primaryResearch-resources p {
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.widget_categories ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.widget_categories ul li {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  color: #666666;
+  padding-left: 17px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 1px solid #efefef;
+}
+
+.widget_categories ul li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.widget_categories ul li::before {
+  background: #1dd3f8;
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  content: "";
+  left: 0;
+  top: 8px;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.widget_categories ul li a {
+  display: block;
+  color: #666666;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.widget_categories ul li a span {
+  float: right;
+  font-size: 13px;
+}
+
+.widget_categories ul li a:hover {
+  color: #1dd3f8;
+}
+
+.widget_categories ul li .post-count {
+  float: right;
+}
+
+.widget-title {
+  text-transform: capitalize;
+  position: relative;
+  font-size: 20px;
+  margin-bottom: 0;
+  background-color: #f7f7f7;
+  padding: 10px 20px;
+  color: #212121;
+  position: relative;
+}
+
+.widget-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #1dd3f8;
+}
+
+.widget-title {
+  margin-bottom: 0;
+}
+
+.post-wrap {
+  padding: 20px;
 }

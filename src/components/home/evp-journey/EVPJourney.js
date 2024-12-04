@@ -35,7 +35,9 @@ function EVPJourney() {
           </div>
         </div>
         <div className="evp-journey-button-container">
-          <button className="default-btn">Get Started</button>
+          <button className="default-btn" onClick={() => navigate("/evp")}>
+            Get Started
+          </button>
         </div>
         <div className="five-ds">
           <div className="five-ds-heading">

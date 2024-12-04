@@ -17,7 +17,7 @@ export const login = createAsyncThunk("auth/login", async (userData) => {
 
   const loginResponse = await response.json();
 
-  localStorage.setItem("tokens", JSON.stringify(loginResponse.tokens));
+  localStorage.setItem("loginData", JSON.stringify(loginResponse.loginData));
 
   return loginResponse;
 });
@@ -36,7 +36,7 @@ const loginAuthSlice = createSlice({
       state.accessToken = null;
       state.userEmail = null;
       state.isLoggedIn = false;
-      localStorage.removeItem("tokens");
+      localStorage.removeItem("loginData");
     },
   },
   extraReducers: (builder) => {
@@ -46,8 +46,8 @@ const loginAuthSlice = createSlice({
       })
       .addCase(login.fulfilled, (state, action) => {
         state.loading = false;
-        state.accessToken = action.payload.tokens.access;
-        state.userEmail = action.payload.tokens.email;
+        state.accessToken = action.payload.loginData.access;
+        state.userEmail = action.payload.loginData.email;
         state.isLoggedIn = true;
       })
       .addCase(login.rejected, (state, action) => {
