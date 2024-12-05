@@ -42,8 +42,6 @@ function App() {
           <Route element={<IndustryTrends />} path="/industry-trends" />
           <Route element={<EVPJourney />} path="/evp-journey" />
           <Route element={<EVP />} path="evp" />
-          <Route element={<SingleAttribute />} path="single-attribute" />
-          <Route element={<SingleAudience />} path="single-audience" />
           <Route
             element={<InternalCommunications />}
             path="/internal-communications"

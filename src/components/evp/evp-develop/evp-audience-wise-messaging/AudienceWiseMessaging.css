@@ -8,6 +8,7 @@
 }
 
 .single-features {
+  min-height: 21rem;
   text-align: center;
   padding: 30px;
   background-color: #ffffff;

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import "../Develop.css";
@@ -17,11 +16,18 @@ import {
   Attribute8,
   Attribute9,
 } from "../../../../assets/images/images";
+import SingleAttribute from "./SingleAttribute";
 
 function AttributesOfAGreatPlace() {
   const { data } = useSelector((store) => store.inputField);
 
   const [attributesData, setAttributesData] = useState([]);
+  const [modalData, setModalData] = useState({
+    isOpen: false,
+    title: "",
+    content: "",
+    image: "",
+  });
 
   useEffect(() => {
     if (data) {
@@ -29,9 +35,13 @@ function AttributesOfAGreatPlace() {
     }
   }, [data]);
 
-  console.log(attributesData);
+  const handleReadMore = (title, content, image) => {
+    setModalData({ isOpen: true, title, content, image });
+  };
 
-  const navigate = useNavigate();
+  const closeModal = () => {
+    setModalData({ isOpen: false, title: "", content: "", image: "" });
+  };
 
   return (
     <div className="evp-develop">
@@ -64,7 +74,13 @@ function AttributesOfAGreatPlace() {
 
                   <div
                     className="read-more"
-                    onClick={() => navigate("/single-attribute")}
+                    onClick={() =>
+                      handleReadMore(
+                        "Culture",
+                        attributesData.culture,
+                        Attribute1
+                      )
+                    }
                   >
                     Read More <i className="bx bx-plus"></i>
                   </div>
@@ -96,7 +112,13 @@ function AttributesOfAGreatPlace() {
 
                   <div
                     className="read-more"
-                    onClick={() => navigate("/single-attribute")}
+                    onClick={() =>
+                      handleReadMore(
+                        "Purpose and Values",
+                        attributesData.purpose_and_values,
+                        Attribute2
+                      )
+                    }
                   >
                     Read More <i className="bx bx-plus"></i>
                   </div>
@@ -128,7 +150,13 @@ function AttributesOfAGreatPlace() {
 
                   <div
                     className="read-more"
-                    onClick={() => navigate("/single-attribute")}
+                    onClick={() =>
+                      handleReadMore(
+                        "Benefits and Perks",
+                        attributesData.benefits_perks,
+                        Attribute3
+                      )
+                    }
                   >
                     Read More <i className="bx bx-plus"></i>
                   </div>
@@ -160,7 +188,13 @@ function AttributesOfAGreatPlace() {
 
                   <div
                     className="read-more"
-                    onClick={() => navigate("/single-attribute")}
+                    onClick={() =>
+                      handleReadMore(
+                        "Career Development",
+                        attributesData.career_development,
+                        Attribute4
+                      )
+                    }
                   >
                     Read More <i className="bx bx-plus"></i>
                   </div>
@@ -192,7 +226,13 @@ function AttributesOfAGreatPlace() {
 
                   <div
                     className="read-more"
-                    onClick={() => navigate("/single-attribute")}
+                    onClick={() =>
+                      handleReadMore(
+                        "Office and Facilities",
+                        attributesData.office_and_facilities,
+                        Attribute4
+                      )
+                    }
                   >
                     Read More <i className="bx bx-plus"></i>
                   </div>
@@ -224,7 +264,13 @@ function AttributesOfAGreatPlace() {
 
                   <div
                     className="read-more"
-                    onClick={() => navigate("/single-attribute")}
+                    onClick={() =>
+                      handleReadMore(
+                        "Leadership and Management",
+                        attributesData.leadership_and_management,
+                        Attribute6
+                      )
+                    }
                   >
                     Read More <i className="bx bx-plus"></i>
                   </div>
@@ -256,7 +302,13 @@ function AttributesOfAGreatPlace() {
 
                   <div
                     className="read-more"
-                    onClick={() => navigate("/single-attribute")}
+                    onClick={() =>
+                      handleReadMore(
+                        "Rewards and Recognition",
+                        attributesData.rewards_and_recognition,
+                        Attribute7
+                      )
+                    }
                   >
                     Read More <i className="bx bx-plus"></i>
                   </div>
@@ -288,7 +340,13 @@ function AttributesOfAGreatPlace() {
 
                   <div
                     className="read-more"
-                    onClick={() => navigate("/single-attribute")}
+                    onClick={() =>
+                      handleReadMore(
+                        "Teamwork and Collaboration",
+                        attributesData.teamwork_and_collaboration,
+                        Attribute8
+                      )
+                    }
                   >
                     Read More <i className="bx bx-plus"></i>
                   </div>
@@ -320,7 +378,13 @@ function AttributesOfAGreatPlace() {
 
                   <div
                     className="read-more"
-                    onClick={() => navigate("/single-attribute")}
+                    onClick={() =>
+                      handleReadMore(
+                        "Brand and Reputation",
+                        attributesData.brand_and_reputation,
+                        Attribute9
+                      )
+                    }
                   >
                     Read More <i className="bx bx-plus"></i>
                   </div>
@@ -330,6 +394,13 @@ function AttributesOfAGreatPlace() {
           </div>
         </div>
       </section>
+      <SingleAttribute
+        isOpen={modalData.isOpen}
+        onClose={closeModal}
+        title={modalData.title}
+        content={modalData.content}
+        image={modalData.image}
+      />
     </div>
   );
 }

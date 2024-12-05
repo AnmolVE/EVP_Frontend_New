@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
+console.log(REACT_APP_BASE_URL);
 
 export const login = createAsyncThunk("auth/login", async (userData) => {
   const response = await fetch(`${REACT_APP_BASE_URL}/login/`, {

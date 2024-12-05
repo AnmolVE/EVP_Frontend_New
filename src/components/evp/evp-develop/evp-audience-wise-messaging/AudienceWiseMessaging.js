@@ -1,24 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
 
 import "./AudienceWiseMessaging.css";
 import "../Develop.css";
+import SingleAudience from "./SingleAudience";
 
 function AudienceWiseMessaging() {
   const { data } = useSelector((store) => store.inputField);
 
   const [audienceData, setAudienceData] = useState([]);
+  const [modalData, setModalData] = useState({
+    isOpen: false,
+    title: "",
+    content: "",
+  });
+
+  const handleReadMore = (title, content) => {
+    setModalData({ isOpen: true, title: title, content: content });
+  };
+
+  const closeModal = () => {
+    setModalData({ isOpen: false, title: "", content: "" });
+  };
 
   useEffect(() => {
     if (data) {
       setAudienceData(data);
     }
   }, [data]);
-
-  console.log(audienceData);
-
-  const navigate = useNavigate();
 
   return (
     <div className="evp-develop">
@@ -38,8 +47,13 @@ function AudienceWiseMessaging() {
                 </p>
 
                 <div
-                  onClick={() => navigate("/single-audience")}
                   className="read-more-icon"
+                  onClick={() =>
+                    handleReadMore(
+                      "Existing Employees",
+                      audienceData.existing_employees
+                    )
+                  }
                 >
                   <span className="flaticon-right-arrow"></span>
                 </div>
@@ -53,8 +67,8 @@ function AudienceWiseMessaging() {
                 <p className="two-line-text">{audienceData.alumni}</p>
 
                 <div
-                  onClick={() => navigate("/single-audience")}
                   className="read-more-icon"
+                  onClick={() => handleReadMore("Alumni", audienceData.alumni)}
                 >
                   <span className="flaticon-right-arrow"></span>
                 </div>
@@ -68,8 +82,13 @@ function AudienceWiseMessaging() {
                 <p className="two-line-text">{audienceData.targeted_talent}</p>
 
                 <div
-                  onClick={() => navigate("/single-audience")}
                   className="read-more-icon"
+                  onClick={() =>
+                    handleReadMore(
+                      "Targeted Talent",
+                      audienceData.targeted_talent
+                    )
+                  }
                 >
                   <span className="flaticon-right-arrow"></span>
                 </div>
@@ -83,8 +102,10 @@ function AudienceWiseMessaging() {
                 <p className="two-line-text">{audienceData.leadership}</p>
 
                 <div
-                  onClick={() => navigate("/single-audience")}
                   className="read-more-icon"
+                  onClick={() =>
+                    handleReadMore("Leadership", audienceData.leadership)
+                  }
                 >
                   <span className="flaticon-right-arrow"></span>
                 </div>
@@ -98,8 +119,10 @@ function AudienceWiseMessaging() {
                 <p className="two-line-text">{audienceData.recruiters}</p>
 
                 <div
-                  onClick={() => navigate("/single-audience")}
                   className="read-more-icon"
+                  onClick={() =>
+                    handleReadMore("Recruiters", audienceData.recruiters)
+                  }
                 >
                   <span className="flaticon-right-arrow"></span>
                 </div>
@@ -113,8 +136,10 @@ function AudienceWiseMessaging() {
                 <p className="two-line-text">{audienceData.clients}</p>
 
                 <div
-                  onClick={() => navigate("/single-audience")}
                   className="read-more-icon"
+                  onClick={() =>
+                    handleReadMore("Clients", audienceData.clients)
+                  }
                 >
                   <span className="flaticon-right-arrow"></span>
                 </div>
@@ -128,8 +153,10 @@ function AudienceWiseMessaging() {
                 <p className="two-line-text">{audienceData.offer_drops}</p>
 
                 <div
-                  onClick={() => navigate("/single-audience")}
                   className="read-more-icon"
+                  onClick={() =>
+                    handleReadMore("Offer Drops", audienceData.offer_drops)
+                  }
                 >
                   <span className="flaticon-right-arrow"></span>
                 </div>
@@ -145,8 +172,13 @@ function AudienceWiseMessaging() {
                 </p>
 
                 <div
-                  onClick={() => navigate("/single-audience")}
                   className="read-more-icon"
+                  onClick={() =>
+                    handleReadMore(
+                      "Exit Interview Feedback",
+                      audienceData.exit_interview_feedback
+                    )
+                  }
                 >
                   <span className="flaticon-right-arrow"></span>
                 </div>
@@ -162,8 +194,13 @@ function AudienceWiseMessaging() {
                 </p>
 
                 <div
-                  onClick={() => navigate("/single-audience")}
                   className="read-more-icon"
+                  onClick={() =>
+                    handleReadMore(
+                      "Employee Feedback Summary",
+                      audienceData.employee_feedback_summary
+                    )
+                  }
                 >
                   <span className="flaticon-right-arrow"></span>
                 </div>
@@ -172,6 +209,12 @@ function AudienceWiseMessaging() {
           </div>
         </div>
       </section>
+      <SingleAudience
+        isOpen={modalData.isOpen}
+        onClose={closeModal}
+        title={modalData.title}
+        content={modalData.content}
+      />
     </div>
   );
 }

@@ -4,12 +4,38 @@ import "./DesignPrinciples.css";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
+const questions = [
+  "What are the strategic goals for the next 3-5 years?",
+  "Do you have an existing EVP? If so, what aspects of it are working well, and what areas need improvement?",
+  "What are the key attributes or messages that you want to convey through your EVP?",
+  "How would you describe your company culture?",
+  "What values are most important to your organization and its employees?",
+  "What challenges do you currently face in attracting and retaining top talent?",
+  "What are the key reasons employees stay at your company? What are the reasons they leave?",
+  "What talent segment(s) do you most want your EVP to target?",
+  "How do you differentiate your company's employee experience from competitors?",
+  "How do you currently measure employee satisfaction and engagement?",
+  "What channels do you use to communicate with employees and potential candidates?",
+  "How do you plan to measure the success and impact of the new EVP?",
+  "How do you believe your company is perceived by potential candidates in the market?",
+  "What are the key messages you want to convey to the market about working at your company?",
+  "What are your competitors doing in terms of EVP that you admire or want to differentiate from?",
+];
+
 function DesignPrinciples({ companyName, accessToken }) {
   const [fileNames, setFileNames] = useState(["Upload documents"]);
   const [files, setFiles] = useState([]);
   const fileInputRef = useRef(null);
 
   const [designPrinciples, setDesignPrinciples] = useState({});
+  const [visibleQuestions, setVisibleQuestions] = useState({});
+
+  const toggleVisibility = (question) => {
+    setVisibleQuestions((prev) => ({
+      ...prev,
+      [question]: !prev[question],
+    }));
+  };
 
   const getDesignPrinciples = async () => {
     try {
@@ -36,10 +62,11 @@ function DesignPrinciples({ companyName, accessToken }) {
   }, []);
 
   const handleInputChange = (e) => {
-    setDesignPrinciples({
-      ...designPrinciples,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setDesignPrinciples((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -86,192 +113,22 @@ function DesignPrinciples({ companyName, accessToken }) {
           First-hand information adds credibility and depth to your research
         </p>
         <div className="evp-designPrinciples-questions">
-          <div className="evp-designPrinciples-question">
-            <label>What are the strategic goals for the next 3-5 years?</label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              Do you have an existing EVP? If so, what aspects of it are working
-              well, and what areas need improvement?
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              What are the key attributes or messages that you want to convey
-              through your EVP?
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>How would you describe your company culture?</label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              What values are most important to your organization and its
-              employees?
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              What challenges do you currently face in attracting and retaining
-              top talent?
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              What are the key reasons employees stay at your company? What are
-              the reasons they leave?
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              What talent segment(s) do you most want your EVP to target
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              How do you differentiate your company's employee experience from
-              competitors?
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              How do you currently measure employee satisfaction and engagement?
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              What channels do you use to communicate with employees and
-              potential candidates?
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              How do you plan to measure the success and impact of the new EVP?
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              How do you believe your company is perceived by potential
-              candidates in the market?
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              What are the key messages you want to convey to the market about
-              working at your company?
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
-          <div className="evp-designPrinciples-question">
-            <label>
-              What are your competitors doing in terms of EVP that you admire or
-              want to differentiate from?
-            </label>
-            <textarea
-              className="custom_input"
-              onChange={handleInputChange}
-              name="question_1"
-              value={designPrinciples?.question_1}
-              placeholder="Enter Data"
-            />
-          </div>
+          {questions.map((question, index) => (
+            <div key={index} className="evp-designPrinciples-question">
+              <label onClick={() => toggleVisibility(`question_${index}`)}>
+                {`${index + 1}. ${question}`}
+              </label>
+              {visibleQuestions[`question_${index}`] && (
+                <textarea
+                  className="custom_input"
+                  onChange={handleInputChange}
+                  name={`question_${index}`}
+                  value={designPrinciples[`question_${index + 1}`] || ""}
+                  placeholder="Enter Data"
+                />
+              )}
+            </div>
+          ))}
           <div className="evp-designPrinciples-button">
             <button onClick={handleSubmit} className="default-btn">
               Save

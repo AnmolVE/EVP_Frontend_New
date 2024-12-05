@@ -66,6 +66,7 @@
   padding: 5px 15px;
   border-radius: 4px;
   text-decoration: none;
+  cursor: pointer;
 }
 .read-more i {
   position: relative;
