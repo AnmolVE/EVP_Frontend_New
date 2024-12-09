@@ -42,7 +42,7 @@ function AudienceWiseMessaging() {
               <div className="single-features">
                 <i className="flaticon-cloud-computing-1"></i>
                 <h3>Existing Employees</h3>
-                <p className="two-line-text">
+                <p className="two-line-text custom_para2">
                   {audienceData.existing_employees}
                 </p>
 
@@ -64,7 +64,9 @@ function AudienceWiseMessaging() {
               <div className="single-features">
                 <i className="flaticon-engineer"></i>
                 <h3>Alumni</h3>
-                <p className="two-line-text">{audienceData.alumni}</p>
+                <p className="two-line-text custom_para2">
+                  {audienceData.alumni}
+                </p>
 
                 <div
                   className="read-more-icon"
@@ -79,7 +81,9 @@ function AudienceWiseMessaging() {
               <div className="single-features">
                 <i className="flaticon-success"></i>
                 <h3>Targeted Talent</h3>
-                <p className="two-line-text">{audienceData.targeted_talent}</p>
+                <p className="two-line-text custom_para2">
+                  {audienceData.targeted_talent}
+                </p>
 
                 <div
                   className="read-more-icon"
@@ -99,7 +103,9 @@ function AudienceWiseMessaging() {
               <div className="single-features">
                 <i className="flaticon-technical-support"></i>
                 <h3>Leadership</h3>
-                <p className="two-line-text">{audienceData.leadership}</p>
+                <p className="two-line-text custom_para2">
+                  {audienceData.leadership}
+                </p>
 
                 <div
                   className="read-more-icon"
@@ -116,7 +122,9 @@ function AudienceWiseMessaging() {
               <div className="single-features">
                 <i className="flaticon-shield"></i>
                 <h3>Recruiters</h3>
-                <p className="two-line-text">{audienceData.recruiters}</p>
+                <p className="two-line-text custom_para2">
+                  {audienceData.recruiters}
+                </p>
 
                 <div
                   className="read-more-icon"
@@ -133,7 +141,9 @@ function AudienceWiseMessaging() {
               <div className="single-features">
                 <i className="flaticon-success"></i>
                 <h3>Clients</h3>
-                <p className="two-line-text">{audienceData.clients}</p>
+                <p className="two-line-text custom_para2">
+                  {audienceData.clients}
+                </p>
 
                 <div
                   className="read-more-icon"
@@ -150,7 +160,9 @@ function AudienceWiseMessaging() {
               <div className="single-features">
                 <i className="flaticon-machine-learning"></i>
                 <h3>Offer Drops</h3>
-                <p className="two-line-text">{audienceData.offer_drops}</p>
+                <p className="two-line-text custom_para2">
+                  {audienceData.offer_drops}
+                </p>
 
                 <div
                   className="read-more-icon"
@@ -167,7 +179,7 @@ function AudienceWiseMessaging() {
               <div className="single-features">
                 <i className="flaticon-artificial-intelligence"></i>
                 <h3>Exit Interview Feedback</h3>
-                <p className="two-line-text">
+                <p className="two-line-text custom_para2">
                   {audienceData.exit_interview_feedback}
                 </p>
 
@@ -189,7 +201,7 @@ function AudienceWiseMessaging() {
               <div className="single-features">
                 <i className="flaticon-health"></i>
                 <h3>Employee Feedback Summary</h3>
-                <p className="two-line-text">
+                <p className="two-line-text custom_para2">
                   {audienceData.employee_feedback_summary}
                 </p>
 

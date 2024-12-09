@@ -5,43 +5,21 @@ import "./Alignment.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
-function Alignment({ companyName, accessToken }) {
+function Alignment() {
   const { data } = useSelector((store) => store.inputField);
 
-  const [alignmentData, setAlignmentData] = useState({});
+  const [alignmentData, setAlignmentData] = useState([]);
+  const [activeThemeId, setActiveThemeId] = useState(null);
 
   useEffect(() => {
-    if (data) {
+    if (data && Array.isArray(data)) {
       setAlignmentData(data);
+      setActiveThemeId(data[0]?.id);
     }
   }, [data]);
 
-  const handleInputChange = (e) => {
-    setAlignmentData({
-      ...alignmentData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch(
-        `${REACT_APP_BASE_URL}/alignment/${companyName}/`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${accessToken}`,
-          },
-          body: JSON.stringify(alignmentData),
-        }
-      );
-      alert("Data updated successfully");
-    } catch (error) {
-      alert(`Error: ${error.message}`);
-    }
+  const handleThemeClick = (id) => {
+    setActiveThemeId((prevId) => (prevId === id ? null : id));
   };
 
   return (
@@ -51,24 +29,32 @@ function Alignment({ companyName, accessToken }) {
         Validate your Alignment data before goes to next step
       </p>
       <div className="evp-alignment-container">
-        <div className="evp-alignment-input">
-          <p>What we want to be known for</p>
-          <textarea
-            className="custom_input"
-            onChange={handleInputChange}
-            name="what_we_want_to_be_known_for"
-            value={alignmentData?.what_we_want_to_be_known_for || ""}
-            placeholder="Enter data"
-          />
-          <div className="evp-alignment-button">
-            <button
-              type="submit"
-              onClick={handleSubmit}
-              className="default-btn"
-            >
-              Save
-            </button>
-          </div>
+        <div className="evp-alignments">
+          {alignmentData?.map((item) => (
+            <div key={item.id} className="evp-alignments-theme">
+              <div
+                className="evp-alignment-themeName"
+                onClick={() => handleThemeClick(item.id)}
+              >
+                <div className="evp-alignments-theme-icon">&times;</div>
+                <h4>{item.theme_name}</h4>
+              </div>
+              {activeThemeId === item.id && (
+                <div className="evp-alignment-themeData">
+                  <div className="evp-alignment-themeData-aspects">
+                    <h4>Positive Aspects (that support this principle)</h4>
+                    <p className="custom_para2">{item.positive_aspects}</p>
+                  </div>
+                  <div className="evp-alignment-themeData-aspects">
+                    <h4>
+                      Negative Aspects (that do not support this principle)
+                    </h4>
+                    <p className="custom_para2">{item.negative_aspects}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>

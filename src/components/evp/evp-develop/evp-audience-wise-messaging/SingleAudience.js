@@ -12,7 +12,7 @@ function SingleAudience({ isOpen, onClose, title, content }) {
           &times;
         </button>
         <h2>{title}</h2>
-        <p>{content}</p>
+        <p className="custom_para2">{content}</p>
       </div>
     </div>
   );

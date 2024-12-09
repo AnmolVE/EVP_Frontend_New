@@ -70,7 +70,9 @@ function AttributesOfAGreatPlace() {
                     <h3>Culture</h3>
                   </div>
 
-                  <p className="two-line-text">{attributesData.culture}</p>
+                  <p className="two-line-text custom_para2">
+                    {attributesData.culture}
+                  </p>
 
                   <div
                     className="read-more"
@@ -106,7 +108,7 @@ function AttributesOfAGreatPlace() {
                     <h3>Purpose and Values</h3>
                   </div>
 
-                  <p className="two-line-text">
+                  <p className="two-line-text custom_para2">
                     {attributesData.purpose_and_values}
                   </p>
 
@@ -144,7 +146,7 @@ function AttributesOfAGreatPlace() {
                     <h3>Benefits and Perks</h3>
                   </div>
 
-                  <p className="two-line-text">
+                  <p className="two-line-text custom_para2">
                     {attributesData.benefits_perks}
                   </p>
 
@@ -182,7 +184,7 @@ function AttributesOfAGreatPlace() {
                     <h3>Career Development</h3>
                   </div>
 
-                  <p className="two-line-text">
+                  <p className="two-line-text custom_para2">
                     {attributesData.career_development}
                   </p>
 
@@ -220,7 +222,7 @@ function AttributesOfAGreatPlace() {
                     <h3>Office and Facilities</h3>
                   </div>
 
-                  <p className="two-line-text">
+                  <p className="two-line-text custom_para2">
                     {attributesData.office_and_facilities}
                   </p>
 
@@ -258,7 +260,7 @@ function AttributesOfAGreatPlace() {
                     <h3>Leadership and Management</h3>
                   </div>
 
-                  <p className="two-line-text">
+                  <p className="two-line-text custom_para2">
                     {attributesData.leadership_and_management}
                   </p>
 
@@ -296,7 +298,7 @@ function AttributesOfAGreatPlace() {
                     <h3>Rewards and Recognition</h3>
                   </div>
 
-                  <p className="two-line-text">
+                  <p className="two-line-text custom_para2">
                     {attributesData.rewards_and_recognition}
                   </p>
 
@@ -334,7 +336,7 @@ function AttributesOfAGreatPlace() {
                     <h3>Teamwork and Collaboration</h3>
                   </div>
 
-                  <p className="two-line-text">
+                  <p className="two-line-text custom_para2">
                     {attributesData.teamwork_and_collaboration}
                   </p>
 
@@ -372,7 +374,7 @@ function AttributesOfAGreatPlace() {
                     <h3>Brand and Reputation</h3>
                   </div>
 
-                  <p className="two-line-text">
+                  <p className="two-line-text custom_para2">
                     {attributesData.brand_and_reputation}
                   </p>
 

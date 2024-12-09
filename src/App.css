@@ -18,6 +18,12 @@
   font-weight: 400;
 }
 
+.custom_para2 {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+}
+
 .custom_input {
   padding: 1rem;
   font-size: 18px;

@@ -1,23 +1,46 @@
-.evp-alignment-input {
-  padding: 0.5rem;
+.evp-alignments {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.evp-alignments-theme {
+  height: auto;
+  min-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.evp-alignment-input p {
-  font-family: "Roboto";
-  font-size: 1.2rem;
-  font-weight: 400;
+.evp-alignments-theme h4 {
+  margin-bottom: 0;
 }
 
-.evp-alignment-input textarea {
-  height: 25rem;
-  width: 100%;
-  border: none;
-  background-color: #f5f4f4;
-  outline: none;
-}
-
-.evp-alignment-button {
+.evp-alignment-themeName {
+  height: auto;
+  min-height: 4rem;
   display: flex;
-  justify-content: end;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.evp-alignment-themeData {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.evp-alignment-themeData-aspects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.evp-alignments-theme-icon {
+  font-size: 2rem;
 }
