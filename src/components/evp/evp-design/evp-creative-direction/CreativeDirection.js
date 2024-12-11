@@ -27,32 +27,12 @@ function CreativeDirection() {
       <div className="evp-creativeDirection-container">
         <section className="business-area">
           <div className="">
-            <div className="row align-items-center">
+            <div className="row">
               <div className="col-lg-6">
-                <div className="single-business">
-                  <i className="flaticon-chip"></i>
-                  <h3>AI Will Automate Cybersecurity Improve</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore. Quis ipsum
-                    suspendisse ultrices gravida suspendisse.
+                <div>
+                  <p className="custom_para2">
+                    {creativeDirectionData.creative_direction_data}
                   </p>
-                </div>
-
-                <div className="single-business">
-                  <i className="flaticon-blockchain"></i>
-                  <h3>A Community With A Unique Mission</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore. Quis ipsum
-                    suspendisse ultrices gravida suspendisse.
-                  </p>
-                </div>
-
-                <div className="business-btn">
-                  <Link href="/about-2" className="default-btn">
-                    Know Details
-                  </Link>
                 </div>
               </div>
 

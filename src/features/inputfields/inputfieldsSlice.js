@@ -15,7 +15,7 @@ const apiEndpoints = {
     Alignment: `${REACT_APP_BASE_URL}/alignment/`,
   },
   design: {
-    "EVP Statement": `${REACT_APP_BASE_URL}/evp-statement/`,
+    "EVP Statement": `${REACT_APP_BASE_URL}/evp-statement-themes/`,
     "Creative Direction": `${REACT_APP_BASE_URL}/creative-direction/`,
     "EVP Definition": `${REACT_APP_BASE_URL}/evp-definition/`,
     "EVP Promise": `${REACT_APP_BASE_URL}/evp-promise/`,
