@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { AiOutlineRight } from "react-icons/ai";
+import { AiOutlineLeft } from "react-icons/ai";
 import { fetchDataForSelectedItem } from "../../features/inputfields/inputfieldsSlice";
 
 import "./EVP.css";
@@ -360,14 +362,17 @@ function EVP() {
           </div>
         </div>
         <div className="evp-backButton">
-          <button className="default-btn" onClick={handleBackClick}>
-            Back
+          <button onClick={handleBackClick}>
+            <AiOutlineLeft />
           </button>
         </div>
         <div className="evp-nextButton">
-          <button className="default-btn" onClick={handleNextClick}>
-            Next
+          <button onClick={handleNextClick}>
+            <AiOutlineRight />
           </button>
+        </div>
+        <div className="evp-downloadButton">
+          <button className="default-btn">Download</button>
         </div>
         {/* <Footer /> */}
       </div>

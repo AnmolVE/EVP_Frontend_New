@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { AiOutlineRight } from "react-icons/ai";
 
 import "./DesignPrinciples.css";
 
@@ -36,6 +37,9 @@ function DesignPrinciples({ companyName, accessToken }) {
       [question]: !prev[question],
     }));
   };
+
+  const getRotationClass = (question) =>
+    visibleQuestions[question] ? "designRotated" : "";
 
   const getDesignPrinciples = async () => {
     try {
@@ -114,10 +118,19 @@ function DesignPrinciples({ companyName, accessToken }) {
         </p>
         <div className="evp-designPrinciples-questions">
           {questions.map((question, index) => (
-            <div key={index} className="evp-designPrinciples-question">
-              <label onClick={() => toggleVisibility(`question_${index}`)}>
-                {`${index + 1}. ${question}`}
-              </label>
+            <div
+              key={index}
+              className="evp-designPrinciples-question-container"
+            >
+              <div
+                className="evp-designPrinciples-question"
+                onClick={() => toggleVisibility(`question_${index}`)}
+              >
+                <label>{`${index + 1}. ${question}`}</label>
+                <button className={getRotationClass(`question_${index}`)}>
+                  <AiOutlineRight />
+                </button>
+              </div>
               {visibleQuestions[`question_${index}`] && (
                 <textarea
                   className="custom_input"

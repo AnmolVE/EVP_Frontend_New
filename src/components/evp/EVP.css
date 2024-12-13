@@ -77,3 +77,36 @@
   top: 90%;
   left: 92%;
 }
+
+.evp-downloadButton {
+  z-index: 10;
+  position: fixed;
+  top: 11%;
+  left: 85%;
+}
+
+.evp-nextButton button {
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #0dcaf0;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 50%;
+}
+
+.evp-backButton button {
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #0dcaf0;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 50%;
+}

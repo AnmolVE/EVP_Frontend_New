@@ -18,10 +18,24 @@
   gap: 1rem;
 }
 
-.evp-designPrinciples-question {
+.evp-designPrinciples-question-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  cursor: pointer;
+}
+
+.evp-designPrinciples-question-container textarea {
+  height: 8rem;
+  width: 100%;
+  border: none;
+  background-color: #f5f4f4;
+  outline: none;
+}
+
+.evp-designPrinciples-question {
+  display: flex;
+  justify-content: space-between;
 }
 
 .evp-designPrinciples-question label {
@@ -31,15 +45,17 @@
   cursor: pointer;
 }
 
-.evp-designPrinciples-question textarea {
-  height: 8rem;
-  width: 100%;
+.evp-designPrinciples-question button {
   border: none;
-  background-color: #f5f4f4;
-  outline: none;
+  background: none;
 }
 
 .evp-designPrinciples-button {
   display: flex;
   justify-content: center;
+}
+
+.designRotated {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
 }

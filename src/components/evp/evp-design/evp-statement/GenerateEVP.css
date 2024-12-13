@@ -1,4 +1,4 @@
-.singleAudience-overlay {
+.generateEvp-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,11 +8,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  overflow: hidden;
+  z-index: 10000;
 }
 
-.singleAudience-content {
-  height: 40rem;
+.generateEvp-content {
+  height: 50rem;
   background: white;
   padding: 20px;
   border-radius: 8px;
@@ -23,11 +24,7 @@
   overflow-y: auto;
 }
 
-.singleAudience-content h2 {
-  margin-bottom: 20px;
-}
-
-.singleAudience-close-button {
+.generateEvp-closeButton {
   position: absolute;
   top: 10px;
   right: 10px;

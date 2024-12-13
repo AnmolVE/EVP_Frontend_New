@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { AiOutlineRight } from "react-icons/ai";
 import { useSelector } from "react-redux";
 
 import "./Alignment.css";
@@ -22,6 +23,9 @@ function Alignment() {
     setActiveThemeId((prevId) => (prevId === id ? null : id));
   };
 
+  const getRotationClass = (id) =>
+    activeThemeId === id ? "alignmentRotatedIcon" : "";
+
   return (
     <div className="evp-alignment">
       <h2 className="custom_h2">Alignment</h2>
@@ -36,7 +40,13 @@ function Alignment() {
                 className="evp-alignment-themeName"
                 onClick={() => handleThemeClick(item.id)}
               >
-                <div className="evp-alignments-theme-icon">&times;</div>
+                <div
+                  className={`evp-alignments-theme-icon ${getRotationClass(
+                    item.id
+                  )}`}
+                >
+                  <AiOutlineRight />
+                </div>
                 <h4>{item.theme_name}</h4>
               </div>
               {activeThemeId === item.id && (
