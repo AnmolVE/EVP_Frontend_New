@@ -8,7 +8,7 @@ function GenerateEVP({ isOpen, onClose }) {
   return (
     <div className="generateEvp-overlay">
       <div className="generateEvp-content">
-        <div>EVP Data will come here</div>
+        <div>EVP Statement will come here</div>
         <button className="generateEvp-closeButton" onClick={onClose}>
           &times;
         </button>

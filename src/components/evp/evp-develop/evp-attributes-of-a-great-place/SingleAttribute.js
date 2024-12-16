@@ -13,7 +13,7 @@ function SingleAttribute({ isOpen, onClose, title, content, image }) {
         </button>
         <h2>{title}</h2>
         <img src={image} alt={title} className="singleAttribute-image" />
-        <p className="custom_para2">{content}</p>
+        <p className="custom_para2 para">{content}</p>
       </div>
     </div>
   );

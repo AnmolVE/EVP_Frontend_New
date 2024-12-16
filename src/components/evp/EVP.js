@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { AiOutlineRight } from "react-icons/ai";
 import { AiOutlineLeft } from "react-icons/ai";
+import { FaRegEye } from "react-icons/fa";
+import { IoCloudDownloadOutline } from "react-icons/io5";
 import { fetchDataForSelectedItem } from "../../features/inputfields/inputfieldsSlice";
 
 import "./EVP.css";
@@ -372,7 +374,12 @@ function EVP() {
           </button>
         </div>
         <div className="evp-downloadButton">
-          <button className="default-btn">Download</button>
+          <button className="">
+            <FaRegEye />
+          </button>
+          <button className="">
+            <IoCloudDownloadOutline />
+          </button>
         </div>
         {/* <Footer /> */}
       </div>

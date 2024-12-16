@@ -1,4 +1,4 @@
-.business-area .default-btn {
+/* .business-area .default-btn {
   margin-top: 10px;
 }
 
@@ -177,4 +177,20 @@
   .single-counter h2 span {
     font-size: 40px;
   }
+} */
+
+.evp-creativeDirection-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.evp-creativeDirection-taglines {
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.evp-creativeDirection-visualConcept {
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
