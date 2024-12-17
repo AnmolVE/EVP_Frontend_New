@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import { useSelector } from "react-redux";
 
+import ContentButtons from "../../download-content/ContentButtons";
+
 import "./Alignment.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -67,6 +69,7 @@ function Alignment() {
           ))}
         </div>
       </div>
+      <ContentButtons />
     </div>
   );
 }

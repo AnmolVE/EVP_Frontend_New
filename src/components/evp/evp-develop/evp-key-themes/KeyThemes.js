@@ -11,6 +11,8 @@ import {
 
 import keyThemesImg from "../../../../assets/images/keyThemes.png";
 
+import ContentButtons from "../../download-content/ContentButtons";
+
 import "./KeyThemes.css";
 
 function KeyThemes() {
@@ -64,6 +66,7 @@ function KeyThemes() {
           </div>
         </div>
       </div>
+      <ContentButtons />
     </div>
   );
 }

@@ -373,14 +373,14 @@ function EVP() {
             <AiOutlineRight />
           </button>
         </div>
-        <div className="evp-downloadButton">
-          <button className="">
+        {/* <div className="evp-downloadButton">
+          <button>
             <FaRegEye />
           </button>
-          <button className="">
+          <button>
             <IoCloudDownloadOutline />
           </button>
-        </div>
+        </div> */}
         {/* <Footer /> */}
       </div>
     </>

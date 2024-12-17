@@ -1,0 +1,21 @@
+.download-contentButtons {
+  z-index: 10;
+  position: fixed;
+  top: 13%;
+  left: 90%;
+  display: flex;
+  gap: 1rem;
+}
+
+.download-contentButtons button {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #0dcaf0;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 50%;
+}

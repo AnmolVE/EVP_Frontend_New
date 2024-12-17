@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
+import ContentButtons from "../../download-content/ContentButtons";
+
 import "../Develop.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -492,6 +494,7 @@ function CompanyDataset({ companyName, accessToken }) {
           </div>
         </div>
       </div>
+      <ContentButtons />
     </div>
   );
 }

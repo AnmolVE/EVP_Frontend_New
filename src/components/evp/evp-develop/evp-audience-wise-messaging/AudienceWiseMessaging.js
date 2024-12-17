@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import "./AudienceWiseMessaging.css";
 import "../Develop.css";
 import SingleAudience from "./SingleAudience";
+import ContentButtons from "../../download-content/ContentButtons";
 
 function AudienceWiseMessaging() {
   const { data } = useSelector((store) => store.inputField);
@@ -221,6 +222,7 @@ function AudienceWiseMessaging() {
           </div>
         </div>
       </section>
+      <ContentButtons />
       <SingleAudience
         isOpen={modalData.isOpen}
         onClose={closeModal}

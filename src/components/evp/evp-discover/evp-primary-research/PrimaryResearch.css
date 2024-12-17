@@ -78,16 +78,63 @@
 
 .evp-primaryResearch-resources {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.evp-primaryResearch-resources p {
-  font-family: "Roboto";
-  font-size: 1.2rem;
-  font-weight: 500;
+.evp-primaryResearch-resources-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f7f7f7;
 }
 
-.widget_categories ul {
+.evp-primaryResearch-resources-header h3 {
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.evp-primaryResearch-resources-header span {
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.useful-resource-tooltip {
+  position: absolute;
+  top: 30px;
+  left: -250px;
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.evp-primaryResearch-resources-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  color: #666666;
+}
+
+.evp-primaryResearch-resources-links a {
+  color: #666666;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.evp-primaryResearch-resources-links a:hover {
+  color: #0dcaf0;
+}
+
+/* .widget_categories ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -168,4 +215,4 @@
 
 .post-wrap {
   padding: 20px;
-}
+} */

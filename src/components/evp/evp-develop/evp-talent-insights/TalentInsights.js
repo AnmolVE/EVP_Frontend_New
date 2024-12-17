@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+
+import ContentButtons from "../../download-content/ContentButtons";
 
 import "./TalentInsights.css";
-import { useSelector } from "react-redux";
 
 function TalentInsights() {
   const { data } = useSelector((store) => store.inputField);
@@ -46,6 +48,7 @@ function TalentInsights() {
           </tbody>
         </table>
       </div>
+      <ContentButtons />
     </div>
   );
 }

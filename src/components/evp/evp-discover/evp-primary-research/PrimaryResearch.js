@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { HiInformationCircle } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 
 import "./PrimaryResearch.css";
@@ -14,6 +15,8 @@ function PrimaryResearch() {
   const [fileNames, setFileNames] = useState(["Upload documents"]);
   const [files, setFiles] = useState([]);
   const fileInputRef = useRef(null);
+
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const handleFileChange = (event) => {
     const selectedFiles = Array.from(event.target.files);
@@ -114,8 +117,7 @@ function PrimaryResearch() {
             </div>
           </div>
           <div className="evp-primaryResearch-resources">
-            <div className="evp-primaryResearch-resources-links">
-              <div className="widget widget_categories">
+            {/* <div className="widget widget_categories">
                 <h3 className="widget-title">Useful Resources</h3>
 
                 <div className="post-wrap">
@@ -149,6 +151,52 @@ function PrimaryResearch() {
                     </li>
                   </ul>
                 </div>
+              </div> */}
+            <div className="evp-primaryResearch-resources-header">
+              <h3>Useful Resources</h3>
+              <span
+                onMouseEnter={() => setShowTooltip(true)}
+                onMouseLeave={() => setShowTooltip(false)}
+              >
+                <HiInformationCircle />
+                {showTooltip && (
+                  <div className="useful-resource-tooltip">
+                    These are the useful resources for your reference, and you
+                    can follow the steps which are written in the available
+                    PDFs.
+                  </div>
+                )}
+              </span>
+            </div>
+            <div className="evp-primaryResearch-resources-links">
+              <div>
+                <a
+                  href="assets\docs\Interview.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Interview
+                </a>
+                <hr />
+              </div>
+              <div>
+                <a
+                  href="assets\docs\ThinkTank.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Think Tank
+                </a>
+                <hr />
+              </div>
+              <div>
+                <a
+                  href="assets\docs\Survey.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Survey
+                </a>
               </div>
             </div>
           </div>

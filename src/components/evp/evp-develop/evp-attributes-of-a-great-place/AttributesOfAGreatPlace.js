@@ -17,6 +17,7 @@ import {
   Attribute9,
 } from "../../../../assets/images/images";
 import SingleAttribute from "./SingleAttribute";
+import ContentButtons from "../../download-content/ContentButtons";
 
 function AttributesOfAGreatPlace() {
   const { data } = useSelector((store) => store.inputField);
@@ -396,6 +397,7 @@ function AttributesOfAGreatPlace() {
           </div>
         </div>
       </section>
+      <ContentButtons />
       <SingleAttribute
         isOpen={modalData.isOpen}
         onClose={closeModal}
