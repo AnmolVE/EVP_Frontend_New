@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-import "./AudienceWiseMessaging.css";
-import "../Develop.css";
 import SingleAudience from "./SingleAudience";
 import ContentButtons from "../../download-content/ContentButtons";
+import Loading from "../../../utils/loading/Loading";
+
+import "./AudienceWiseMessaging.css";
+import "../Develop.css";
 
 function AudienceWiseMessaging() {
-  const { data } = useSelector((store) => store.inputField);
+  const { data, loading } = useSelector((store) => store.inputField);
 
   const [audienceData, setAudienceData] = useState([]);
   const [modalData, setModalData] = useState({
@@ -29,6 +31,10 @@ function AudienceWiseMessaging() {
       setAudienceData(data);
     }
   }, [data]);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="evp-develop">

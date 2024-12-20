@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import "../Develop.css";
-import "./AttributesOfAGreatPlace.css";
+import SingleAttribute from "./SingleAttribute";
+import ContentButtons from "../../download-content/ContentButtons";
+import Loading from "../../../utils/loading/Loading";
 
 import {
   Attribute1,
@@ -16,11 +17,12 @@ import {
   Attribute8,
   Attribute9,
 } from "../../../../assets/images/images";
-import SingleAttribute from "./SingleAttribute";
-import ContentButtons from "../../download-content/ContentButtons";
+
+import "../Develop.css";
+import "./AttributesOfAGreatPlace.css";
 
 function AttributesOfAGreatPlace() {
-  const { data } = useSelector((store) => store.inputField);
+  const { data, loading } = useSelector((store) => store.inputField);
 
   const [attributesData, setAttributesData] = useState([]);
   const [modalData, setModalData] = useState({
@@ -43,6 +45,10 @@ function AttributesOfAGreatPlace() {
   const closeModal = () => {
     setModalData({ isOpen: false, title: "", content: "", image: "" });
   };
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="evp-develop">

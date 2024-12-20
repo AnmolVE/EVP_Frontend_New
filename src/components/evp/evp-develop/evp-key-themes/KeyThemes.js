@@ -12,11 +12,12 @@ import {
 import keyThemesImg from "../../../../assets/images/keyThemes.png";
 
 import ContentButtons from "../../download-content/ContentButtons";
+import Loading from "../../../utils/loading/Loading";
 
 import "./KeyThemes.css";
 
 function KeyThemes() {
-  const { data } = useSelector((store) => store.inputField);
+  const { data, loading } = useSelector((store) => store.inputField);
 
   const [keyThemesData, setKeyThemesData] = useState([]);
 
@@ -25,6 +26,10 @@ function KeyThemes() {
       setKeyThemesData(data);
     }
   }, [data]);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="evp-keyThemes">
@@ -47,7 +52,7 @@ function KeyThemes() {
                       </AccordionItemHeading>
 
                       <AccordionItemPanel>
-                        <p>{theme.key_theme_desc}</p>
+                        <p className="custom_para2">{theme.key_theme_desc}</p>
                       </AccordionItemPanel>
                     </AccordionItem>
                   ))}

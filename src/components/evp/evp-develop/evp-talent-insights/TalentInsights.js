@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import ContentButtons from "../../download-content/ContentButtons";
+import Loading from "../../../utils/loading/Loading";
 
 import "./TalentInsights.css";
 
 function TalentInsights() {
-  const { data } = useSelector((store) => store.inputField);
+  const { data, loading } = useSelector((store) => store.inputField);
 
   const [talentInsightsData, setTalentInsightsData] = useState([]);
 
@@ -16,7 +17,9 @@ function TalentInsights() {
     }
   }, [data]);
 
-  console.log(talentInsightsData);
+  if (loading) {
+    <Loading />;
+  }
 
   return (
     <div className="evp-talentInsights">

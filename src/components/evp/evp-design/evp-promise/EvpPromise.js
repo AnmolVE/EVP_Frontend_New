@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
+import ContentButtons from "../../download-content/ContentButtons";
+
 import "../Design.css";
 
 function EvpPromise() {
@@ -41,6 +43,7 @@ function EvpPromise() {
           </tbody>
         </table>
       </div>
+      <ContentButtons />
     </div>
   );
 }

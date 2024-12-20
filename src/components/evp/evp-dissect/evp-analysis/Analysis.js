@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import ContentButtons from "../../download-content/ContentButtons";
+import Loading from "../../../utils/loading/Loading";
 
 import "./Analysis.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function Analysis({ companyName, accessToken }) {
-  const { data } = useSelector((store) => store.inputField);
+  const { data, loading } = useSelector((store) => store.inputField);
 
   const [analysisData, setAnalysisData] = useState({});
 
@@ -45,6 +46,10 @@ function Analysis({ companyName, accessToken }) {
       alert(`Error: ${error.message}`);
     }
   };
+
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
   return (
     <div className="evp-analysis">

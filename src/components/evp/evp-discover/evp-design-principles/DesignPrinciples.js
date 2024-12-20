@@ -3,7 +3,7 @@ import { AiOutlineRight } from "react-icons/ai";
 
 import "./DesignPrinciples.css";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const questions = [
   "What are the strategic goals for the next 3-5 years?",
@@ -44,7 +44,7 @@ function DesignPrinciples({ companyName, accessToken }) {
   const getDesignPrinciples = async () => {
     try {
       const response = await fetch(
-        `${BASE_URL}/design-principles/${companyName}/`,
+        `${REACT_APP_BASE_URL}/design-principles/${companyName}/`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -77,7 +77,7 @@ function DesignPrinciples({ companyName, accessToken }) {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${BASE_URL}/design-principles/`, {
+      const response = await fetch(`${REACT_APP_BASE_URL}/design-principles/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -109,6 +109,32 @@ function DesignPrinciples({ companyName, accessToken }) {
     fileInputRef.current.click();
   };
 
+  const handleFileSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("company_name", companyName);
+    files.forEach((file) => {
+      formData.append("documents", file);
+    });
+
+    try {
+      const response = await fetch(`${REACT_APP_BASE_URL}/design-principles/`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: formData,
+      });
+      if (response.ok) {
+        const responseData = await response.json();
+        setDesignPrinciples(responseData);
+      }
+    } catch (error) {
+      console.error("Error adding company documents:", error);
+    }
+  };
+
   return (
     <div className="evp-designPrinciples">
       <div className="evp-designPrinciples-mainContainer">
@@ -135,7 +161,7 @@ function DesignPrinciples({ companyName, accessToken }) {
                 <textarea
                   className="custom_input"
                   onChange={handleInputChange}
-                  name={`question_${index}`}
+                  name={`question_${index + 1}`}
                   value={designPrinciples[`question_${index + 1}`] || ""}
                   placeholder="Enter Data"
                 />
@@ -192,7 +218,9 @@ function DesignPrinciples({ companyName, accessToken }) {
           </div>
         </div>
         <div className="evp-primaryResearch-button">
-          <button className="default-btn">Submit</button>
+          <button className="default-btn" onClick={handleFileSubmit}>
+            Submit
+          </button>
         </div>
       </div>
     </div>

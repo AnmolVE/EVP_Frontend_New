@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+
+import GenerateEVP from "./GenerateEVP";
+import ContentButtons from "../../download-content/ContentButtons";
 
 import {
   evpStatementImg1,
@@ -9,13 +13,16 @@ import {
 } from "../../../../assets/images/images";
 
 import "./EVPStatement.css";
-import GenerateEVP from "./GenerateEVP";
 
-function MessagingHierarchy() {
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
+
+function MessagingHierarchy({ companyName, accessToken }) {
   const { data } = useSelector((store) => store.inputField);
 
   const [evpStatementData, setEvpStatementData] = useState([]);
   const [activeTab, setActiveTab] = useState("");
+
+  const [taglineData, setTaglineData] = useState("");
 
   const images = [
     evpStatementImg1,
@@ -28,7 +35,43 @@ function MessagingHierarchy() {
     isOpen: false,
   });
 
-  const handleGenerateEVP = (title, content, image) => {
+  const handleGenerateEVP = async () => {
+    const mainTheme = evpStatementData[0]?.theme_name;
+    const pillar_1 = evpStatementData[1]?.theme_name;
+    const pillar_2 = evpStatementData[2]?.theme_name;
+    const pillar_3 = evpStatementData[3]?.theme_name;
+
+    const body = {
+      company_name: companyName,
+      main_theme: mainTheme,
+      pillar_1: pillar_1,
+      pillar_2: pillar_2,
+      pillar_3: pillar_3,
+    };
+    console.log(body);
+
+    try {
+      const response = await fetch(`${REACT_APP_BASE_URL}/generate-evp/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to generate EVP");
+      }
+
+      const result = await response.json();
+      console.log(result.tagline);
+      setTaglineData(result.tagline);
+    } catch (error) {
+      console.error("Error generating EVP:", error);
+      alert("An error occurred while generating EVP.");
+    }
+
     setModalData({ isOpen: true });
   };
 
@@ -47,6 +90,21 @@ function MessagingHierarchy() {
     setActiveTab(themeName);
   };
 
+  const onDragEnd = (result) => {
+    const { source, destination } = result;
+
+    // If dropped outside a valid droppable area, do nothing
+    if (!destination) return;
+
+    // Rearrange the data array
+    const updatedData = Array.from(evpStatementData);
+    const [removed] = updatedData.splice(source.index, 1);
+    updatedData.splice(destination.index, 0, removed);
+
+    setEvpStatementData(updatedData);
+    setActiveTab(updatedData[0]?.theme_name); // Update active tab to the new main theme
+  };
+
   return (
     <div className="evp-statement">
       <h2 className="custom_h2">Generate EVP Statement</h2>
@@ -55,26 +113,48 @@ function MessagingHierarchy() {
         secondary pillars
       </p>
       <div className="evp-statement-container">
-        <div className="evp-statement-themes">
-          {evpStatementData.map((theme) => (
-            <div
-              key={theme.id}
-              className={`evp-statement-theme ${
-                activeTab === theme.theme_name ? "active-theme" : ""
-              }`}
-              onClick={() => handleTabClick(theme.theme_name)}
-            >
-              <p>{theme.theme_name}</p>
-            </div>
-          ))}
-        </div>
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Droppable droppableId="themes">
+            {(provided) => (
+              <div
+                className="evp-statement-themes"
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+              >
+                {evpStatementData.map((theme, index) => (
+                  <Draggable
+                    key={theme.id}
+                    draggableId={theme.id.toString()}
+                    index={index}
+                  >
+                    {(provided) => (
+                      <div
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        className={`evp-statement-theme ${
+                          activeTab === theme.theme_name ? "active-theme" : ""
+                        }`}
+                        onClick={() => handleTabClick(theme.theme_name)}
+                      >
+                        <p>{theme.theme_name}</p>
+                      </div>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
+
         <div className="evp-statement-mainContent">
           {evpStatementData.map((theme, index) =>
             activeTab === theme.theme_name ? (
               <div key={theme.id} className="evp-statement-data">
                 <div className="evp-statement-data-image">
                   <figure className="evp-statement-data-image-fig">
-                    <img src={images[index]} alt="Image" />
+                    <img src={images[index]} alt="Theme" />
                   </figure>
                   <button
                     className="default-btn"
@@ -84,6 +164,9 @@ function MessagingHierarchy() {
                   </button>
                 </div>
                 <div className="evp-statement-data-desc">
+                  <h2 className="custom_heading">
+                    {index === 0 ? "Main Theme" : `Pillar ${index}`}
+                  </h2>
                   <p className="custom_para2">{theme.theme_desc}</p>
                 </div>
               </div>
@@ -91,7 +174,15 @@ function MessagingHierarchy() {
           )}
         </div>
       </div>
-      <GenerateEVP isOpen={modalData.isOpen} onClose={closeModal} />
+      <ContentButtons />
+      <GenerateEVP
+        isOpen={modalData.isOpen}
+        onClose={closeModal}
+        taglineData={taglineData}
+        companyName={companyName}
+        accessToken={accessToken}
+        selectedThemes={evpStatementData}
+      />
     </div>
   );
 }

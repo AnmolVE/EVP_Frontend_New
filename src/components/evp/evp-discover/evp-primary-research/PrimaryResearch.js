@@ -9,7 +9,7 @@ import Survey from "./evp-primary-research-survey/Survey";
 
 import "../UploadBox.css";
 
-function PrimaryResearch() {
+function PrimaryResearch({ companyName }) {
   const [activeTab, setActiveTab] = useState("Interview");
 
   const [fileNames, setFileNames] = useState(["Upload documents"]);
@@ -64,8 +64,12 @@ function PrimaryResearch() {
                 Survey
               </div>
             </div>
-            {activeTab === "Interview" ? <Interview /> : null}
-            {activeTab === "Think Tank" ? <ThinkTank /> : null}
+            {activeTab === "Interview" ? (
+              <Interview companyName={companyName} />
+            ) : null}
+            {activeTab === "Think Tank" ? (
+              <ThinkTank companyName={companyName} />
+            ) : null}
             {activeTab === "Survey" ? <Survey /> : null}
           </div>
         </div>

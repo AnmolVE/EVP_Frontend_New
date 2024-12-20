@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import ContentButtons from "../../download-content/ContentButtons";
+import Loading from "../../../utils/loading/Loading";
 
 import "../Develop.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function CompanyDataset({ companyName, accessToken }) {
-  const { data } = useSelector((store) => store.inputField);
+  const { data, loading } = useSelector((store) => store.inputField);
   console.log(data);
   const [companyDataset, setCompanyDataset] = useState({});
 
@@ -59,6 +60,10 @@ function CompanyDataset({ companyName, accessToken }) {
       console.error("Error:", error);
     }
   };
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="evp-develop">

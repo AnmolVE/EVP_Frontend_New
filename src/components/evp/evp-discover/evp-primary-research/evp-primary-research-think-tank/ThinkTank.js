@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./ThinkTank.css";
 
-function ThinkTank() {
+function ThinkTank({ companyName }) {
   const [inputFields, setInputFields] = useState([
     { id: 1, name: "", email: "" },
   ]);
@@ -20,6 +20,24 @@ function ThinkTank() {
     const fields = [...inputFields];
     fields[index][name] = value;
     setInputFields(fields);
+  };
+
+  const handleOpenEmailBox = () => {
+    const emailAddresses = inputFields
+      .map((field) => field.name && field.email)
+      .filter((email) => email);
+    if (inputFields.length >= 1) {
+      console.log(inputFields.length);
+      const subject = "Interview Invitation";
+      const body = `Dear Candidate,\n\nYou have been selected to participate in an Employee Value Proposition (EVP) development exercise.\n\nBest regards,\n${companyName}`;
+
+      const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+        emailAddresses.join(",")
+      )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.open(gmailLink, "_blank");
+    } else {
+      alert("Please enter at least one email address");
+    }
   };
 
   return (
@@ -54,7 +72,9 @@ function ThinkTank() {
         </div>
       </div>
       <div className="evp-thinkTank-button">
-        <button className="default-btn">Create</button>
+        <button className="default-btn" onClick={() => handleOpenEmailBox()}>
+          Create
+        </button>
       </div>
     </div>
   );

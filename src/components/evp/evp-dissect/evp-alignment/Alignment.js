@@ -3,13 +3,14 @@ import { AiOutlineRight } from "react-icons/ai";
 import { useSelector } from "react-redux";
 
 import ContentButtons from "../../download-content/ContentButtons";
+import Loading from "../../../utils/loading/Loading";
 
 import "./Alignment.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function Alignment() {
-  const { data } = useSelector((store) => store.inputField);
+  const { data, loading } = useSelector((store) => store.inputField);
 
   const [alignmentData, setAlignmentData] = useState([]);
   const [activeThemeId, setActiveThemeId] = useState(null);
@@ -27,6 +28,10 @@ function Alignment() {
 
   const getRotationClass = (id) =>
     activeThemeId === id ? "alignmentRotatedIcon" : "";
+
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
   return (
     <div className="evp-alignment">

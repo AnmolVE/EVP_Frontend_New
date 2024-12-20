@@ -324,7 +324,9 @@ function EVP() {
                 accessToken={accessToken}
               />
             ) : null}
-            {activeSubTab === "Primary Research" ? <PrimaryResearch /> : null}
+            {activeSubTab === "Primary Research" ? (
+              <PrimaryResearch companyName={companyName} />
+            ) : null}
             {activeSubTab === "Secondary Research" ? (
               <SecondaryResearch
                 companyName={companyName}
@@ -351,7 +353,12 @@ function EVP() {
             {activeSubTab === "Alignment" ? (
               <Alignment companyName={companyName} accessToken={accessToken} />
             ) : null}
-            {activeSubTab === "EVP Statement" ? <EVPStatement /> : null}
+            {activeSubTab === "EVP Statement" ? (
+              <EVPStatement
+                companyName={companyName}
+                accessToken={accessToken}
+              />
+            ) : null}
             {activeSubTab === "Creative Direction" ? (
               <CreativeDirection />
             ) : null}
