@@ -52,9 +52,9 @@ function AttributesOfAGreatPlace() {
 
   return (
     <div className="evp-develop">
-      <h2 className="custom_h2">Attributes of a Great Place</h2>
+      <h2 className="custom_h2">Attributes of an Attractive Workplace</h2>
       <p className="custom_para">
-        This is how you fare on the key attributes of a great work environment
+        Evaluate how your workplace excels on key attributes.
       </p>
       <section className="news-area">
         <div className="">

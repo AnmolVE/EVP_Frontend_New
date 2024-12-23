@@ -4,6 +4,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 import GenerateEVP from "./GenerateEVP";
 import ContentButtons from "../../download-content/ContentButtons";
+import Loading from "../../../utils/loading/Loading";
 
 import {
   evpStatementImg1,
@@ -16,11 +17,12 @@ import "./EVPStatement.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
-function MessagingHierarchy({ companyName, accessToken }) {
-  const { data } = useSelector((store) => store.inputField);
+function EVPStatement({ companyName, accessToken }) {
+  const { data, loading } = useSelector((store) => store.inputField);
 
   const [evpStatementData, setEvpStatementData] = useState([]);
   const [activeTab, setActiveTab] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const [taglineData, setTaglineData] = useState("");
 
@@ -48,8 +50,8 @@ function MessagingHierarchy({ companyName, accessToken }) {
       pillar_2: pillar_2,
       pillar_3: pillar_3,
     };
-    console.log(body);
 
+    setIsLoading(true);
     try {
       const response = await fetch(`${REACT_APP_BASE_URL}/generate-evp/`, {
         method: "POST",
@@ -70,6 +72,8 @@ function MessagingHierarchy({ companyName, accessToken }) {
     } catch (error) {
       console.error("Error generating EVP:", error);
       alert("An error occurred while generating EVP.");
+    } finally {
+      setIsLoading(false);
     }
 
     setModalData({ isOpen: true });
@@ -105,12 +109,15 @@ function MessagingHierarchy({ companyName, accessToken }) {
     setActiveTab(updatedData[0]?.theme_name); // Update active tab to the new main theme
   };
 
+  if (loading || isLoading) {
+    return <Loading />;
+  }
+
   return (
     <div className="evp-statement">
       <h2 className="custom_h2">Generate EVP Statement</h2>
       <p className="custom_para">
-        The EVP will be created on the selected theme - all others will become
-        secondary pillars
+        Craft your EVP using the selected theme as the core.
       </p>
       <div className="evp-statement-container">
         <DragDropContext onDragEnd={onDragEnd}>
@@ -187,4 +194,4 @@ function MessagingHierarchy({ companyName, accessToken }) {
   );
 }
 
-export default MessagingHierarchy;
+export default EVPStatement;

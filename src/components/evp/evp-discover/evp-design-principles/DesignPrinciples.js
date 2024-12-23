@@ -31,6 +31,8 @@ function DesignPrinciples({ companyName, accessToken }) {
   const [designPrinciples, setDesignPrinciples] = useState({});
   const [visibleQuestions, setVisibleQuestions] = useState({});
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const toggleVisibility = (question) => {
     setVisibleQuestions((prev) => ({
       ...prev,
@@ -42,6 +44,7 @@ function DesignPrinciples({ companyName, accessToken }) {
     visibleQuestions[question] ? "designRotated" : "";
 
   const getDesignPrinciples = async () => {
+    setIsLoading(true);
     try {
       const response = await fetch(
         `${REACT_APP_BASE_URL}/design-principles/${companyName}/`,
@@ -58,6 +61,8 @@ function DesignPrinciples({ companyName, accessToken }) {
       }
     } catch (error) {
       console.error("Error:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -76,6 +81,7 @@ function DesignPrinciples({ companyName, accessToken }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setIsLoading(true);
     try {
       const response = await fetch(`${REACT_APP_BASE_URL}/design-principles/`, {
         method: "POST",
@@ -95,6 +101,8 @@ function DesignPrinciples({ companyName, accessToken }) {
       }
     } catch (error) {
       console.error("Error:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -118,6 +126,7 @@ function DesignPrinciples({ companyName, accessToken }) {
       formData.append("documents", file);
     });
 
+    setIsLoading(true);
     try {
       const response = await fetch(`${REACT_APP_BASE_URL}/design-principles/`, {
         method: "POST",
@@ -132,6 +141,8 @@ function DesignPrinciples({ companyName, accessToken }) {
       }
     } catch (error) {
       console.error("Error adding company documents:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -140,7 +151,7 @@ function DesignPrinciples({ companyName, accessToken }) {
       <div className="evp-designPrinciples-mainContainer">
         <h2 className="custom_h2">Design Principles</h2>
         <p className="custom_para">
-          First-hand information adds credibility and depth to your research
+          Capture your team's ideas on EVP strategy and vision.
         </p>
         <div className="evp-designPrinciples-questions">
           {questions.map((question, index) => (

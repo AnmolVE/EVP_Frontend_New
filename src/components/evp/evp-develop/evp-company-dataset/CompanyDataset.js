@@ -69,7 +69,7 @@ function CompanyDataset({ companyName, accessToken }) {
     <div className="evp-develop">
       <h2 className="custom_h2">Company Dataset</h2>
       <p className="custom_para">
-        Validate your Company's data before it goes to next step.
+        Review and validate your company data for accuracy.
       </p>
       <div className="evp-develop-container">
         <div className="evp-develop-validationContainer">

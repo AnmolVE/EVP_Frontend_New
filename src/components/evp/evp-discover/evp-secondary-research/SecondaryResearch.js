@@ -51,7 +51,7 @@ function SecondaryResearch({ companyName, accessToken }) {
       <div className="evp-secondaryResearch-mainContainer">
         <h2 className="custom_h2">Secondary Research</h2>
         <p className="custom_para">
-          Company and industry documents personalise the EVP
+          Utilise company and industry data to inform your EVP.
         </p>
         <div className="evp-secondaryResearch-dataGather">
           <div className="about-area">

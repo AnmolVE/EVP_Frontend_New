@@ -47,15 +47,15 @@ function Analysis({ companyName, accessToken }) {
     }
   };
 
-  // if (loading) {
-  //   return <Loading />;
-  // }
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="evp-analysis">
       <h2 className="custom_h2">Analysis</h2>
       <p className="custom_para">
-        Validate your Analysis data before goes to next step
+        Review and confirm what's working and areas to improve.
       </p>
       <div className="evp-analysis-container">
         <div className="evp-analysis-input">

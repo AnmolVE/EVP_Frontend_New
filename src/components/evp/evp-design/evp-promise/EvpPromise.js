@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import ContentButtons from "../../download-content/ContentButtons";
+import Loading from "../../../utils/loading/Loading";
 
 import "../Design.css";
 
 function EvpPromise() {
-  const { data } = useSelector((store) => store.inputField);
+  const { data, loading } = useSelector((store) => store.inputField);
 
   const [evpPromiseData, setEvpPromiseData] = useState([]);
 
@@ -16,11 +17,15 @@ function EvpPromise() {
     }
   }, [data]);
 
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="evp-promise">
       <h2 className="custom_h2">EVP Promise</h2>
       <p className="custom_para">
-        Validate your Definition data before it goes to next step.
+        Outline mutual expectations between your organisation and employees.
       </p>
       <div className="evp-design-container">
         <table className="table">

@@ -35,7 +35,7 @@ function PrimaryResearch({ companyName }) {
         <div className="evp-primaryResearch-mainContainer">
           <h2 className="custom_h2">Primary Research</h2>
           <p className="custom_para">
-            First-hand information adds credibility and depth to your research
+            Add first-hand insights to strengthen your EVP foundation.
           </p>
           <div className="evp-primaryResearch-dataGather">
             <div className="evp-PrimaryResearch-tabs">

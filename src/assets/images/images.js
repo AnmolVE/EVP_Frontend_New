@@ -4,6 +4,7 @@ import FooterShape_1 from "./footer-shape-one.png";
 import FooterShape_2 from "./footer-shape-two.png";
 import keyThemesImg from "./keyThemes.png";
 import EVPJourneyImage from "./evp-journey.png";
+import evp_handbook_thumbnail from "./handbook_thumbnail.png";
 import evpStatementThumbnailImage from "./Demo_image.jpg";
 
 // Attributes of a Great Place
@@ -40,6 +41,7 @@ export {
   FooterShape_2,
   keyThemesImg,
   EVPJourneyImage,
+  evp_handbook_thumbnail,
   evpStatementThumbnailImage,
   Attribute1,
   Attribute2,

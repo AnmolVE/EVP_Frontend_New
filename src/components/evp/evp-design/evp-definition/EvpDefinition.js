@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import ContentButtons from "../../download-content/ContentButtons";
+import Loading from "../../../utils/loading/Loading";
 
 import "../Design.css";
 
 function EvpDefinition() {
-  const { data } = useSelector((store) => store.inputField);
+  const { data, loading } = useSelector((store) => store.inputField);
 
   const [evpDefinitionData, setEvpDefinitionData] = useState([]);
 
@@ -16,11 +17,15 @@ function EvpDefinition() {
     }
   }, [data]);
 
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="evp-definition">
       <h2 className="custom_h2">EVP Definition</h2>
       <p className="custom_para">
-        Validate your Definition data before it goes to next step.
+        Clarify what your EVP means and does not mean.
       </p>
       <div className="evp-design-container">
         <table className="table">

@@ -1,4 +1,4 @@
-.coming-soon-area {
+/* .coming-soon-area {
   position: relative;
   height: 100vh;
   z-index: 1;
@@ -198,4 +198,30 @@
     font-size: 65px;
     right: -49px;
   }
+} */
+
+.evp-handbook-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.evp-handbook-thumbnail {
+  height: 500px;
+  width: 500px;
+}
+
+.evp-handbook-thumbnail img {
+  width: 100%;
+  height: auto;
+}
+
+.evp-handbook-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.evp-handbook-buttons a {
+  color: #fff;
+  text-decoration: none;
 }

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Loading from "../../../utils/loading/Loading";
+
 import "./GenerateEVP.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -13,6 +15,7 @@ function GenerateEVP({
   selectedThemes,
 }) {
   const [apiResponse, setApiResponse] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async () => {
     if (!selectedThemes || selectedThemes.length < 4) {
@@ -29,8 +32,7 @@ function GenerateEVP({
       tagline: taglineData,
     };
 
-    console.log("Sending data to API:", body);
-
+    setIsLoading(true);
     try {
       const response = await fetch(`${REACT_APP_BASE_URL}/generate-evp/`, {
         method: "POST",
@@ -51,10 +53,16 @@ function GenerateEVP({
     } catch (error) {
       console.error("Error submitting data:", error);
       alert("An error occurred while submitting data.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
   if (!isOpen) return null;
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className="generateEvp-overlay">

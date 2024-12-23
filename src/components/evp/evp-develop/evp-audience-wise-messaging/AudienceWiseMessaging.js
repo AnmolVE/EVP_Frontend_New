@@ -40,7 +40,7 @@ function AudienceWiseMessaging() {
     <div className="evp-develop">
       <h2 className="custom_h2">Audience Wise Messaging</h2>
       <p className="custom_para">
-        Validate your Audience data before it goes to next step.
+        Understand what different audience groups think about your organisation.
       </p>
       <section className="features-area features-area-inner-style">
         <div className="">

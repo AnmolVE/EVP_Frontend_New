@@ -24,6 +24,9 @@ function TalentInsights() {
   return (
     <div className="evp-talentInsights">
       <h2 className="custom_h2">Talent Insights</h2>
+      <p className="custom_para">
+        Understand what drives the talent you aim to attract.
+      </p>
       <div className="evp-talentInsights-container">
         <table className="table">
           <thead className="table-secondary">

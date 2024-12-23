@@ -5,7 +5,7 @@ const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 const apiEndpoints = {
   develop: {
     "Company Dataset": `${REACT_APP_BASE_URL}/companies/`,
-    "Attributes of a Great Place": `${REACT_APP_BASE_URL}/attributes-of-great-workplace/`,
+    "Attributes of an Attractive Workplace": `${REACT_APP_BASE_URL}/attributes-of-great-workplace/`,
     "Key Themes": `${REACT_APP_BASE_URL}/key-themes/`,
     "Audience Wise Messaging": `${REACT_APP_BASE_URL}/audience-wise-messaging/`,
     "Talent Insights": `${REACT_APP_BASE_URL}/talent-insights/`,
@@ -22,7 +22,7 @@ const apiEndpoints = {
     "EVP Audit": `${REACT_APP_BASE_URL}/evp-audit/`,
   },
   deliver: {
-    "EVP Handbook": `${REACT_APP_BASE_URL}/evp-handbook/`,
+    "EVP Handbook": `${REACT_APP_BASE_URL}/evp-handbookk/`,
     "EVP Execution Plan": `${REACT_APP_BASE_URL}/evp-execution-plan/`,
     "EVP Statement & Pillars": `${REACT_APP_BASE_URL}/evp-statement-and-pillars/`,
   },
@@ -52,7 +52,7 @@ export const fetchDataForSelectedItem = createAsyncThunk(
     }
 
     if (
-      selectedItem === "Attributes of a Great Place" ||
+      selectedItem === "Attributes of an Attractive Workplace" ||
       selectedItem === "Key Themes" ||
       selectedItem === "Audience Wise Messaging" ||
       selectedItem === "Talent Insights" ||

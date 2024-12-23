@@ -160,15 +160,15 @@ function EVP() {
                   </div>
                   <div
                     className={`evp-left-bar-subTabs-tab ${
-                      activeSubTab === "Attributes of a Great Place"
+                      activeSubTab === "Attributes of an Attractive Workplace"
                         ? "active-sub"
                         : ""
                     }`}
                     onClick={() =>
-                      setActiveSubTab("Attributes of a Great Place")
+                      setActiveSubTab("Attributes of an Attractive Workplace")
                     }
                   >
-                    Attributes of a Great Place
+                    Attributes of an Attractive Workplace
                   </div>
                   <div
                     className={`evp-left-bar-subTabs-tab ${
@@ -340,7 +340,7 @@ function EVP() {
               />
             ) : null}
             {activeSubTab === "Key Themes" ? <KeyThemes /> : null}
-            {activeSubTab === "Attributes of a Great Place" ? (
+            {activeSubTab === "Attributes of an Attractive Workplace" ? (
               <AttributesOfAGreatPlace />
             ) : null}
             {activeSubTab === "Audience Wise Messaging" ? (

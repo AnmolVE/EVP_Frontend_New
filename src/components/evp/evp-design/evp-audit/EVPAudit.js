@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import ContentButtons from "../../download-content/ContentButtons";
+import Loading from "../../../utils/loading/Loading";
 
 import "../Design.css";
 
 function EVPAudit() {
-  const { data } = useSelector((store) => store.inputField);
+  const { data, loading } = useSelector((store) => store.inputField);
   console.log(data);
 
   const [evpAuditData, setEvpAuditData] = useState([]);
@@ -17,11 +18,15 @@ function EVPAudit() {
     }
   }, [data]);
 
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="evp-audit">
       <h2 className="custom_h2">EVP Audit</h2>
       <p className="custom_para">
-        Validate your Definition data before it goes to next step.
+        Assess where your EVP is strong and where it can grow.
       </p>
       <div className="evp-design-container">
         <table className="table">

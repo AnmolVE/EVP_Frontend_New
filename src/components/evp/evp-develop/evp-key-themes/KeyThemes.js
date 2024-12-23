@@ -35,7 +35,7 @@ function KeyThemes() {
     <div className="evp-keyThemes">
       <h2 className="custom_h2">Key Themes</h2>
       <p className="custom_para">
-        These are the key themes your organisation is known for
+        Identify the key themes that define your organisation.
       </p>
       <div className="faq-area">
         <div className="">

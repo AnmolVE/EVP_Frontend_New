@@ -4,9 +4,10 @@ import { useSelector } from "react-redux";
 import ContentButtons from "../../download-content/ContentButtons";
 
 import "./CreativeDirection.css";
+import Loading from "../../../utils/loading/Loading";
 
 function CreativeDirection() {
-  const { data } = useSelector((store) => store.inputField);
+  const { data, loading } = useSelector((store) => store.inputField);
   const [creativeDirectionData, setCreativeDirectionData] = useState({});
 
   useEffect(() => {
@@ -15,11 +16,15 @@ function CreativeDirection() {
     }
   }, [data]);
 
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="evp-creativeDirection">
       <h2 className="custom_h2">Creative Direction</h2>
       <p className="custom_para">
-        Validate your Creative Direction data before it goes to next step
+        Define tone, visuals, and concepts for a cohesive EVP.
       </p>
       <div className="evp-creativeDirection-container">
         <div className="evp-creativeDirection-taglines">

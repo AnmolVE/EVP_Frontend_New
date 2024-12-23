@@ -29,15 +29,15 @@ function Alignment() {
   const getRotationClass = (id) =>
     activeThemeId === id ? "alignmentRotatedIcon" : "";
 
-  // if (loading) {
-  //   return <Loading />;
-  // }
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="evp-alignment">
       <h2 className="custom_h2">Alignment</h2>
       <p className="custom_para">
-        Validate your Alignment data before goes to next step
+        Clarify how you want to be perceived and positioned.
       </p>
       <div className="evp-alignment-container">
         <div className="evp-alignments">
