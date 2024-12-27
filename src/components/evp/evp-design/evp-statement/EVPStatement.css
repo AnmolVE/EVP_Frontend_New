@@ -10,6 +10,12 @@
   gap: 1rem;
 }
 
+.evp-statement-theme-container {
+  display: grid;
+  grid-template-columns: 1fr 2rem;
+  gap: 1rem;
+}
+
 .evp-statement-theme {
   height: auto;
   min-height: 7rem;
@@ -35,6 +41,12 @@
 .active-theme {
   color: #fff;
   background-color: #0dcaf0;
+}
+
+.evp-statement-regenerateIcon {
+  font-size: 1.3rem;
+  color: gray;
+  cursor: pointer;
 }
 
 .evp-statement-data {

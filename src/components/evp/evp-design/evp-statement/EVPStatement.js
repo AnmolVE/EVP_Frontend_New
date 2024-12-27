@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
+import { GrRefresh } from "react-icons/gr";
+
 import GenerateEVP from "./GenerateEVP";
 import ContentButtons from "../../download-content/ContentButtons";
 import Loading from "../../../utils/loading/Loading";
@@ -24,7 +26,7 @@ function EVPStatement({ companyName, accessToken }) {
   const [activeTab, setActiveTab] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const [taglineData, setTaglineData] = useState("");
+  const [generatedStatement, setGeneratedStatement] = useState({});
 
   const images = [
     evpStatementImg1,
@@ -66,9 +68,8 @@ function EVPStatement({ companyName, accessToken }) {
         throw new Error("Failed to generate EVP");
       }
 
-      const result = await response.json();
-      console.log(result.tagline);
-      setTaglineData(result.tagline);
+      const responseData = await response.json();
+      setGeneratedStatement(responseData);
     } catch (error) {
       console.error("Error generating EVP:", error);
       alert("An error occurred while generating EVP.");
@@ -77,6 +78,35 @@ function EVPStatement({ companyName, accessToken }) {
     }
 
     setModalData({ isOpen: true });
+  };
+
+  const handleRegenerateTheme = async (themeId) => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(
+        `${REACT_APP_BASE_URL}/regenerate-evp-statement-themes/${themeId}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+          body: JSON.stringify({ company_name: companyName }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to regenerate theme");
+      }
+
+      const responseData = await response.json();
+      setEvpStatementData(responseData);
+    } catch (error) {
+      console.error("Error regenerating theme:", error);
+      alert("An error occurred while regenerating the theme.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const closeModal = () => {
@@ -135,16 +165,26 @@ function EVPStatement({ companyName, accessToken }) {
                     index={index}
                   >
                     {(provided) => (
-                      <div
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                        className={`evp-statement-theme ${
-                          activeTab === theme.theme_name ? "active-theme" : ""
-                        }`}
-                        onClick={() => handleTabClick(theme.theme_name)}
-                      >
-                        <p>{theme.theme_name}</p>
+                      <div className="evp-statement-theme-container">
+                        <div
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                          className={`evp-statement-theme ${
+                            activeTab === theme.theme_name ? "active-theme" : ""
+                          }`}
+                          onClick={() => handleTabClick(theme.theme_name)}
+                        >
+                          <p>{theme.theme_name}</p>
+                        </div>
+                        <div>
+                          <span
+                            className="evp-statement-regenerateIcon"
+                            onClick={() => handleRegenerateTheme(theme.id)}
+                          >
+                            <GrRefresh />
+                          </span>
+                        </div>
                       </div>
                     )}
                   </Draggable>
@@ -185,10 +225,10 @@ function EVPStatement({ companyName, accessToken }) {
       <GenerateEVP
         isOpen={modalData.isOpen}
         onClose={closeModal}
-        taglineData={taglineData}
+        generatedStatement={generatedStatement}
+        setGeneratedStatement={setGeneratedStatement}
         companyName={companyName}
         accessToken={accessToken}
-        selectedThemes={evpStatementData}
       />
     </div>
   );

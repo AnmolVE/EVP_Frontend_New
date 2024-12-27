@@ -1,4 +1,4 @@
-.faq-accordion .accordion {
+/* .faq-accordion .accordion {
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 0;
@@ -78,4 +78,112 @@
   .faq-accordion .accordion .accordion-title {
     font-size: 16px;
   }
+} */
+
+/* .evp-keyThemes {
+  position: relative;
+} */
+
+.evp-keyThemes-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.evp-keyThemes-data {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.evp-keyThemes-themes-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 5rem;
+  gap: 1rem;
+}
+
+.evp-keyThemes-themes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.evp-keyThemes-themes-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.evp-keyThemes-regenerateIcon {
+  display: inline-block;
+  font-size: 1.3rem;
+  color: grey;
+  cursor: pointer;
+}
+
+.evp-keyThemes-themes-themeName {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.evp-keyThemes-themes-themeName h4 {
+  margin-bottom: 0;
+}
+
+.evp-keyThemes-themes-themeName-icon {
+  font-size: 2rem;
+}
+
+.evp-keyThemes-themes-themeDesc {
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.evp-keyThemes-themes-themeDesc p {
+  margin-bottom: 0;
+}
+
+.evp-keyThemes-image {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.evp-keyThemes-image-fig {
+  height: 300px;
+  width: 300px;
+}
+
+.evp-keyThemes-image-fig img {
+  width: 100%;
+  height: auto;
+}
+
+.keyThemes-warning {
+  position: absolute;
+  top: 0;
+  left: 900px;
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.keyThemes-warning h3 {
+  color: red;
+}
+
+.keyThemesRotatedIcon {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
 }

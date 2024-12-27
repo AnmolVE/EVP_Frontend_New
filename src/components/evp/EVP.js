@@ -339,7 +339,9 @@ function EVP() {
                 accessToken={accessToken}
               />
             ) : null}
-            {activeSubTab === "Key Themes" ? <KeyThemes /> : null}
+            {activeSubTab === "Key Themes" ? (
+              <KeyThemes companyName={companyName} accessToken={accessToken} />
+            ) : null}
             {activeSubTab === "Attributes of an Attractive Workplace" ? (
               <AttributesOfAGreatPlace />
             ) : null}

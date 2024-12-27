@@ -3,7 +3,7 @@ export const fieldNames = {
   DEVELOP: [
     "Company Dataset",
     "Key Themes",
-    "Attributes of a Great Place",
+    "Attributes of an Attractive Workplace",
     "Audience Wise Messaging",
     "Talent Insights",
   ],
