@@ -1,5 +1,5 @@
 export const fieldNames = {
-  DISCOVER: ["Design Principles", "Primary Research", "Secondary Research"],
+  DISCOVER: ["Primary Research", "Secondary Research", "Design Principles"],
   DEVELOP: [
     "Company Dataset",
     "Key Themes",
@@ -15,5 +15,6 @@ export const fieldNames = {
     "EVP Audit",
     "EVP Promise",
   ],
-  DELIVER: ["EVP Handbook", "EVP Embedment", "EVP Announcement"],
+  // DELIVER: ["EVP Handbook", "EVP Embedment", "EVP Announcement"],
+  DELIVER: ["EVP Handbook"],
 };

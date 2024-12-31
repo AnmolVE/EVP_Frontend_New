@@ -39,7 +39,7 @@ function EVP() {
   const accessToken = loginData.access;
 
   const [activeTab, setActiveTab] = useState("DISCOVER");
-  const [activeSubTab, setActiveSubTab] = useState("Design Principles");
+  const [activeSubTab, setActiveSubTab] = useState("Primary Research");
 
   useEffect(() => {
     dispatch(fetchDataForSelectedItem(activeSubTab));
@@ -92,21 +92,13 @@ function EVP() {
                 className="evp-left-bar-mainTabs"
                 onClick={() => {
                   setActiveTab("DISCOVER");
-                  setActiveSubTab("Design Principles");
+                  setActiveSubTab("Primary Research");
                 }}
               >
                 <p>DISCOVER</p>
               </div>
               {activeTab === "DISCOVER" ? (
                 <div className="evp-left-bar-subTabs">
-                  <div
-                    className={`evp-left-bar-subTabs-tab ${
-                      activeSubTab === "Design Principles" ? "active-sub" : ""
-                    }`}
-                    onClick={() => setActiveSubTab("Design Principles")}
-                  >
-                    Design Principles
-                  </div>
                   <div
                     className={`evp-left-bar-subTabs-tab ${
                       activeSubTab === "Primary Research" ? "active-sub" : ""
@@ -122,6 +114,14 @@ function EVP() {
                     onClick={() => setActiveSubTab("Secondary Research")}
                   >
                     Secondary Research
+                  </div>
+                  <div
+                    className={`evp-left-bar-subTabs-tab ${
+                      activeSubTab === "Design Principles" ? "active-sub" : ""
+                    }`}
+                    onClick={() => setActiveSubTab("Design Principles")}
+                  >
+                    Design Principles
                   </div>
                 </div>
               ) : null}
@@ -297,7 +297,7 @@ function EVP() {
                   >
                     EVP Handbook
                   </div>
-                  <div
+                  {/* <div
                     className={`evp-left-bar-subTabs-tab ${
                       activeSubTab === "EVP Embedment" ? "active-sub" : ""
                     }`}
@@ -312,23 +312,23 @@ function EVP() {
                     onClick={() => setActiveSubTab("EVP Announcement")}
                   >
                     EVP Announcement
-                  </div>
+                  </div> */}
                 </div>
               ) : null}
             </div>
           </div>
           <div className="evp-content">
-            {activeSubTab === "Design Principles" ? (
-              <DesignPrinciples
-                companyName={companyName}
-                accessToken={accessToken}
-              />
-            ) : null}
             {activeSubTab === "Primary Research" ? (
               <PrimaryResearch companyName={companyName} />
             ) : null}
             {activeSubTab === "Secondary Research" ? (
               <SecondaryResearch
+                companyName={companyName}
+                accessToken={accessToken}
+              />
+            ) : null}
+            {activeSubTab === "Design Principles" ? (
+              <DesignPrinciples
                 companyName={companyName}
                 accessToken={accessToken}
               />

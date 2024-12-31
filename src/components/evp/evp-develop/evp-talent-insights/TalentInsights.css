@@ -11,3 +11,16 @@
 .evp-talentInsights-container th {
   font-size: 1.3rem;
 }
+
+.talentInsightsAddButton {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: none;
+  font-size: 40px;
+  background-color: #0dcaf0;
+  color: #fff;
+}

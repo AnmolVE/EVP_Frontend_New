@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 
+import Loading from "../../../utils/loading/Loading";
+
 import "./SecondaryResearch.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -8,6 +10,8 @@ function SecondaryResearch({ companyName, accessToken }) {
   const [fileNames, setFileNames] = useState(["Upload documents"]);
   const [files, setFiles] = useState([]);
   const fileInputRef = useRef(null);
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFileChange = (event) => {
     const selectedFiles = Array.from(event.target.files);
@@ -23,6 +27,7 @@ function SecondaryResearch({ companyName, accessToken }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setIsLoading(true);
     const formData = new FormData();
     formData.append("company_name", companyName);
     files.forEach((file) => {
@@ -43,8 +48,14 @@ function SecondaryResearch({ companyName, accessToken }) {
       }
     } catch (error) {
       console.error("Error adding company documents:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className="evp-secondaryResearch">
