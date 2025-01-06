@@ -319,7 +319,10 @@ function EVP() {
           </div>
           <div className="evp-content">
             {activeSubTab === "Primary Research" ? (
-              <PrimaryResearch companyName={companyName} />
+              <PrimaryResearch
+                companyName={companyName}
+                accessToken={accessToken}
+              />
             ) : null}
             {activeSubTab === "Secondary Research" ? (
               <SecondaryResearch

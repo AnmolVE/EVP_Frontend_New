@@ -42,10 +42,11 @@ function Navbar() {
           <div className="container">
             <Link href="/" className="navbar-brand">
               <img
+                style={{ marginLeft: "4rem" }}
                 src={NavbarStimulaiImage}
                 alt="logo"
-                width={150}
-                height={50}
+                width={200}
+                height={60}
               />
             </Link>
 
@@ -65,7 +66,7 @@ function Navbar() {
               <span className="icon-bar bottom-bar"></span>
             </button>
 
-            <div className={classOne} id="navbarSupportedContent">
+            {/* <div className={classOne} id="navbarSupportedContent">
               <ul className="navbar-nav m-auto">
                 <li className="nav-item">
                   <Link
@@ -181,7 +182,7 @@ function Navbar() {
                   Log In <i className="bx bx-log-in-circle"></i>
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </nav>
       </div>

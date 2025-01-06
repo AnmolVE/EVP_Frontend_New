@@ -36,8 +36,12 @@ function EVPJourney() {
         </div>
         <div className="evp-journey-button-container">
           <button className="default-btn" onClick={() => navigate("/evp")}>
-            Get Started
+            Create New EVP
           </button>
+          <button className="default-btn" onClick={() => navigate("/edit-evp")}>
+            View/Edit EVP
+          </button>
+          <button className="default-btn">Embed Existing EVP</button>
         </div>
         <div className="five-ds">
           <div className="five-ds-heading">

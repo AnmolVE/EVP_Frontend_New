@@ -35,3 +35,11 @@
   display: flex;
   justify-content: end;
 }
+
+@media (max-width: 1024px) {
+  .evp-develop-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

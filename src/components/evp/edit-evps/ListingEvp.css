@@ -1,0 +1,16 @@
+.listing-evp {
+  padding: 10rem;
+}
+
+.existing-evps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.existing-evp {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+}

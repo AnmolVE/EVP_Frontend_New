@@ -1,15 +1,17 @@
 import React, { useState, useRef } from "react";
 import { HiInformationCircle } from "react-icons/hi2";
-import { Link } from "react-router-dom";
+import { BsPaperclip } from "react-icons/bs";
 
 import "./PrimaryResearch.css";
+import "../UploadBox.css";
+
 import Interview from "./evp-primary-research-interview/Interview";
 import ThinkTank from "./evp-primary-research-think-tank/ThinkTank";
 import Survey from "./evp-primary-research-survey/Survey";
 
-import "../UploadBox.css";
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
-function PrimaryResearch({ companyName }) {
+function PrimaryResearch({ companyName, accessToken }) {
   const [activeTab, setActiveTab] = useState("Interview");
 
   const [fileNames, setFileNames] = useState(["Upload documents"]);
@@ -18,15 +20,65 @@ function PrimaryResearch({ companyName }) {
 
   const [showTooltip, setShowTooltip] = useState(false);
 
+  const [pdfAlert, setPdfAlert] = useState(false);
+  const [transcriptSuccess, setTranscriptSuccess] = useState(false);
+
   const handleFileChange = (event) => {
     const selectedFiles = Array.from(event.target.files);
-    const fileNames = selectedFiles.map((file) => file.name);
+
+    const pdfFiles = selectedFiles.filter(
+      (file) => file.type === "application/pdf"
+    );
+
+    if (pdfFiles.length !== selectedFiles.length) {
+      setPdfAlert(true);
+      fileInputRef.current.value = null;
+      return;
+    }
+
+    const fileNames = pdfFiles.map((file) => file.name);
     setFileNames(fileNames);
-    setFiles(selectedFiles);
+    setFiles(pdfFiles);
   };
 
   const handleSVGClick = () => {
     fileInputRef.current.click();
+  };
+
+  const handleTranscriptSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    files.forEach((file) => {
+      formData.append("documents", file);
+    });
+
+    // for (let [key, value] of formData.entries()) {
+    //   console.log(`${key}: ${value}`);
+    // }
+
+    try {
+      const response = await fetch(
+        `${REACT_APP_BASE_URL}/transcript/${companyName}/`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+          body: formData,
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        setFileNames(["Upload documents"]);
+        setTranscriptSuccess(true);
+      } else {
+        console.error("Failed to submit transcript:");
+      }
+    } catch (error) {
+      console.error("Error submitting transcript:", error);
+    }
   };
 
   return (
@@ -84,29 +136,7 @@ function PrimaryResearch({ companyName }) {
                 onChange={handleFileChange}
                 ref={fileInputRef}
               />
-              <div className="upload-area" onClick={handleSVGClick}>
-                <div className="upload-svg">
-                  <svg
-                    fill="#000000"
-                    height="20"
-                    width="20"
-                    version="1.1"
-                    id="Layer_1"
-                    viewBox="0 0 512 512"
-                  >
-                    <g>
-                      <g>
-                        <path
-                          d="M256,0c-54.013,0-97.955,43.943-97.955,97.955v338.981c0,41.39,33.674,75.064,75.064,75.064
-                        c41.39,0,75.064-33.674,75.064-75.064V122.511c0-28.327-23.046-51.375-51.375-51.375c-28.327,0-51.374,23.047-51.374,51.375
-                        v296.911h31.347V122.511c0-11.042,8.984-20.028,20.028-20.028s20.028,8.985,20.028,20.028v314.424
-                        c0,24.106-19.612,43.717-43.718,43.717c-24.106,0-43.717-19.612-43.717-43.717V97.955c0-36.727,29.88-66.608,66.608-66.608
-                        s66.608,29.881,66.608,66.608v321.467h31.347V97.955C353.955,43.943,310.013,0,256,0z"
-                        />
-                      </g>
-                    </g>
-                  </svg>
-                </div>
+              <div className="upload-area">
                 <div className="uploaded-files">
                   {fileNames.map((name, index) => (
                     <div key={index} className="uploaded-file-name">
@@ -114,48 +144,28 @@ function PrimaryResearch({ companyName }) {
                     </div>
                   ))}
                 </div>
+                <div className="upload-svg" onClick={handleSVGClick}>
+                  <BsPaperclip />
+                </div>
               </div>
             </div>
+            {pdfAlert && (
+              <div className="pop-messages">
+                <p>Only PDF format supported</p>
+              </div>
+            )}
+            {transcriptSuccess && (
+              <div className="pop-messages">
+                <p>Transcripts added successfully</p>
+              </div>
+            )}
             <div className="evp-primaryResearch-button">
-              <button className="default-btn">Submit</button>
+              <button className="default-btn" onClick={handleTranscriptSubmit}>
+                Upload
+              </button>
             </div>
           </div>
           <div className="evp-primaryResearch-resources">
-            {/* <div className="widget widget_categories">
-                <h3 className="widget-title">Useful Resources</h3>
-
-                <div className="post-wrap">
-                  <ul>
-                    <li>
-                      <a
-                        href="/assets/docs/Interview.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Interview
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="assets\docs\ThinkTank.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Think Tank
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="assets\docs\Survey.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Survey
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div> */}
             <div className="evp-primaryResearch-resources-header">
               <h3>Useful Resources</h3>
               <span

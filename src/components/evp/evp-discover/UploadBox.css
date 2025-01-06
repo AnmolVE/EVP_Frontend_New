@@ -1,20 +1,21 @@
 .upload-area {
   width: 100%;
   min-height: 2.5rem;
-  max-height: 8rem;
-  display: grid;
-  grid-template-columns: 2rem 1fr;
+  height: auto;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
   border: 1px solid #ccc;
   border-radius: 0.4rem;
-  cursor: pointer;
 }
 
 .upload-svg {
   height: 100%;
   width: 100%;
+  font-size: 20px;
   align-content: center;
+  cursor: pointer;
 }
 
 .uploaded-files {
@@ -24,7 +25,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 .uploaded-file-name {
