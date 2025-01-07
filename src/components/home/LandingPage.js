@@ -1,8 +1,72 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+
+import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 
 import "./LandingPage.css";
+
+import {
+  LandingOne,
+  LandingTwo,
+  LandingThree,
+  LandingFour,
+  LandingFive,
+  LandingSix,
+} from "../../assets/images/images";
+
+import Navbar from "../bars/Navbar";
+
+const servicesData = [
+  {
+    iconName: "flaticon-chip",
+    title: "Employee Value Proposition",
+    shortText:
+      "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
+    viewDetails: "/services/service-details/",
+    aosDelay: "100",
+  },
+  {
+    iconName: "flaticon-vr",
+    title: "Content & Creative",
+    shortText:
+      "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
+    viewDetails: "/services/service-details/",
+    aosDelay: "200",
+  },
+  {
+    iconName: "flaticon-blockchain",
+    title: "Internal Comms",
+    shortText:
+      "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
+    viewDetails: "/services/service-details/",
+    aosDelay: "300",
+  },
+  {
+    iconName: "flaticon-target",
+    title: "Employer Brand Index",
+    shortText:
+      "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
+    viewDetails: "/services/service-details/",
+    aosDelay: "400",
+  },
+  {
+    iconName: "flaticon-choice",
+    title: "Leadership Branding",
+    shortText:
+      "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
+    viewDetails: "/services/service-details/",
+    aosDelay: "500",
+  },
+  {
+    iconName: "flaticon-deep-learning",
+    title: "Recruitment Campaign",
+    shortText:
+      "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
+    viewDetails: "/services/service-details/",
+    aosDelay: "600",
+  },
+];
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -14,109 +78,54 @@ function LandingPage() {
   const loginData = JSON.parse(localStorage.getItem("loginData"));
   const companyName = loginData.companyName;
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(`${REACT_APP_BASE_URL}/home-page/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ company_name: companyName }),
-      });
-      if (response.ok) {
-        const data = await response.json();
-        setHomePageData(data);
-      }
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   return (
-    <div className="landing-page-main-container">
-      <section className="landing-page-section-1">
-        <div className="landing-page-section-1-top">
-          <div className="landing-page-section-1-top-left">
-            <img src="" alt="image" />
+    <>
+      <Navbar />
+      <div className="offer-area offer-area-two offer-area-four pt-100 pb-70">
+        <div className="container">
+          <div className="section-title home-four-section-title">
+            <span>Services</span>
+            <h2>What would you like to do today?</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure
+              architecto quaerat eaque sapiente accusantium ad ut explicabo
+              consequuntur fuga quidem? Sint.
+            </p>
           </div>
-          <div className="landing-page-section-1-top-right">
-            <div className="landing-page-section-1-top-right-component">
-              <img src="" alt="image"></img>
-              <p>Company Profile</p>
-            </div>
-            <div className="landing-page-section-1-top-right-component">
-              <img src="" alt="image"></img>
-              <p>Talent Insights</p>
-            </div>
-            <div className="landing-page-section-1-top-right-component">
-              <img src="" alt="image"></img>
-              <p>Industry Trends</p>
-            </div>
-            <div className="landing-page-section-1-top-right-component">
-              <img src="" alt="image"></img>
-              <p>Dashboard</p>
-            </div>
-          </div>
-        </div>
-        <div className="landing-page-section-1-container">
-          <p>Company's Talent</p>
-          <p>Marketing Workspace</p>
-          <p>7897 credits</p>
-        </div>
-      </section>
-      <section className="landing-page-section-2">
-        <div className="landing-page-section-2-left">
-          <ul>
-            <li>Employer Brand Index</li>
-            <li onClick={() => navigate("/evp-journey")}>
-              Employee Value Proposition
-            </li>
-            <li>Recruitment Campaign</li>
-            <li>Social & Digital Content</li>
-            <li onClick={() => navigate("/internal-communications")}>
-              Internal Communications
-            </li>
-            <li>Leadership Brand</li>
-            <li>Integration Comms</li>
-          </ul>
-        </div>
-        <div className="landing-page-section-2-right">
-          <div className="landing-page-section-2-right-container">
-            <div className="landing-page-section-2-right-container-info">
-              <p>{homePageData?.fact1}</p>
-            </div>
-            <div className="landing-page-section-2-right-container-info">
-              <p>{homePageData?.fact2}</p>
-            </div>
-            <div className="landing-page-section-2-right-container-info">
-              <p>{homePageData?.fact3}</p>
-            </div>
-            <div className="landing-page-section-2-right-container-info">
-              <p>{homePageData?.fact4}</p>
-            </div>
-            <div className="landing-page-section-2-right-container-info">
-              <p>{homePageData?.fact5}</p>
-            </div>
-            <div className="landing-page-section-2-right-container-info">
-              <p>{homePageData?.fact6}</p>
-            </div>
-            <div className="landing-page-section-2-right-container-info">
-              <p>{homePageData?.fact7}</p>
-            </div>
-            <div className="landing-page-section-2-right-container-info">
-              <p>{homePageData?.fact8}</p>
-            </div>
-            <div className="landing-page-section-2-right-container-info">
-              <p>{homePageData?.fact9}</p>
-            </div>
+
+          <div className="row justify-content-center">
+            {servicesData &&
+              servicesData.slice(0, 6).map((value, i) => (
+                <div
+                  className="col-lg-4 col-sm-6"
+                  key={i}
+                  data-aos="fade-in"
+                  data-aos-duration="1200"
+                  data-aos-delay={value.aosDelay}
+                >
+                  <div className="service-card">
+                    <i className={value.iconName}></i>
+                    <h3 onClick={() => navigate("/evp")}>
+                      <Link href={value.viewDetails}>{value.title}</Link>
+                    </h3>
+                    <p>{value.shortText}</p>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
-      </section>
-    </div>
+
+        {/* Shape Images */}
+        <div className="offer-shape">
+          <img src={LandingOne} alt="Image" width={300} height={375} />
+          <img src={LandingTwo} alt="Image" width={300} height={375} />
+          <img src={LandingThree} alt="Image" width={41} height={36} />
+          <img src={LandingFour} alt="Image" width={20} height={20} />
+          <img src={LandingFive} alt="Image" width={28} height={30} />
+          <img src={LandingSix} alt="Image" width={25} height={25} />
+        </div>
+      </div>
+    </>
   );
 }
 

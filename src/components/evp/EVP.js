@@ -297,7 +297,7 @@ function EVP() {
                   >
                     EVP Handbook
                   </div>
-                  {/* <div
+                  <div
                     className={`evp-left-bar-subTabs-tab ${
                       activeSubTab === "EVP Embedment" ? "active-sub" : ""
                     }`}
@@ -312,7 +312,7 @@ function EVP() {
                     onClick={() => setActiveSubTab("EVP Announcement")}
                   >
                     EVP Announcement
-                  </div> */}
+                  </div>
                 </div>
               ) : null}
             </div>

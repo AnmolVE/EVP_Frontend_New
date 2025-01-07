@@ -11,7 +11,9 @@ function PreHiring() {
         {preHiringFields.map((field, index) => (
           <div
             key={index}
-            className="evp-embedment-left-box"
+            className={`evp-embedment-left-box ${
+              activeField === field ? "active" : ""
+            }`}
             onClick={() => setActiveField(field)}
           >
             <p>{field}</p>
@@ -259,6 +261,7 @@ function PreHiring() {
           <button>Save</button>
         </div>
       </div>
+      <button className="default-btn">Generate</button>
     </div>
   );
 }

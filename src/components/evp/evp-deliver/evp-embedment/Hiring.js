@@ -13,7 +13,9 @@ function Hiring() {
         {hiringFields.map((field, index) => (
           <div
             key={index}
-            className="evp-embedment-left-box"
+            className={`evp-embedment-left-box ${
+              activeField === field ? "active" : ""
+            }`}
             onClick={() => setActiveField(field)}
           >
             <p>{field}</p>

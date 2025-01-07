@@ -2,6 +2,14 @@ import NavbarStimulaiImage from "./Stimulai.png";
 import NavbarUserImage from "./User.png";
 import FooterShape_1 from "./footer-shape-one.png";
 import FooterShape_2 from "./footer-shape-two.png";
+
+import LandingOne from "./evp/landing-page/landing_one.png";
+import LandingTwo from "./evp/landing-page/landing_two.png";
+import LandingThree from "./evp/landing-page/landing_three.png";
+import LandingFour from "./evp/landing-page/landing_four.png";
+import LandingFive from "./evp/landing-page/landing_five.png";
+import LandingSix from "./evp/landing-page/landing_six.png";
+
 import keyThemesImg from "./keyThemes.png";
 import EVPJourneyImage from "./evp-journey.png";
 import evp_handbook_thumbnail from "./handbook_thumbnail.png";
@@ -41,6 +49,12 @@ export {
   FooterShape_2,
   keyThemesImg,
   EVPJourneyImage,
+  LandingOne,
+  LandingTwo,
+  LandingThree,
+  LandingFour,
+  LandingFive,
+  LandingSix,
   evp_handbook_thumbnail,
   evpStatementThumbnailImage,
   Attribute1,

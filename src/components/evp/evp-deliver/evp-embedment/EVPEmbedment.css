@@ -89,6 +89,11 @@
   text-align: center;
 }
 
+.evp-embedment-left-box.active {
+  color: #fff;
+  background-color: #0dcaf0;
+}
+
 .evp-embedment-right {
   height: 100%;
   width: 100%;
