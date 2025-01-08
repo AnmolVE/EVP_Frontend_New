@@ -39,7 +39,7 @@ function EVP() {
   const accessToken = loginData.access;
 
   const [activeTab, setActiveTab] = useState("DISCOVER");
-  const [activeSubTab, setActiveSubTab] = useState("Primary Research");
+  const [activeSubTab, setActiveSubTab] = useState("Design Principles");
 
   useEffect(() => {
     dispatch(fetchDataForSelectedItem(activeSubTab));
@@ -92,13 +92,21 @@ function EVP() {
                 className="evp-left-bar-mainTabs"
                 onClick={() => {
                   setActiveTab("DISCOVER");
-                  setActiveSubTab("Primary Research");
+                  setActiveSubTab("Design Principles");
                 }}
               >
                 <p>DISCOVER</p>
               </div>
               {activeTab === "DISCOVER" ? (
                 <div className="evp-left-bar-subTabs">
+                  <div
+                    className={`evp-left-bar-subTabs-tab ${
+                      activeSubTab === "Design Principles" ? "active-sub" : ""
+                    }`}
+                    onClick={() => setActiveSubTab("Design Principles")}
+                  >
+                    Design Principles
+                  </div>
                   <div
                     className={`evp-left-bar-subTabs-tab ${
                       activeSubTab === "Primary Research" ? "active-sub" : ""
@@ -114,14 +122,6 @@ function EVP() {
                     onClick={() => setActiveSubTab("Secondary Research")}
                   >
                     Secondary Research
-                  </div>
-                  <div
-                    className={`evp-left-bar-subTabs-tab ${
-                      activeSubTab === "Design Principles" ? "active-sub" : ""
-                    }`}
-                    onClick={() => setActiveSubTab("Design Principles")}
-                  >
-                    Design Principles
                   </div>
                 </div>
               ) : null}

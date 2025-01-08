@@ -14,7 +14,7 @@ const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 function PrimaryResearch({ companyName, accessToken }) {
   const [activeTab, setActiveTab] = useState("Interview");
 
-  const [fileNames, setFileNames] = useState(["Upload documents"]);
+  const [fileNames, setFileNames] = useState(["Add documents"]);
   const [files, setFiles] = useState([]);
   const fileInputRef = useRef(null);
 
