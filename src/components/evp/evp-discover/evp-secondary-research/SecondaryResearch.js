@@ -37,13 +37,16 @@ function SecondaryResearch({ companyName, accessToken }) {
     });
 
     try {
-      const response = await fetch(`${REACT_APP_BASE_URL}/search/`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: formData,
-      });
+      const response = await fetch(
+        `${REACT_APP_BASE_URL}/save-secondary-documents/`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+          body: formData,
+        }
+      );
       if (response.ok) {
         const responseData = await response.json();
         console.log(responseData);

@@ -90,7 +90,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -111,7 +113,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -132,7 +136,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -153,7 +159,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -174,7 +182,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -195,7 +205,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -216,7 +228,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -237,7 +251,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -258,7 +274,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -279,7 +297,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -300,7 +320,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -321,7 +343,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -342,7 +366,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -363,7 +389,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -386,7 +414,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -409,7 +439,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -430,7 +462,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -451,7 +485,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -472,7 +508,9 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button className="default-btn">Save</button>
+            <button className="default-btn" onClick={() => handleSubmit()}>
+              Save
+            </button>
           </div>
         </div>
         <div className="evp-develop-validationContainer">
@@ -493,7 +531,7 @@ function CompanyDataset({ companyName, accessToken }) {
             />
           </div>
           <div className="evp-develop-validation-buttons">
-            <button onClick={handleSubmit} className="default-btn">
+            <button onClick={() => handleSubmit()} className="default-btn">
               Save
             </button>
           </div>

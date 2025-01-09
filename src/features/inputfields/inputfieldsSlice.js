@@ -52,6 +52,7 @@ export const fetchDataForSelectedItem = createAsyncThunk(
     }
 
     if (
+      selectedItem === "Company Dataset" ||
       selectedItem === "Attributes of an Attractive Workplace" ||
       selectedItem === "Key Themes" ||
       selectedItem === "Audience Wise Messaging" ||
