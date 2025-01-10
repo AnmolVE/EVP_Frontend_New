@@ -14,7 +14,7 @@ const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 function PrimaryResearch({ companyName, accessToken }) {
   const [activeTab, setActiveTab] = useState("Interview");
 
-  const [fileNames, setFileNames] = useState(["Add documents"]);
+  const [fileNames, setFileNames] = useState([]);
   const [files, setFiles] = useState([]);
   const fileInputRef = useRef(null);
 
@@ -38,6 +38,7 @@ function PrimaryResearch({ companyName, accessToken }) {
 
     const fileNames = pdfFiles.map((file) => file.name);
     setFileNames(fileNames);
+    console.log(fileNames);
     setFiles(pdfFiles);
   };
 
@@ -71,8 +72,9 @@ function PrimaryResearch({ companyName, accessToken }) {
 
       if (response.ok) {
         const data = await response.json();
-        setFileNames(["Upload documents"]);
+        setFileNames([]);
         setTranscriptSuccess(true);
+        alert("Transcripts added successfully!!!");
       } else {
         console.error("Failed to submit transcript:");
       }
@@ -128,7 +130,7 @@ function PrimaryResearch({ companyName, accessToken }) {
         <div className="evp-primaryResearch-right">
           <div className="evp-primaryResearch-uploadContainer">
             <div className="evp-primaryResearch-documents">
-              <p>Upload Documents</p>
+              <p>Upload Transcripts</p>
               <input
                 type="file"
                 style={{ display: "none" }}
@@ -137,17 +139,25 @@ function PrimaryResearch({ companyName, accessToken }) {
                 ref={fileInputRef}
               />
               <div className="upload-area">
-                <div className="uploaded-files">
+                {/* <div className="uploaded-files">
                   {fileNames.map((name, index) => (
                     <div key={index} className="uploaded-file-name">
                       {name}
                     </div>
                   ))}
-                </div>
+                </div> */}
                 <div className="upload-svg" onClick={handleSVGClick}>
                   <BsPaperclip />
+                  <p>add transcripts</p>
                 </div>
               </div>
+            </div>
+            <div className="uploaded-files">
+              {fileNames.map((name, index) => (
+                <div key={index} className="uploaded-file-name">
+                  {name}
+                </div>
+              ))}
             </div>
             {pdfAlert && (
               <div className="pop-messages">

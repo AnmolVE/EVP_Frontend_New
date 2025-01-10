@@ -9,7 +9,7 @@ import "./SecondaryResearch.css";
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function SecondaryResearch({ companyName, accessToken }) {
-  const [fileNames, setFileNames] = useState(["Add documents"]);
+  const [fileNames, setFileNames] = useState([]);
   const [files, setFiles] = useState([]);
   const fileInputRef = useRef(null);
 
@@ -29,7 +29,6 @@ function SecondaryResearch({ companyName, accessToken }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setIsLoading(true);
     const formData = new FormData();
     formData.append("company_name", companyName);
     files.forEach((file) => {
@@ -49,12 +48,11 @@ function SecondaryResearch({ companyName, accessToken }) {
       );
       if (response.ok) {
         const responseData = await response.json();
+        alert("Documents added successfully!!!");
         console.log(responseData);
       }
     } catch (error) {
       console.error("Error adding company documents:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -136,17 +134,18 @@ function SecondaryResearch({ companyName, accessToken }) {
             ref={fileInputRef}
           />
           <div className="upload-area">
-            <div className="uploaded-files">
-              {fileNames.map((name, index) => (
-                <div key={index} className="uploaded-file-name">
-                  {name}
-                </div>
-              ))}
-            </div>
             <div className="upload-svg" onClick={handleSVGClick}>
               <BsPaperclip />
+              <p>add documents</p>
             </div>
           </div>
+        </div>
+        <div className="uploaded-files">
+          {fileNames.map((name, index) => (
+            <div key={index} className="uploaded-file-name">
+              {name}
+            </div>
+          ))}
         </div>
         <div className="evp-secondaryResearch-button">
           <button type="submit" className="default-btn">

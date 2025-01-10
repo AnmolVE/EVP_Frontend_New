@@ -25,7 +25,7 @@ const questions = [
 ];
 
 function DesignPrinciples({ companyName, accessToken }) {
-  const [fileNames, setFileNames] = useState(["Add documents"]);
+  const [fileNames, setFileNames] = useState([]);
   const [files, setFiles] = useState([]);
   const fileInputRef = useRef(null);
 
@@ -200,17 +200,18 @@ function DesignPrinciples({ companyName, accessToken }) {
             ref={fileInputRef}
           />
           <div className="upload-area">
-            <div className="uploaded-files">
-              {fileNames.map((name, index) => (
-                <div key={index} className="uploaded-file-name">
-                  {name}
-                </div>
-              ))}
-            </div>
             <div className="upload-svg" onClick={handleSVGClick}>
               <BsPaperclip />
+              <p>add transcripts</p>
             </div>
           </div>
+        </div>
+        <div className="uploaded-files">
+          {fileNames.map((name, index) => (
+            <div key={index} className="uploaded-file-name">
+              {name}
+            </div>
+          ))}
         </div>
         <div className="evp-primaryResearch-button">
           <button className="default-btn" onClick={handleFileSubmit}>

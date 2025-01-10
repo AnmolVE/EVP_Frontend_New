@@ -18,7 +18,7 @@ function TalentInsights() {
   }, [data]);
 
   if (loading) {
-    <Loading />;
+    return <Loading />;
   }
 
   return (
