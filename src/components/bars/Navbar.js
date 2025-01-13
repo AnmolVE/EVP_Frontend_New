@@ -66,7 +66,7 @@ function Navbar() {
               <span className="icon-bar bottom-bar"></span>
             </button>
 
-            {/* <div className={classOne} id="navbarSupportedContent">
+            <div className={classOne} id="navbarSupportedContent">
               <ul className="navbar-nav m-auto">
                 <li className="nav-item">
                   <Link
@@ -74,33 +74,37 @@ function Navbar() {
                     className="nav-link"
                     onClick={(e) => e.preventDefault()}
                   >
-                    Home <i className="bx bx-chevron-down"></i>
+                    Modules <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/">Home One</Link>
+                      <Link href="/">Employee Value Proposition</Link>
                     </li>
 
                     <li className="nav-item">
-                      <Link href="/index-2/">Home Two</Link>
+                      <Link href="/index-2/">Content and Creative</Link>
                     </li>
 
                     <li className="nav-item">
-                      <Link href="/index-3/">Home Three</Link>
+                      <Link href="/index-3/">Internal Comms</Link>
                     </li>
 
                     <li className="nav-item">
-                      <Link href="/index-4/">Home Four</Link>
+                      <Link href="/index-4/">Employer Brand Index</Link>
                     </li>
 
                     <li className="nav-item">
-                      <Link href="/index-5/">Home Five</Link>
+                      <Link href="/index-5/">Leadership Branding</Link>
+                    </li>
+
+                    <li className="nav-item">
+                      <Link href="/index-5/">Recruitment Campaign</Link>
                     </li>
                   </ul>
                 </li>
 
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link
                     href="#"
                     className="nav-link"
@@ -174,15 +178,15 @@ function Navbar() {
                       <Link href="/contact-2/">Contact Style Two</Link>
                     </li>
                   </ul>
-                </li>
+                </li> */}
               </ul>
 
-              <div className="others-options">
+              {/* <div className="others-options">
                 <Link className="default-btn" href="/auth/login/">
                   Log In <i className="bx bx-log-in-circle"></i>
                 </Link>
-              </div>
-            </div> */}
+              </div> */}
+            </div>
           </div>
         </nav>
       </div>

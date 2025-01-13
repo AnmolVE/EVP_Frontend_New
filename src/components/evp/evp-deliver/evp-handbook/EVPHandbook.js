@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 
+import { BsJournalBookmark } from "react-icons/bs";
+import { VscGitPullRequestGoToChanges } from "react-icons/vsc";
+
 import { evp_handbook_thumbnail } from "../../../../assets/images/images";
 
 import "./EVPHandbook.css";
@@ -12,24 +15,25 @@ function EVPHandbook() {
         Download a PDF summarising all EVP information to date.
       </p>
       <div className="evp-handbook-content">
-        <figure className="evp-handbook-thumbnail">
-          <img src={evp_handbook_thumbnail} alt="Image" />
-        </figure>
         <div className="evp-handbook-buttons">
-          <button className="default-btn">
-            <a
-              href="assets\docs\Interview.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View
-            </a>
-          </button>
-          <button className="default-btn">
-            <a href="assets/docs/Interview.pdf" download="Interview.pdf">
-              Download
-            </a>
-          </button>
+          <div className="evp-handbook-buttons-tab">
+            <span>
+              <BsJournalBookmark />
+            </span>
+            <button className="default-btn">Download Basic Handbook</button>
+          </div>
+          <div className="evp-handbook-buttons-tab">
+            <span>
+              <VscGitPullRequestGoToChanges />
+            </span>
+            <button className="default-btn">Request Premium Handbook</button>
+          </div>
+          <div className="evp-handbook-buttons-tab">
+            <span>
+              <BsJournalBookmark />
+            </span>
+            <button className="default-btn">Download Premium Handbook</button>
+          </div>
         </div>
       </div>
     </div>

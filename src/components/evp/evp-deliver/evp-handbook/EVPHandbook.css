@@ -200,7 +200,7 @@
   }
 } */
 
-.evp-handbook-content {
+/* .evp-handbook-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -224,7 +224,7 @@
 .evp-handbook-buttons a {
   color: #fff;
   text-decoration: none;
-}
+} */
 
 /* .evp-handbook-dummyData {
   display: flex;
@@ -235,3 +235,26 @@
 .evp-handbook-dummyData p {
   width: 30rem;
 } */
+
+/* .evp-handbook-content {
+  border: 1px solid red;
+} */
+
+.evp-handbook-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 10rem;
+}
+
+.evp-handbook-buttons-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.evp-handbook-buttons-tab span {
+  font-size: 5rem;
+}

@@ -35,9 +35,6 @@ function CreativeDirection() {
           <h4>Visual Concept</h4>
           <p className="custom_para2">{creativeDirectionData.visual_concept}</p>
         </div>
-        <figure>
-          <img src="" alt="Creative Image" />
-        </figure>
       </div>
       <ContentButtons />
     </div>

@@ -97,6 +97,9 @@
 
 import React, { useState, useEffect } from "react";
 
+import { BsJournalBookmark } from "react-icons/bs";
+import { MdWorkspacePremium } from "react-icons/md";
+
 import { evp_handbook_thumbnail } from "../../../../assets/images/images";
 
 import "./EVPAnnouncement.css";
@@ -109,24 +112,25 @@ function EVPAnnouncement() {
         Create a tailored plan to launch your EVP to stakeholders.
       </p>
       <div className="evp-announcement-content">
-        <figure className="evp-announcement-thumbnail">
-          <img src={evp_handbook_thumbnail} alt="Image" />
-        </figure>
         <div className="evp-announcement-buttons">
-          <button className="default-btn">
-            <a
-              href="assets\docs\Interview.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View
-            </a>
-          </button>
-          <button className="default-btn">
-            <a href="assets/docs/Interview.pdf" download="Interview.pdf">
-              Download
-            </a>
-          </button>
+          <div className="evp-announcement-buttons-tab">
+            <span>
+              <BsJournalBookmark />
+            </span>
+            <button className="default-btn">Download Basic Plan</button>
+          </div>
+          <div className="evp-announcement-buttons-tab">
+            <span>
+              <MdWorkspacePremium />
+            </span>
+            <button className="default-btn">Request Premium Plan</button>
+          </div>
+          <div className="evp-announcement-buttons-tab">
+            <span>
+              <BsJournalBookmark />
+            </span>
+            <button className="default-btn">Download Premium Plan</button>
+          </div>
         </div>
       </div>
     </div>

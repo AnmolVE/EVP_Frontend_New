@@ -15,6 +15,9 @@ export const fieldNames = {
     "EVP Audit",
     "EVP Promise",
   ],
-  // DELIVER: ["EVP Handbook", "EVP Embedment", "EVP Announcement"],
-  DELIVER: ["EVP Handbook"],
+  DELIVER: [
+    "EVP Handbook",
+    // "EVP Embedment",
+    "EVP Announcement",
+  ],
 };

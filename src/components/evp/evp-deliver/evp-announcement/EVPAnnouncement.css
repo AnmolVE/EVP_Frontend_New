@@ -200,7 +200,7 @@
   }
 } */
 
-.evp-announcement-content {
+/* .evp-announcement-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -224,4 +224,23 @@
 .evp-announcement-buttons a {
   color: #fff;
   text-decoration: none;
+} */
+
+.evp-announcement-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 10rem;
+}
+
+.evp-announcement-buttons-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.evp-announcement-buttons-tab span {
+  font-size: 5rem;
 }
