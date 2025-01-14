@@ -48,7 +48,7 @@
 
 .evp-primaryResearch-uploadContainer {
   width: 100%;
-  height: auto;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;

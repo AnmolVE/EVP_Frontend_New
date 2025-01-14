@@ -20,19 +20,13 @@ function EVPHandbook() {
             <span>
               <BsJournalBookmark />
             </span>
-            <button className="default-btn">Download Basic Handbook</button>
+            <button className="default-btn">Basic Handbook</button>
           </div>
           <div className="evp-handbook-buttons-tab">
             <span>
               <VscGitPullRequestGoToChanges />
             </span>
-            <button className="default-btn">Request Premium Handbook</button>
-          </div>
-          <div className="evp-handbook-buttons-tab">
-            <span>
-              <BsJournalBookmark />
-            </span>
-            <button className="default-btn">Download Premium Handbook</button>
+            <button className="default-btn">Premium Handbook</button>
           </div>
         </div>
       </div>

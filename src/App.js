@@ -16,6 +16,7 @@ import EVPJourney from "./components/home/evp-journey/EVPJourney";
 import InternalCommunications from "./components/internal-communications/InternalCommunications";
 import EVP from "./components/evp/EVP";
 import ListingEvp from "./components/evp/edit-evps/ListingEvp";
+import EVPEmbedment from "./components/evp-embedment/EVPEmbedment";
 
 function App() {
   return (
@@ -41,7 +42,8 @@ function App() {
           <Route element={<TalentInsights />} path="/talent-insights" />
           <Route element={<IndustryTrends />} path="/industry-trends" />
           <Route element={<EVPJourney />} path="/evp-journey" />
-          <Route element={<EVP />} path="evp" />
+          <Route element={<EVP />} path="/evp" />
+          <Route element={<EVPEmbedment />} path="/evp-embedment" />
           <Route
             element={<InternalCommunications />}
             path="/internal-communications"

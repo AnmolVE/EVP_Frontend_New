@@ -23,7 +23,7 @@ const servicesData = [
     title: "Employee Value Proposition",
     shortText:
       "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
-    viewDetails: "/services/service-details/",
+    viewDetails: "/evp",
     aosDelay: "100",
   },
   {
@@ -31,7 +31,7 @@ const servicesData = [
     title: "Content & Creative",
     shortText:
       "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
-    viewDetails: "/services/service-details/",
+    viewDetails: "/evp-embedment",
     aosDelay: "200",
   },
   {
@@ -39,7 +39,7 @@ const servicesData = [
     title: "Internal Comms",
     shortText:
       "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
-    viewDetails: "/services/service-details/",
+    viewDetails: "",
     aosDelay: "300",
   },
   {
@@ -47,7 +47,7 @@ const servicesData = [
     title: "Employer Brand Index",
     shortText:
       "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
-    viewDetails: "/services/service-details/",
+    viewDetails: "",
     aosDelay: "400",
   },
   {
@@ -55,7 +55,7 @@ const servicesData = [
     title: "Leadership Branding",
     shortText:
       "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
-    viewDetails: "/services/service-details/",
+    viewDetails: "",
     aosDelay: "500",
   },
   {
@@ -63,7 +63,7 @@ const servicesData = [
     title: "Recruitment Campaign",
     shortText:
       "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
-    viewDetails: "/services/service-details/",
+    viewDetails: "",
     aosDelay: "600",
   },
 ];
@@ -105,8 +105,8 @@ function LandingPage() {
                 >
                   <div className="service-card">
                     <i className={value.iconName}></i>
-                    <h3 onClick={() => navigate("/evp")}>
-                      <Link href={value.viewDetails}>{value.title}</Link>
+                    <h3>
+                      <Link to={value.viewDetails}>{value.title}</Link>
                     </h3>
                     <p>{value.shortText}</p>
                   </div>

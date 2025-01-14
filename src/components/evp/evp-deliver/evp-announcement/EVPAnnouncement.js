@@ -117,19 +117,13 @@ function EVPAnnouncement() {
             <span>
               <BsJournalBookmark />
             </span>
-            <button className="default-btn">Download Basic Plan</button>
+            <button className="default-btn">Basic Plan</button>
           </div>
           <div className="evp-announcement-buttons-tab">
             <span>
               <MdWorkspacePremium />
             </span>
-            <button className="default-btn">Request Premium Plan</button>
-          </div>
-          <div className="evp-announcement-buttons-tab">
-            <span>
-              <BsJournalBookmark />
-            </span>
-            <button className="default-btn">Download Premium Plan</button>
+            <button className="default-btn">Premium Plan</button>
           </div>
         </div>
       </div>
