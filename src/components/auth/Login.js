@@ -24,7 +24,7 @@ function Login() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="adjust">
         <div className="login-container-left">
           <figure className="login-stimulai-img">

@@ -128,9 +128,9 @@ function PrimaryResearch({ companyName, accessToken }) {
           </div>
         </div>
         <div className="evp-primaryResearch-right">
-          <div className="evp-primaryResearch-uploadContainer">
-            <div className="evp-primaryResearch-documents">
-              <p>Upload Transcripts</p>
+          <div className="upload-box">
+            <p className="custom_para2">Upload Transcripts</p>
+            <div>
               <input
                 type="file"
                 style={{ display: "none" }}
@@ -139,37 +139,20 @@ function PrimaryResearch({ companyName, accessToken }) {
                 ref={fileInputRef}
               />
               <div className="upload-area">
-                {/* <div className="uploaded-files">
-                  {fileNames.map((name, index) => (
-                    <div key={index} className="uploaded-file-name">
-                      {name}
-                    </div>
-                  ))}
-                </div> */}
                 <div className="upload-svg" onClick={handleSVGClick}>
                   <BsPaperclip />
                   <p>add transcripts</p>
                 </div>
               </div>
-            </div>
-            <div className="uploaded-files">
-              {fileNames.map((name, index) => (
-                <div key={index} className="uploaded-file-name">
-                  {name}
-                </div>
-              ))}
-            </div>
-            {pdfAlert && (
-              <div className="pop-messages">
-                <p>Only PDF format supported</p>
+              <div className="uploaded-files">
+                {fileNames.map((name, index) => (
+                  <div key={index} className="uploaded-file-name">
+                    {name}
+                  </div>
+                ))}
               </div>
-            )}
-            {transcriptSuccess && (
-              <div className="pop-messages">
-                <p>Transcripts added successfully</p>
-              </div>
-            )}
-            <div className="evp-primaryResearch-button">
+            </div>
+            <div className="upload-box-button">
               <button className="default-btn" onClick={handleTranscriptSubmit}>
                 Upload
               </button>

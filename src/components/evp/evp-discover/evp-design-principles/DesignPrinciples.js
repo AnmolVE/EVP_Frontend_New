@@ -3,6 +3,7 @@ import { AiOutlineRight } from "react-icons/ai";
 import { BsPaperclip } from "react-icons/bs";
 
 import "./DesignPrinciples.css";
+import Loading from "../../../utils/loading/Loading";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -84,7 +85,6 @@ function DesignPrinciples({ companyName, accessToken }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setIsLoading(true);
     try {
       const response = await fetch(`${REACT_APP_BASE_URL}/design-principles/`, {
         method: "POST",
@@ -104,8 +104,6 @@ function DesignPrinciples({ companyName, accessToken }) {
       }
     } catch (error) {
       console.error("Error:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -141,13 +139,19 @@ function DesignPrinciples({ companyName, accessToken }) {
       if (response.ok) {
         const responseData = await response.json();
         setDesignPrinciples(responseData);
+        alert("data fetched successfully");
       }
     } catch (error) {
       console.error("Error adding company documents:", error);
     } finally {
       setIsLoading(false);
+      setFileNames([]);
     }
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className="evp-designPrinciples">
@@ -189,9 +193,9 @@ function DesignPrinciples({ companyName, accessToken }) {
           </div>
         </div>
       </div>
-      <div className="evp-primaryResearch-uploadContainer">
-        <div className="evp-primaryResearch-documents">
-          <p>Upload Documents</p>
+      <div className="upload-box">
+        <p className="custom_para2">Upload Documents</p>
+        <div>
           <input
             type="file"
             style={{ display: "none" }}
@@ -202,18 +206,18 @@ function DesignPrinciples({ companyName, accessToken }) {
           <div className="upload-area">
             <div className="upload-svg" onClick={handleSVGClick}>
               <BsPaperclip />
-              <p>add transcripts</p>
+              <p>add documents</p>
             </div>
           </div>
+          <div className="uploaded-files">
+            {fileNames.map((name, index) => (
+              <div key={index} className="uploaded-file-name">
+                {name}
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="uploaded-files">
-          {fileNames.map((name, index) => (
-            <div key={index} className="uploaded-file-name">
-              {name}
-            </div>
-          ))}
-        </div>
-        <div className="evp-primaryResearch-button">
+        <div className="upload-box-button">
           <button className="default-btn" onClick={handleFileSubmit}>
             Upload
           </button>

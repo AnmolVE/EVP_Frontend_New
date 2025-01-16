@@ -116,16 +116,10 @@ function SecondaryResearch({ companyName, accessToken }) {
             </div>
           </div>
         </div>
-        <button className="default-btn" style={{ marginTop: "2rem" }}>
-          Next
-        </button>
       </div>
-      <form
-        className="evp-secondaryResearch-uploadContainer"
-        onSubmit={handleSubmit}
-      >
-        <div className="evp-secondaryResearch-documents">
-          <p>Upload Documents</p>
+      <div className="upload-box">
+        <p className="custom_para2">Upload Documents</p>
+        <div>
           <input
             type="file"
             style={{ display: "none" }}
@@ -139,20 +133,20 @@ function SecondaryResearch({ companyName, accessToken }) {
               <p>add documents</p>
             </div>
           </div>
+          <div className="uploaded-files">
+            {fileNames.map((name, index) => (
+              <div key={index} className="uploaded-file-name">
+                {name}
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="uploaded-files">
-          {fileNames.map((name, index) => (
-            <div key={index} className="uploaded-file-name">
-              {name}
-            </div>
-          ))}
-        </div>
-        <div className="evp-secondaryResearch-button">
-          <button type="submit" className="default-btn">
+        <div className="upload-box-button">
+          <button className="default-btn" onClick={handleSubmit}>
             Upload
           </button>
         </div>
-      </form>
+      </div>
     </div>
   );
 }

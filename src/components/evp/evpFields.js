@@ -1,5 +1,5 @@
 export const fieldNames = {
-  DISCOVER: ["Primary Research", "Secondary Research", "Design Principles"],
+  DISCOVER: ["Design Principles", "Primary Research", "Secondary Research"],
   DEVELOP: [
     "Company Dataset",
     "Key Themes",
