@@ -10,24 +10,29 @@ import "./EVP.css";
 
 import Navbar from "../bars/Navbar";
 import Footer from "../bars/Footer";
+import DesignPrinciples from "./evp-discover/evp-design-principles/DesignPrinciples";
 import PrimaryResearch from "./evp-discover/evp-primary-research/PrimaryResearch";
+import SecondaryResearch from "./evp-discover/evp-secondary-research/SecondaryResearch";
+import EVPTollgate1 from "./evp-discover/discover-tollgate/EVPTollgate1";
 import CompanyDataset from "./evp-develop/evp-company-dataset/CompanyDataset";
+import KeyThemes from "./evp-develop/evp-key-themes/KeyThemes";
 import AttributesOfAGreatPlace from "./evp-develop/evp-attributes-of-a-great-place/AttributesOfAGreatPlace";
 import AudienceWiseMessaging from "./evp-develop/evp-audience-wise-messaging/AudienceWiseMessaging";
+import TalentInsights from "./evp-develop/evp-talent-insights/TalentInsights";
+import EVPTollgate2 from "./evp-develop/develop-tollgate/EVPTollgate2";
 import Analysis from "./evp-dissect/evp-analysis/Analysis";
 import Alignment from "./evp-dissect/evp-alignment/Alignment";
-import TalentInsights from "./evp-develop/evp-talent-insights/TalentInsights";
+import EVPTollgate3 from "./evp-dissect/dissect-tollgate/EVPTollgate3";
+import EVPStatement from "./evp-design/evp-statement/EVPStatement";
+import CreativeDirection from "./evp-design/evp-creative-direction/CreativeDirection";
 import EvpDefinition from "./evp-design/evp-definition/EvpDefinition";
 import EVPAudit from "./evp-design/evp-audit/EVPAudit";
 import EvpPromise from "./evp-design/evp-promise/EvpPromise";
-import DesignPrinciples from "./evp-discover/evp-design-principles/DesignPrinciples";
-import KeyThemes from "./evp-develop/evp-key-themes/KeyThemes";
-import SecondaryResearch from "./evp-discover/evp-secondary-research/SecondaryResearch";
-import EVPStatement from "./evp-design/evp-statement/EVPStatement";
-import EVPEmbedment from "./evp-deliver/evp-embedment/EVPEmbedment";
-import CreativeDirection from "./evp-design/evp-creative-direction/CreativeDirection";
+import EVPTollgate4 from "./evp-design/design-tollgate/EVPTollgate4";
 import EVPHandbook from "./evp-deliver/evp-handbook/EVPHandbook";
+import EVPEmbedment from "./evp-deliver/evp-embedment/EVPEmbedment";
 import EVPAnnouncement from "./evp-deliver/evp-announcement/EVPAnnouncement";
+import EVPTollgate5 from "./evp-deliver/deliver-tollgate/EVPTollgate5";
 
 import { fieldNames } from "./evpFields";
 
@@ -123,6 +128,14 @@ function EVP() {
                   >
                     Secondary Research
                   </div>
+                  <div
+                    className={`evp-left-bar-subTabs-tab ${
+                      activeSubTab === "Tollgate 1" ? "active-sub" : ""
+                    }`}
+                    onClick={() => setActiveSubTab("Tollgate 1")}
+                  >
+                    Tollgate 1
+                  </div>
                 </div>
               ) : null}
             </div>
@@ -188,6 +201,14 @@ function EVP() {
                   >
                     Talent Insights
                   </div>
+                  <div
+                    className={`evp-left-bar-subTabs-tab ${
+                      activeSubTab === "Tollgate 2" ? "active-sub" : ""
+                    }`}
+                    onClick={() => setActiveSubTab("Tollgate 2")}
+                  >
+                    Tollgate 2
+                  </div>
                 </div>
               ) : null}
             </div>
@@ -218,6 +239,14 @@ function EVP() {
                     onClick={() => setActiveSubTab("Alignment")}
                   >
                     Alignment
+                  </div>
+                  <div
+                    className={`evp-left-bar-subTabs-tab ${
+                      activeSubTab === "Tollgate 3" ? "active-sub" : ""
+                    }`}
+                    onClick={() => setActiveSubTab("Tollgate 3")}
+                  >
+                    Tollgate 3
                   </div>
                 </div>
               ) : null}
@@ -274,6 +303,14 @@ function EVP() {
                   >
                     EVP Promise
                   </div>
+                  <div
+                    className={`evp-left-bar-subTabs-tab ${
+                      activeSubTab === "Tollgate 4" ? "active-sub" : ""
+                    }`}
+                    onClick={() => setActiveSubTab("Tollgate 4")}
+                  >
+                    Tollgate 4
+                  </div>
                 </div>
               ) : null}
             </div>
@@ -313,11 +350,25 @@ function EVP() {
                   >
                     EVP Announcement
                   </div>
+                  <div
+                    className={`evp-left-bar-subTabs-tab ${
+                      activeSubTab === "Tollgate 5" ? "active-sub" : ""
+                    }`}
+                    onClick={() => setActiveSubTab("Tollgate 5")}
+                  >
+                    Tollgate 5
+                  </div>
                 </div>
               ) : null}
             </div>
           </div>
           <div className="evp-content">
+            {activeSubTab === "Design Principles" ? (
+              <DesignPrinciples
+                companyName={companyName}
+                accessToken={accessToken}
+              />
+            ) : null}
             {activeSubTab === "Primary Research" ? (
               <PrimaryResearch
                 companyName={companyName}
@@ -330,12 +381,7 @@ function EVP() {
                 accessToken={accessToken}
               />
             ) : null}
-            {activeSubTab === "Design Principles" ? (
-              <DesignPrinciples
-                companyName={companyName}
-                accessToken={accessToken}
-              />
-            ) : null}
+            {activeSubTab === "Tollgate 1" ? <EVPTollgate1 /> : null}
             {activeSubTab === "Company Dataset" ? (
               <CompanyDataset
                 companyName={companyName}
@@ -352,12 +398,14 @@ function EVP() {
               <AudienceWiseMessaging />
             ) : null}
             {activeSubTab === "Talent Insights" ? <TalentInsights /> : null}
+            {activeSubTab === "Tollgate 2" ? <EVPTollgate2 /> : null}
             {activeSubTab === "Analysis" ? (
               <Analysis companyName={companyName} accessToken={accessToken} />
             ) : null}
             {activeSubTab === "Alignment" ? (
               <Alignment companyName={companyName} accessToken={accessToken} />
             ) : null}
+            {activeSubTab === "Tollgate 3" ? <EVPTollgate3 /> : null}
             {activeSubTab === "EVP Statement" ? (
               <EVPStatement
                 companyName={companyName}
@@ -370,9 +418,11 @@ function EVP() {
             {activeSubTab === "EVP Definition" ? <EvpDefinition /> : null}
             {activeSubTab === "EVP Audit" ? <EVPAudit /> : null}
             {activeSubTab === "EVP Promise" ? <EvpPromise /> : null}
+            {activeSubTab === "Tollgate 4" ? <EVPTollgate4 /> : null}
             {activeSubTab === "EVP Handbook" ? <EVPHandbook /> : null}
             {activeSubTab === "EVP Embedment" ? <EVPEmbedment /> : null}
             {activeSubTab === "EVP Announcement" ? <EVPAnnouncement /> : null}
+            {activeSubTab === "Tollgate 5" ? <EVPTollgate5 /> : null}
           </div>
         </div>
         <div className="evp-backButton">
