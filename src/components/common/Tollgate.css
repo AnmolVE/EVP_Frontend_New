@@ -1,0 +1,42 @@
+.tollgate-boxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 10rem;
+}
+
+.tollgate-boxes-top {
+  display: flex;
+  gap: 5rem;
+}
+
+.tollgate-boxes-top-box {
+  min-width: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f5f4f4;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.tollgate-boxes-top-box span {
+  font-size: 5rem;
+}
+
+.tollgate-boxes-bottom {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f5f4f4;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.tollgate-boxes-bottom p {
+  margin-bottom: 0;
+  font-size: 20px;
+}

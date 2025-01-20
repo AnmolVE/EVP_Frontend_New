@@ -1,5 +1,8 @@
 import React from "react";
 
+import { MdFileDownload } from "react-icons/md";
+import { FaShareSquare } from "react-icons/fa";
+
 function EVPTollgate2() {
   return (
     <div className="tollgate-container">
@@ -9,12 +12,22 @@ function EVPTollgate2() {
       </p>
       <div className="tollgate-boxes">
         <div className="tollgate-boxes-top">
-          <p>Download Develop Report</p>
-          <p>Share Develop Report</p>
+          <div className="tollgate-boxes-top-box">
+            <span>
+              <MdFileDownload />
+            </span>
+            <button className="default-btn">Download Develop Report</button>
+          </div>
+          <div className="tollgate-boxes-top-box">
+            <span>
+              <FaShareSquare />
+            </span>
+            <button className="default-btn">Share Develop Report</button>
+          </div>
         </div>
         <div className="tollgate-boxes-bottom">
           <input type="checkbox" />
-          <p>
+          <p className="custom_para2">
             I confirm that this section has been validated and approved by key
             stakeholders.
           </p>

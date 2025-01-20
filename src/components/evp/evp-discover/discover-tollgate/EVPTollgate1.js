@@ -1,5 +1,10 @@
 import React from "react";
 
+import { MdFileDownload } from "react-icons/md";
+import { FaShareSquare } from "react-icons/fa";
+
+import "../../../common/Tollgate.css";
+
 function EVPToolgate1() {
   return (
     <div className="tollgate-container">
@@ -9,12 +14,22 @@ function EVPToolgate1() {
       </p>
       <div className="tollgate-boxes">
         <div className="tollgate-boxes-top">
-          <p>Download Discovery Report</p>
-          <p>Share Discovery Report</p>
+          <div className="tollgate-boxes-top-box">
+            <span>
+              <MdFileDownload />
+            </span>
+            <button className="default-btn">Download Discovery Report</button>
+          </div>
+          <div className="tollgate-boxes-top-box">
+            <span>
+              <FaShareSquare />
+            </span>
+            <button className="default-btn">Share Discovery Report</button>
+          </div>
         </div>
         <div className="tollgate-boxes-bottom">
           <input type="checkbox" />
-          <p>
+          <p className="custom_para2">
             I confirm that this section has been validated and approved by key
             stakeholders.
           </p>
