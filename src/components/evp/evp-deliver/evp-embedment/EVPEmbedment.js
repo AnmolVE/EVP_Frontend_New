@@ -92,7 +92,13 @@ function EVPEmbedment({ companyName, accessToken }) {
           </div>
         </div>
         <div className="evp-embedment-content-container">
-          {activeTab === "Pre-hiring" && <PreHiring />}
+          {activeTab === "Pre-hiring" && (
+            <PreHiring
+              companyName={companyName}
+              accessToken={accessToken}
+              activeTab={activeTab}
+            />
+          )}
           {activeTab === "Hiring" && <Hiring />}
           {activeTab === "Onboarding" && <OnBoarding />}
           {activeTab === "Learning & Development" && <LearningAndDevelopment />}

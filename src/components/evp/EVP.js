@@ -420,7 +420,12 @@ function EVP() {
             {activeSubTab === "EVP Promise" ? <EvpPromise /> : null}
             {activeSubTab === "Tollgate 4" ? <EVPTollgate4 /> : null}
             {activeSubTab === "EVP Handbook" ? <EVPHandbook /> : null}
-            {activeSubTab === "EVP Embedment" ? <EVPEmbedment /> : null}
+            {activeSubTab === "EVP Embedment" ? (
+              <EVPEmbedment
+                companyName={companyName}
+                accessToken={accessToken}
+              />
+            ) : null}
             {activeSubTab === "EVP Announcement" ? <EVPAnnouncement /> : null}
             {activeSubTab === "Tollgate 5" ? <EVPTollgate5 /> : null}
           </div>

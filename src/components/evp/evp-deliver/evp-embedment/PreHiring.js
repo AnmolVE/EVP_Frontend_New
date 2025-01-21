@@ -2,8 +2,29 @@ import React, { useState } from "react";
 
 import { preHiringFields } from "./embedment-constants";
 
-function PreHiring() {
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
+
+function PreHiring({ companyName, accessToken, activeTab }) {
   const [activeField, setActiveField] = useState("Social Media Ads");
+
+  const handleGenerateClick = async () => {
+    const response = await fetch(`${REACT_APP_BASE_URL}/evp-embedment/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify({
+        company_name: companyName,
+        stage: activeTab,
+        touchpoint: activeField,
+      }),
+    });
+    if (response.ok) {
+      const responseData = await response.json();
+      console.log(responseData);
+    }
+  };
 
   return (
     <div className="evp-embedment-content">
@@ -261,7 +282,9 @@ function PreHiring() {
           <button>Save</button>
         </div>
       </div>
-      <button className="default-btn">Generate</button>
+      <button className="default-btn" onClick={handleGenerateClick}>
+        Generate
+      </button>
     </div>
   );
 }

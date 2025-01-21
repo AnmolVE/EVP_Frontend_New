@@ -11,7 +11,6 @@ export const fieldNames = {
     "Attributes of an Attractive Workplace",
     "Audience Wise Messaging",
     "Talent Insights",
-    ,
     "Tollgate 2",
   ],
   DISSECT: ["Analysis", "Alignment", "Tollgate 3"],
@@ -23,10 +22,5 @@ export const fieldNames = {
     "EVP Promise",
     "Tollgate 4",
   ],
-  DELIVER: [
-    "EVP Handbook",
-    // "EVP Embedment",
-    "EVP Announcement",
-    "Tollgate 5",
-  ],
+  DELIVER: ["EVP Handbook", "EVP Embedment", "EVP Announcement", "Tollgate 5"],
 };
