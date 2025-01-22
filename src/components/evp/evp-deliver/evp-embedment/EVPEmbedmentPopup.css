@@ -1,0 +1,40 @@
+.embedment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 10000;
+}
+
+.embedment-content {
+  height: 50rem;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 1000px;
+  max-width: 90%;
+  position: relative;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.embedment-closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.embedment-regenerateIcon {
+  font-size: 2rem;
+  cursor: pointer;
+}

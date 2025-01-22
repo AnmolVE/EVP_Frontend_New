@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 
 import { preHiringFields } from "./embedment-constants";
+import EVPEmbedmentPopup from "./EVPEmbedmentPopup";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function PreHiring({ companyName, accessToken, activeTab }) {
   const [activeField, setActiveField] = useState("Social Media Ads");
+
+  const [generatedData, setGeneratedData] = useState({});
+
+  const [modalData, setModalData] = useState({
+    isOpen: false,
+  });
+
+  const closeModal = () => {
+    setModalData({ isOpen: false });
+  };
 
   const handleGenerateClick = async () => {
     const response = await fetch(`${REACT_APP_BASE_URL}/evp-embedment/`, {
@@ -22,7 +33,8 @@ function PreHiring({ companyName, accessToken, activeTab }) {
     });
     if (response.ok) {
       const responseData = await response.json();
-      console.log(responseData);
+      setGeneratedData(responseData);
+      setModalData({ isOpen: true });
     }
   };
 
@@ -285,6 +297,13 @@ function PreHiring({ companyName, accessToken, activeTab }) {
       <button className="default-btn" onClick={handleGenerateClick}>
         Generate
       </button>
+      <EVPEmbedmentPopup
+        isOpen={modalData.isOpen}
+        onClose={closeModal}
+        generatedData={generatedData}
+        companyName={companyName}
+        accessToken={accessToken}
+      />
     </div>
   );
 }

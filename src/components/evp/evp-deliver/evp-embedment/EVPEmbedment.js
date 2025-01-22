@@ -99,18 +99,62 @@ function EVPEmbedment({ companyName, accessToken }) {
               activeTab={activeTab}
             />
           )}
-          {activeTab === "Hiring" && <Hiring />}
-          {activeTab === "Onboarding" && <OnBoarding />}
-          {activeTab === "Learning & Development" && <LearningAndDevelopment />}
+          {activeTab === "Hiring" && (
+            <Hiring
+              companyName={companyName}
+              accessToken={accessToken}
+              activeTab={activeTab}
+            />
+          )}
+          {activeTab === "Onboarding" && (
+            <OnBoarding
+              companyName={companyName}
+              accessToken={accessToken}
+              activeTab={activeTab}
+            />
+          )}
+          {activeTab === "Learning & Development" && (
+            <LearningAndDevelopment
+              companyName={companyName}
+              accessToken={accessToken}
+              activeTab={activeTab}
+            />
+          )}
           {activeTab === "Compensation & Benefits" && (
-            <CompensationAndBenefits />
+            <CompensationAndBenefits
+              companyName={companyName}
+              accessToken={accessToken}
+              activeTab={activeTab}
+            />
           )}
           {activeTab === "Internal Communications" && (
-            <InternalCommunications />
+            <InternalCommunications
+              companyName={companyName}
+              accessToken={accessToken}
+              activeTab={activeTab}
+            />
           )}
-          {activeTab === "Employee Engagement" && <EmployeeEngagement />}
-          {activeTab === "Separation/Exit" && <SeparationExit />}
-          {activeTab === "Alumni Relations" && <AlumniRelations />}
+          {activeTab === "Employee Engagement" && (
+            <EmployeeEngagement
+              companyName={companyName}
+              accessToken={accessToken}
+              activeTab={activeTab}
+            />
+          )}
+          {activeTab === "Separation/Exit" && (
+            <SeparationExit
+              companyName={companyName}
+              accessToken={accessToken}
+              activeTab={activeTab}
+            />
+          )}
+          {activeTab === "Alumni Relations" && (
+            <AlumniRelations
+              companyName={companyName}
+              accessToken={accessToken}
+              activeTab={activeTab}
+            />
+          )}
         </div>
       </div>
     </div>

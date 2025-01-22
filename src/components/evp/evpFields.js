@@ -22,5 +22,5 @@ export const fieldNames = {
     "EVP Promise",
     "Tollgate 4",
   ],
-  DELIVER: ["EVP Handbook", "EVP Embedment", "EVP Announcement", "Tollgate 5"],
+  DELIVER: ["EVP Handbook", "EVP Announcement", "Tollgate 5", "EVP Embedment"],
 };
