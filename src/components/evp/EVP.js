@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { AiOutlineRight } from "react-icons/ai";
 import { AiOutlineLeft } from "react-icons/ai";
+import { FaCrown } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 import { IoCloudDownloadOutline } from "react-icons/io5";
 import { fetchDataForSelectedItem } from "../../features/inputfields/inputfieldsSlice";
@@ -351,12 +352,21 @@ function EVP() {
                     Tollgate 5
                   </div>
                   <div
-                    className={`evp-left-bar-subTabs-tab ${
+                    className={`evp-left-bar-subTabs-tab evp-embedment ${
                       activeSubTab === "EVP Embedment" ? "active-sub" : ""
                     }`}
                     onClick={() => setActiveSubTab("EVP Embedment")}
                   >
-                    EVP Embedment
+                    <div className="evp-embedment-icon">
+                      <FaCrown />
+                    </div>
+                    <div>
+                      <p className="custom_para">EVP Embedment</p>
+                      <p className="custom_para2">
+                        Launch the Campaign & Content module to embed the EVP
+                        across key touchpoints
+                      </p>
+                    </div>
                   </div>
                 </div>
               ) : null}

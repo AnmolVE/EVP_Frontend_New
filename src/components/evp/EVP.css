@@ -64,6 +64,29 @@
   height: auto;
 }
 
+.evp-left-bar-subTabs-tab.evp-embedment {
+  height: auto;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: #0b0b5c;
+  color: white;
+}
+
+.evp-left-bar-subTabs-tab.evp-embedment.active-sub {
+  background-color: #0dcaf0;
+  color: #fff;
+}
+
+.evp-embedment-icon {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 25px;
+}
+
 .evp-backButton {
   z-index: 10;
   position: fixed;
