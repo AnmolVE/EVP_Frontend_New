@@ -91,6 +91,9 @@ function EVPEmbedment({ companyName, accessToken }) {
             <p>Alumni Relations</p>
           </div>
         </div>
+        <div>
+          <button className="default-btn">+</button>
+        </div>
         <div className="evp-embedment-content-container">
           {activeTab === "Pre-hiring" && (
             <PreHiring
