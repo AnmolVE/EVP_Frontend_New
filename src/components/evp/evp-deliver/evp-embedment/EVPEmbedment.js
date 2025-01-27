@@ -13,87 +13,59 @@ import AlumniRelations from "./AlumniRelations";
 
 function EVPEmbedment({ companyName, accessToken }) {
   const [activeTab, setActiveTab] = useState("Pre-hiring");
+  const [hoveredTab, setHoveredTab] = useState(null);
+  const [showInputBox, setShowInputBox] = useState(false);
+
+  const tabs = [
+    "Pre-hiring",
+    "Hiring",
+    "Onboarding",
+    "Learning & Development",
+    "Compensation & Benefits",
+    "Internal Communications",
+    "Employee Engagement",
+    "Separation/Exit",
+    "Alumni Relations",
+  ];
 
   return (
     <div className="evp-embedment-main-container">
       <div className="evp-embedment-container">
         <div className="evp-embedment-tabs">
-          <div
-            className={`evp-embedment-tab ${
-              activeTab === "Pre-hiring" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("Pre-hiring")}
-          >
-            <p>Pre-hiring</p>
-          </div>
-          <div
-            className={`evp-embedment-tab ${
-              activeTab === "Hiring" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("Hiring")}
-          >
-            <p>Hiring</p>
-          </div>
-          <div
-            className={`evp-embedment-tab ${
-              activeTab === "Onboarding" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("Onboarding")}
-          >
-            <p>Onboarding</p>
-          </div>
-          <div
-            className={`evp-embedment-tab ${
-              activeTab === "Learning & Development" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("Learning & Development")}
-          >
-            <p>Learning & Development</p>
-          </div>
-          <div
-            className={`evp-embedment-tab ${
-              activeTab === "Compensation & Benefits" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("Compensation & Benefits")}
-          >
-            <p>Compensation & Benefits</p>
-          </div>
-          <div
-            className={`evp-embedment-tab ${
-              activeTab === "Internal Communications" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("Internal Communications")}
-          >
-            <p>Internal Communications</p>
-          </div>
-          <div
-            className={`evp-embedment-tab ${
-              activeTab === "Employee Engagement" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("Employee Engagement")}
-          >
-            <p>Employee Engagement</p>
-          </div>
-          <div
-            className={`evp-embedment-tab ${
-              activeTab === "Separation/Exit" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("Separation/Exit")}
-          >
-            <p>Separation/Exit</p>
-          </div>
-          <div
-            className={`evp-embedment-tab ${
-              activeTab === "Alumni Relations" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("Alumni Relations")}
-          >
-            <p>Alumni Relations</p>
-          </div>
+          {tabs.map((tab, index) => (
+            <div
+              key={index}
+              className={`evp-embedment-tab ${
+                activeTab === tab || hoveredTab === tab
+                  ? "expanded"
+                  : "collapsed"
+              }`}
+              onClick={() => setActiveTab(tab)}
+              onMouseEnter={() => setHoveredTab(tab)}
+              onMouseLeave={() => setHoveredTab(null)}
+            >
+              <p>{activeTab === tab || hoveredTab === tab ? tab : index + 1}</p>
+            </div>
+          ))}
         </div>
         <div>
-          <button className="default-btn">+</button>
+          <button
+            className="default-btn"
+            onClick={() => setShowInputBox(!showInputBox)}
+          >
+            {showInputBox ? "-" : "+"}
+          </button>
         </div>
+        {showInputBox && (
+          <div className="embedment-input-box">
+            <label>label 1</label>
+            <input type="text" placeholder="enter data" />
+            <label>label 1</label>
+            <input type="text" placeholder="enter data" />
+            <label>label 1</label>
+            <input type="text" placeholder="enter data" />
+          </div>
+        )}
         <div className="evp-embedment-content-container">
           {activeTab === "Pre-hiring" && (
             <PreHiring
