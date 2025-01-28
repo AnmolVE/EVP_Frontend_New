@@ -31,7 +31,7 @@ import EVPAudit from "./evp-design/evp-audit/EVPAudit";
 import EvpPromise from "./evp-design/evp-promise/EvpPromise";
 import EVPTollgate4 from "./evp-design/design-tollgate/EVPTollgate4";
 import EVPHandbook from "./evp-deliver/evp-handbook/EVPHandbook";
-import EVPAnnouncement from "./evp-deliver/evp-announcement/EVPAnnouncement";
+import EVPCalendar from "./evp-deliver/evp-calendar/EVPCalendar";
 import EVPTollgate5 from "./evp-deliver/deliver-tollgate/EVPTollgate5";
 import EVPEmbedment from "./evp-deliver/evp-embedment/EVPEmbedment";
 
@@ -337,11 +337,11 @@ function EVP() {
                   </div>
                   <div
                     className={`evp-left-bar-subTabs-tab ${
-                      activeSubTab === "EVP Announcement" ? "active-sub" : ""
+                      activeSubTab === "EVP Calendar" ? "active-sub" : ""
                     }`}
-                    onClick={() => setActiveSubTab("EVP Announcement")}
+                    onClick={() => setActiveSubTab("EVP Calendar")}
                   >
-                    EVP Announcement
+                    EVP Calendar
                   </div>
                   <div
                     className={`evp-left-bar-subTabs-tab ${
@@ -430,7 +430,7 @@ function EVP() {
             {activeSubTab === "EVP Promise" ? <EvpPromise /> : null}
             {activeSubTab === "Tollgate 4" ? <EVPTollgate4 /> : null}
             {activeSubTab === "EVP Handbook" ? <EVPHandbook /> : null}
-            {activeSubTab === "EVP Announcement" ? <EVPAnnouncement /> : null}
+            {activeSubTab === "EVP Calendar" ? <EVPCalendar /> : null}
             {activeSubTab === "Tollgate 5" ? <EVPTollgate5 /> : null}
             {activeSubTab === "EVP Embedment" ? (
               <EVPEmbedment

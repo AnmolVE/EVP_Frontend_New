@@ -22,7 +22,7 @@ const apiEndpoints = {
     "EVP Audit": `${REACT_APP_BASE_URL}/evp-audit/`,
   },
   deliver: {
-    "EVP Handbook": `${REACT_APP_BASE_URL}/evp-handbookk/`,
+    "EVP Handbook": `${REACT_APP_BASE_URL}/evp-handbook/`,
     "EVP Execution Plan": `${REACT_APP_BASE_URL}/evp-execution-plan/`,
     "EVP Statement & Pillars": `${REACT_APP_BASE_URL}/evp-statement-and-pillars/`,
   },

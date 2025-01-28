@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import { BsJournalBookmark } from "react-icons/bs";
 import { VscGitPullRequestGoToChanges } from "react-icons/vsc";
@@ -8,6 +9,16 @@ import { evp_handbook_thumbnail } from "../../../../assets/images/images";
 import "./EVPHandbook.css";
 
 function EVPHandbook() {
+  const { data, loading } = useSelector((store) => store.inputField);
+
+  const [handbookData, setHandbookData] = useState([]);
+
+  useEffect(() => {
+    if (data) {
+      setHandbookData(data);
+    }
+  }, [data]);
+
   return (
     <div className="evp-handbook">
       <h2 className="custom_h2">EVP Handbook</h2>
@@ -30,6 +41,7 @@ function EVPHandbook() {
           </div>
         </div>
       </div>
+      <div>{handbookData.handbook_data}</div>
     </div>
     // <div className="evp-handbook-dummyData">
     //   <p className="custom_para">
