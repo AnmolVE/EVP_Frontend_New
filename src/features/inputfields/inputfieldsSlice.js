@@ -3,6 +3,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const apiEndpoints = {
+  discover: {
+    "Tollgate 1": `${REACT_APP_BASE_URL}/evp-tollgate1/`,
+  },
   develop: {
     "Company Dataset": `${REACT_APP_BASE_URL}/companies/`,
     "Attributes of an Attractive Workplace": `${REACT_APP_BASE_URL}/attributes-of-great-workplace/`,
@@ -23,6 +26,7 @@ const apiEndpoints = {
   },
   deliver: {
     "EVP Handbook": `${REACT_APP_BASE_URL}/evp-handbook/`,
+    "EVP Calendar": `${REACT_APP_BASE_URL}/evp-calendar/`,
     "EVP Execution Plan": `${REACT_APP_BASE_URL}/evp-execution-plan/`,
     "EVP Statement & Pillars": `${REACT_APP_BASE_URL}/evp-statement-and-pillars/`,
   },
@@ -42,6 +46,7 @@ export const fetchDataForSelectedItem = createAsyncThunk(
     }
 
     const apiUrl =
+      apiEndpoints.discover[selectedItem] ||
       apiEndpoints.develop[selectedItem] ||
       apiEndpoints.dissect[selectedItem] ||
       apiEndpoints.design[selectedItem] ||
@@ -52,6 +57,7 @@ export const fetchDataForSelectedItem = createAsyncThunk(
     }
 
     if (
+      selectedItem === "Tollgate 1" ||
       selectedItem === "Company Dataset" ||
       selectedItem === "Attributes of an Attractive Workplace" ||
       selectedItem === "Key Themes" ||
@@ -64,7 +70,8 @@ export const fetchDataForSelectedItem = createAsyncThunk(
       selectedItem === "EVP Definition" ||
       selectedItem === "EVP Promise" ||
       selectedItem === "EVP Audit" ||
-      selectedItem === "EVP Handbook"
+      selectedItem === "EVP Handbook" ||
+      selectedItem === "EVP Calendar"
     ) {
       try {
         const response = await fetch(apiUrl, {

@@ -7,6 +7,7 @@ import { VscGitPullRequestGoToChanges } from "react-icons/vsc";
 import { evp_handbook_thumbnail } from "../../../../assets/images/images";
 
 import "./EVPHandbook.css";
+import Loading from "../../../utils/loading/Loading";
 
 function EVPHandbook() {
   const { data, loading } = useSelector((store) => store.inputField);
@@ -18,6 +19,10 @@ function EVPHandbook() {
       setHandbookData(data);
     }
   }, [data]);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="evp-handbook">

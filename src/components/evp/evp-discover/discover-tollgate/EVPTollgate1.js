@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import { MdFileDownload } from "react-icons/md";
 import { FaShareSquare } from "react-icons/fa";
 
 import "../../../common/Tollgate.css";
+import Loading from "../../../utils/loading/Loading";
 
 function EVPToolgate1() {
+  const { data, loading } = useSelector((store) => store.inputField);
+
+  const [tollgate1Data, setTollgate1Data] = useState([]);
+
+  useEffect(() => {
+    if (data) {
+      setTollgate1Data(data);
+    }
+  }, [data]);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="tollgate-container">
       <h2 className="custom_h2">Tollgate 1</h2>
@@ -35,6 +51,7 @@ function EVPToolgate1() {
           </p>
         </div>
       </div>
+      <div>{tollgate1Data.tollgate_data}</div>
     </div>
   );
 }

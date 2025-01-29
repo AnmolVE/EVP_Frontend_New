@@ -1,4 +1,4 @@
-.evp-announcement-buttons {
+.evp-calendar-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,7 +6,7 @@
   margin-top: 10rem;
 }
 
-.evp-announcement-buttons-tab {
+.evp-calendar-buttons-tab {
   min-width: 15rem;
   display: flex;
   flex-direction: column;
@@ -17,6 +17,6 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.evp-announcement-buttons-tab span {
+.evp-calendar-buttons-tab span {
   font-size: 5rem;
 }
