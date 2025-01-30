@@ -12,10 +12,12 @@ const apiEndpoints = {
     "Key Themes": `${REACT_APP_BASE_URL}/key-themes/`,
     "Audience Wise Messaging": `${REACT_APP_BASE_URL}/audience-wise-messaging/`,
     "Talent Insights": `${REACT_APP_BASE_URL}/talent-insights/`,
+    "Tollgate 2": `${REACT_APP_BASE_URL}/evp-tollgate2/`,
   },
   dissect: {
     Analysis: `${REACT_APP_BASE_URL}/swot-analysis/`,
     Alignment: `${REACT_APP_BASE_URL}/alignment/`,
+    "Tollgate 3": `${REACT_APP_BASE_URL}/evp-tollgate3/`,
   },
   design: {
     "EVP Statement": `${REACT_APP_BASE_URL}/evp-statement-themes/`,
@@ -23,6 +25,7 @@ const apiEndpoints = {
     "EVP Definition": `${REACT_APP_BASE_URL}/evp-definition/`,
     "EVP Promise": `${REACT_APP_BASE_URL}/evp-promise/`,
     "EVP Audit": `${REACT_APP_BASE_URL}/evp-audit/`,
+    "Tollgate 4": `${REACT_APP_BASE_URL}/evp-tollgate4/`,
   },
   deliver: {
     "EVP Handbook": `${REACT_APP_BASE_URL}/evp-handbook/`,
@@ -63,13 +66,16 @@ export const fetchDataForSelectedItem = createAsyncThunk(
       selectedItem === "Key Themes" ||
       selectedItem === "Audience Wise Messaging" ||
       selectedItem === "Talent Insights" ||
+      selectedItem === "Tollgate 2" ||
       selectedItem === "Analysis" ||
       selectedItem === "Alignment" ||
+      selectedItem === "Tollgate 3" ||
       selectedItem === "EVP Statement" ||
       selectedItem === "Creative Direction" ||
       selectedItem === "EVP Definition" ||
       selectedItem === "EVP Promise" ||
       selectedItem === "EVP Audit" ||
+      selectedItem === "Tollgate 4" ||
       selectedItem === "EVP Handbook" ||
       selectedItem === "EVP Calendar"
     ) {

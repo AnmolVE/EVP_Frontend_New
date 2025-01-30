@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import { MdFileDownload } from "react-icons/md";
 import { FaShareSquare } from "react-icons/fa";
 
+import Loading from "../../../utils/loading/Loading";
+
 function EVPTollgate2() {
+  const { data, loading } = useSelector((store) => store.inputField);
+
+  const [tollgate2Data, setTollgate2Data] = useState([]);
+  console.log(tollgate2Data);
+
+  useEffect(() => {
+    if (data) {
+      setTollgate2Data(data);
+    }
+  }, [data]);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="tollgate-container">
       <h2 className="custom_h2">Tollgate 2</h2>
@@ -33,6 +51,7 @@ function EVPTollgate2() {
           </p>
         </div>
       </div>
+      <div>{tollgate2Data.tollgate2_data}</div>
     </div>
   );
 }
