@@ -2,7 +2,8 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
+  margin-top: 12rem;
   align-items: center;
-  animation: bounce 2s infinite;
+  /* animation: bounce 2s infinite; */
 }

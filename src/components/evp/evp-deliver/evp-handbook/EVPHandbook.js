@@ -8,15 +8,26 @@ import { evp_handbook_thumbnail } from "../../../../assets/images/images";
 
 import "./EVPHandbook.css";
 import Loading from "../../../utils/loading/Loading";
+import HandbookPopup from "./HandbookPopup";
 
 function EVPHandbook() {
   const { data, loading } = useSelector((store) => store.inputField);
 
   const [handbookData, setHandbookData] = useState([]);
 
+  const [modalData, setModalData] = useState({
+    isOpen: false,
+    handbook_data: "",
+  });
+
+  const closeModal = () => {
+    setModalData({ isOpen: false, handbook_data: "" });
+  };
+
   useEffect(() => {
     if (data) {
       setHandbookData(data);
+      setModalData({ isOpen: true });
     }
   }, [data]);
 
@@ -46,14 +57,12 @@ function EVPHandbook() {
           </div>
         </div>
       </div>
-      <div>{handbookData.handbook_data}</div>
+      <HandbookPopup
+        isOpen={modalData.isOpen}
+        onClose={closeModal}
+        handbook_data={handbookData.handbook_data}
+      />
     </div>
-    // <div className="evp-handbook-dummyData">
-    //   <p className="custom_para">
-    //     Hold tight! We're preparing the EVP handbook, insights, recommendations,
-    //     and visual identity. Your deliverables will be ready shortly.
-    //   </p>
-    // </div>
   );
 }
 

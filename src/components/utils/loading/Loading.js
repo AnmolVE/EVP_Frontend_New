@@ -1,11 +1,13 @@
 import React from "react";
+
+import { LoadingImage } from "../../../assets/images/images";
+
 import "./Loading.css";
 
 function Loading() {
   return (
     <div className="loading">
-      <h2>Stimulai is fetching data for you.</h2>
-      <h2>Please wait...</h2>
+      <img width={150} height={150} src={LoadingImage} alt="Loading" />
     </div>
   );
 }

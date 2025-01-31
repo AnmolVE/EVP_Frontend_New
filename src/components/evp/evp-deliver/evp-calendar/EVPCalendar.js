@@ -8,15 +8,26 @@ import { evp_handbook_thumbnail } from "../../../../assets/images/images";
 
 import "./EVPCalendar.css";
 import Loading from "../../../utils/loading/Loading";
+import CalendarPopup from "./CalendarPopup";
 
 function EVPCalendar() {
   const { data, loading } = useSelector((store) => store.inputField);
 
   const [calendarData, setCalendarData] = useState([]);
 
+  const [modalData, setModalData] = useState({
+    isOpen: false,
+    calendar_data: "",
+  });
+
+  const closeModal = () => {
+    setModalData({ isOpen: false, calendar_data: "" });
+  };
+
   useEffect(() => {
     if (data) {
       setCalendarData(data);
+      setModalData({ isOpen: true });
     }
   }, [data]);
 
@@ -46,7 +57,11 @@ function EVPCalendar() {
           </div>
         </div>
       </div>
-      <div>{calendarData.calendar_data}</div>
+      <CalendarPopup
+        isOpen={modalData.isOpen}
+        onClose={closeModal}
+        calendar_data={calendarData.calendar_data}
+      />
     </div>
   );
 }

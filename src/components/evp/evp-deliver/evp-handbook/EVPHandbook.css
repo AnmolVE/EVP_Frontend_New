@@ -1,245 +1,3 @@
-/* .coming-soon-area {
-  position: relative;
-  height: 100vh;
-  z-index: 1;
-  background-color: #00095e;
-}
-.coming-soon-area .coming-soon-content {
-  text-align: center;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  z-index: 2;
-}
-.coming-soon-area .coming-soon-content h1 {
-  margin-bottom: 0;
-  color: #ffffff;
-  font-size: 60px;
-  margin-top: -18px;
-}
-.coming-soon-area .coming-soon-content p {
-  color: #f3f3f3;
-  font-size: 14.5px;
-  max-width: 600px;
-  margin-top: 15px;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-.coming-soon-area .coming-soon-content #timer {
-  margin-top: 30px;
-}
-.coming-soon-area .coming-soon-content #timer div {
-  display: inline-block;
-  color: #ffffff;
-  position: relative;
-  margin-left: 35px;
-  margin-right: 35px;
-  font-size: 45px;
-  font-weight: 700;
-}
-.coming-soon-area .coming-soon-content #timer div span {
-  display: block;
-  text-transform: capitalize;
-  margin-top: -15px;
-  font-size: 16px;
-  font-weight: normal;
-}
-.coming-soon-area .coming-soon-content #timer div:last-child {
-  margin-right: 0;
-}
-.coming-soon-area .coming-soon-content #timer div:last-child::before {
-  display: none;
-}
-.coming-soon-area .coming-soon-content #timer div:first-child {
-  margin-left: 0;
-}
-.coming-soon-area .coming-soon-content #timer div::before {
-  content: "";
-  position: absolute;
-  right: -50px;
-  top: -10px;
-  font-size: 70px;
-  color: #ffffff;
-}
-.coming-soon-area .coming-soon-content .newsletter-form {
-  position: relative;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-}
-.coming-soon-area .coming-soon-content .newsletter-form .input-newsletter {
-  display: block;
-  width: 100%;
-  height: 60px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.3);
-  padding-left: 15px;
-  color: #ffffff;
-  outline: 0;
-  transition: 0.5s;
-  border-radius: 10px;
-}
-.coming-soon-area
-  .coming-soon-content
-  .newsletter-form
-  .input-newsletter::-moz-placeholder {
-  color: #ffffff;
-}
-.coming-soon-area
-  .coming-soon-content
-  .newsletter-form
-  .input-newsletter::placeholder {
-  color: #ffffff;
-}
-.coming-soon-area
-  .coming-soon-content
-  .newsletter-form
-  .input-newsletter:focus {
-  border-color: #1dd3f8;
-}
-.coming-soon-area .coming-soon-content .newsletter-form button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 60px;
-  padding: 0 30px;
-  text-transform: uppercase;
-  outline: 0;
-  color: #ffffff;
-  transition: 0.5s;
-  font-weight: 500;
-  font-size: 15px;
-  cursor: pointer;
-}
-.coming-soon-area .coming-soon-content .newsletter-form button::after {
-  border-radius: 0;
-}
-.coming-soon-area .coming-soon-content .newsletter-form button::before {
-  border-radius: 0;
-}
-.coming-soon-area .coming-soon-content .newsletter-form button:hover {
-  color: #ffffff;
-}
-.coming-soon-area .coming-soon-content .newsletter-form #validator-newsletter {
-  color: #ffffff;
-  font-size: 14px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -30px;
-  margin: 0 auto;
-}
-
-.d-table {
-  width: 100%;
-  height: 100%;
-}
-
-.d-table-cell {
-  vertical-align: middle;
-}
-
-@media only screen and (max-width: 767px) {
-  .coming-soon-area .coming-soon-content {
-    height: 100%;
-  }
-  .coming-soon-area .coming-soon-content h1 {
-    font-size: 40px;
-    line-height: 1.1;
-    margin-top: 0;
-  }
-  .coming-soon-area .coming-soon-content p {
-    font-size: 13px;
-    margin-top: 15px;
-  }
-  .coming-soon-area .coming-soon-content #timer {
-    margin-top: 20px;
-  }
-  .coming-soon-area .coming-soon-content #timer div {
-    font-size: 40px;
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-  .coming-soon-area .coming-soon-content #timer div span {
-    font-size: 14px;
-    margin-top: -5px;
-  }
-  .coming-soon-area .coming-soon-content #timer div::before {
-    display: none;
-  }
-  .coming-soon-area .coming-soon-content .newsletter-form {
-    margin-top: 35px;
-  }
-  .coming-soon-area .coming-soon-content .newsletter-form .input-newsletter {
-    height: 55px;
-    padding-left: 13px;
-    font-size: 15px;
-  }
-  .coming-soon-area .coming-soon-content .newsletter-form button {
-    position: relative;
-    height: auto;
-    padding: 14px 30px;
-    font-size: 14px;
-    margin-top: 15px;
-  }
-}
-
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .coming-soon-area .coming-soon-content h1 {
-    font-size: 55px;
-  }
-  .coming-soon-area .coming-soon-content #timer div {
-    font-size: 45px;
-  }
-  .coming-soon-area .coming-soon-content #timer div::before {
-    font-size: 65px;
-    right: -49px;
-  }
-} */
-
-/* .evp-handbook-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.evp-handbook-thumbnail {
-  height: 500px;
-  width: 500px;
-}
-
-.evp-handbook-thumbnail img {
-  width: 100%;
-  height: auto;
-}
-
-.evp-handbook-buttons {
-  display: flex;
-  gap: 1rem;
-}
-
-.evp-handbook-buttons a {
-  color: #fff;
-  text-decoration: none;
-} */
-
-/* .evp-handbook-dummyData {
-  display: flex;
-  justify-content: center;
-  margin-top: 5rem;
-}
-
-.evp-handbook-dummyData p {
-  width: 30rem;
-} */
-
-/* .evp-handbook-content {
-  border: 1px solid red;
-} */
-
 .evp-handbook-buttons {
   display: flex;
   align-items: center;
@@ -261,4 +19,43 @@
 
 .evp-handbook-buttons-tab span {
   font-size: 5rem;
+}
+
+.handbookPopup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.handbookPopup-content {
+  height: 50rem;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 1000px;
+  max-width: 90%;
+  position: relative;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.handbookPopup-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.handbookPopup-para {
+  text-align: left;
 }

@@ -1,3 +1,4 @@
+import LoadingImage from "../images/preloader.gif";
 import NavbarStimulaiImage from "./Stimulai.png";
 import NavbarUserImage from "./User.png";
 import FooterShape_1 from "./footer-shape-one.png";
@@ -43,6 +44,7 @@ import embedment3 from "./evp/evp-embedment/embedment3.png";
 import embedment4 from "./evp/evp-embedment/embedment4.png";
 
 export {
+  LoadingImage,
   NavbarStimulaiImage,
   NavbarUserImage,
   FooterShape_1,

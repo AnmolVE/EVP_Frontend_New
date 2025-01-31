@@ -391,7 +391,12 @@ function EVP() {
                 accessToken={accessToken}
               />
             ) : null}
-            {activeSubTab === "Tollgate 1" ? <EVPTollgate1 /> : null}
+            {activeSubTab === "Tollgate 1" ? (
+              <EVPTollgate1
+                companyName={companyName}
+                accessToken={accessToken}
+              />
+            ) : null}
             {activeSubTab === "Company Dataset" ? (
               <CompanyDataset
                 companyName={companyName}
@@ -408,14 +413,24 @@ function EVP() {
               <AudienceWiseMessaging />
             ) : null}
             {activeSubTab === "Talent Insights" ? <TalentInsights /> : null}
-            {activeSubTab === "Tollgate 2" ? <EVPTollgate2 /> : null}
+            {activeSubTab === "Tollgate 2" ? (
+              <EVPTollgate2
+                companyName={companyName}
+                accessToken={accessToken}
+              />
+            ) : null}
             {activeSubTab === "Analysis" ? (
               <Analysis companyName={companyName} accessToken={accessToken} />
             ) : null}
             {activeSubTab === "Alignment" ? (
               <Alignment companyName={companyName} accessToken={accessToken} />
             ) : null}
-            {activeSubTab === "Tollgate 3" ? <EVPTollgate3 /> : null}
+            {activeSubTab === "Tollgate 3" ? (
+              <EVPTollgate3
+                companyName={companyName}
+                accessToken={accessToken}
+              />
+            ) : null}
             {activeSubTab === "EVP Statement" ? (
               <EVPStatement
                 companyName={companyName}
@@ -428,7 +443,12 @@ function EVP() {
             {activeSubTab === "EVP Definition" ? <EvpDefinition /> : null}
             {activeSubTab === "EVP Audit" ? <EVPAudit /> : null}
             {activeSubTab === "EVP Promise" ? <EvpPromise /> : null}
-            {activeSubTab === "Tollgate 4" ? <EVPTollgate4 /> : null}
+            {activeSubTab === "Tollgate 4" ? (
+              <EVPTollgate4
+                companyName={companyName}
+                accessToken={accessToken}
+              />
+            ) : null}
             {activeSubTab === "EVP Handbook" ? <EVPHandbook /> : null}
             {activeSubTab === "EVP Calendar" ? <EVPCalendar /> : null}
             {activeSubTab === "Tollgate 5" ? <EVPTollgate5 /> : null}

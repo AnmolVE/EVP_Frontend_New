@@ -1,24 +1,42 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
 
 import { MdFileDownload } from "react-icons/md";
 import { FaShareSquare } from "react-icons/fa";
 
 import Loading from "../../../utils/loading/Loading";
 
-function EVPTollgate2() {
-  const { data, loading } = useSelector((store) => store.inputField);
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
+function EVPTollgate2({ companyName, accessToken }) {
   const [tollgate2Data, setTollgate2Data] = useState([]);
-  console.log(tollgate2Data);
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    if (data) {
+  const handleCreateClick = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(`${REACT_APP_BASE_URL}/evp-tollgate2/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({
+          company_name: companyName,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to generate data");
+      }
+      const data = await response.json();
       setTollgate2Data(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
     }
-  }, [data]);
+  };
 
-  if (loading) {
+  if (isLoading) {
     return <Loading />;
   }
 
@@ -34,7 +52,9 @@ function EVPTollgate2() {
             <span>
               <MdFileDownload />
             </span>
-            <button className="default-btn">Download Develop Report</button>
+            <button className="default-btn" onClick={() => handleCreateClick()}>
+              Create Develop Report
+            </button>
           </div>
           <div className="tollgate-boxes-top-box">
             <span>
