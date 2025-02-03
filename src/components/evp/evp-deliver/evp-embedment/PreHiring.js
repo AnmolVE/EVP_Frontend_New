@@ -60,7 +60,7 @@ function PreHiring({ companyName, accessToken, activeTab }) {
             {generatedData.message}
           </div>
           <div className="evp-embedment-right-content-inputs">
-            <input type="text" placeholder="enter data" />
+            <input type="text" placeholder="Enter message..." />
             <div className="evp-embedment-right-content-sendButton">
               <BsArrowUpCircleFill />
             </div>

@@ -22,7 +22,7 @@ const servicesData = [
     iconName: "flaticon-chip",
     title: "Employee Value Proposition",
     shortText:
-      "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
+      "Your EVP is the core of your employer brand—the unique promise that sets you apart in attracting and retaining top talent. Organisations with a clear, well-defined EVP see real bottom-line impact.",
     viewDetails: "/evp",
     aosDelay: "100",
   },
@@ -30,7 +30,7 @@ const servicesData = [
     iconName: "flaticon-vr",
     title: "Content & Creative",
     shortText:
-      "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
+      "When the unexpected hits, we help you respond with speed, clarity, and confidence, protecting your employer brand while keeping trust intact.",
     viewDetails: "/evp-embedment",
     aosDelay: "200",
   },
@@ -38,7 +38,7 @@ const servicesData = [
     iconName: "flaticon-blockchain",
     title: "Internal Comms",
     shortText:
-      "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
+      "Your employer brand isn’t just external—it’s how your employees experience it daily. We ensure internal touchpoints reflect your true brand identity, building alignment and engagement.",
     viewDetails: "",
     aosDelay: "300",
   },
@@ -46,7 +46,7 @@ const servicesData = [
     iconName: "flaticon-target",
     title: "Employer Brand Index",
     shortText:
-      "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
+      "Measuring employer brand is both an art and a science. Our proprietary algorithm distils key metrics into a single composite score, delivering actionable insights in a comprehensive report.",
     viewDetails: "",
     aosDelay: "400",
   },
@@ -54,7 +54,7 @@ const servicesData = [
     iconName: "flaticon-choice",
     title: "Leadership Branding",
     shortText:
-      "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
+      "Leaders define your brand. We help them communicate with clarity, consistency, and authenticity, shaping their voice as inspirational and approachable.",
     viewDetails: "",
     aosDelay: "500",
   },
@@ -62,7 +62,7 @@ const servicesData = [
     iconName: "flaticon-deep-learning",
     title: "Recruitment Campaign",
     shortText:
-      "Lorem consectetur ipsum dolor sit amet, adipiscing elit, do eiusmod tempor incididunt sed.",
+      "Attracting AI talent? Positioning your brand around a key theme? Our AI-powered campaigns deliver the right message to the right audience—backed by data and research.",
     viewDetails: "",
     aosDelay: "600",
   },

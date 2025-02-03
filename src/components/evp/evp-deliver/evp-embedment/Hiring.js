@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { hiringFields } from "./embedment-constants";
 import EVPEmbedmentPopup from "./EVPEmbedmentPopup";
 
+import { BsArrowUpCircleFill } from "react-icons/bs";
+
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function Hiring({ companyName, accessToken, activeTab }) {
@@ -54,7 +56,19 @@ function Hiring({ companyName, accessToken, activeTab }) {
           </div>
         ))}
       </div>
-      <div className="evp-embedment-right">{generatedData.message}</div>
+      <div className="evp-embedment-right">
+        <div className="evp-embedment-right-content">
+          <div className="evp-embedment-right-content-message">
+            {generatedData.message}
+          </div>
+          <div className="evp-embedment-right-content-inputs">
+            <input type="text" placeholder="Enter message..." />
+            <div className="evp-embedment-right-content-sendButton">
+              <BsArrowUpCircleFill />
+            </div>
+          </div>
+        </div>
+      </div>
       <button className="default-btn" onClick={handleGenerateClick}>
         Generate
       </button>
