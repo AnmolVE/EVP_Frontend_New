@@ -22,7 +22,7 @@ const servicesData = [
     iconName: "flaticon-chip",
     title: "Employee Value Proposition",
     shortText:
-      "Your EVP is the core of your employer brand—the unique promise that sets you apart in attracting and retaining top talent. Organisations with a clear, well-defined EVP see real bottom-line impact.",
+      "Your EVP is the core of your employer brand—the promise that sets you apart in attracting and retaining top talent. Organisations with a clear, well-defined EVP see bottom-line impact.",
     viewDetails: "/evp",
     aosDelay: "100",
   },
@@ -30,7 +30,7 @@ const servicesData = [
     iconName: "flaticon-vr",
     title: "Content & Creative",
     shortText:
-      "When the unexpected hits, we help you respond with speed, clarity, and confidence, protecting your employer brand while keeping trust intact.",
+      "Content fuels every module, transforming strategy into compelling storytelling. Seamlessly embedded across the platform, it ensures your employer brand is consistent, engaging, and impactful at every touchpoint.",
     viewDetails: "/evp-embedment",
     aosDelay: "200",
   },

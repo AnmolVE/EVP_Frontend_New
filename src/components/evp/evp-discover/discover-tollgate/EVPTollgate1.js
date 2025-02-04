@@ -5,12 +5,22 @@ import { FaShareSquare } from "react-icons/fa";
 
 import "../../../common/Tollgate.css";
 import Loading from "../../../utils/loading/Loading";
+import EVPTollgate1Popup from "./EVPTollgate1Popup";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function EVPToolgate1({ companyName, accessToken }) {
   const [tollgate1Data, setTollgate1Data] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const [modalData, setModalData] = useState({
+    isOpen: false,
+    tollgate_data: "",
+  });
+
+  const closeModal = () => {
+    setModalData({ isOpen: false, tollgate_data: "" });
+  };
 
   const handleCreateClick = async () => {
     setIsLoading(true);
@@ -30,6 +40,7 @@ function EVPToolgate1({ companyName, accessToken }) {
       }
       const data = await response.json();
       setTollgate1Data(data);
+      setModalData({ isOpen: true });
     } catch (error) {
       console.log(error);
     } finally {
@@ -72,7 +83,11 @@ function EVPToolgate1({ companyName, accessToken }) {
           </p>
         </div>
       </div>
-      <div>{tollgate1Data.tollgate_data}</div>
+      <EVPTollgate1Popup
+        isOpen={modalData.isOpen}
+        onClose={closeModal}
+        tollgate_data={tollgate1Data.tollgate_data}
+      />
     </div>
   );
 }

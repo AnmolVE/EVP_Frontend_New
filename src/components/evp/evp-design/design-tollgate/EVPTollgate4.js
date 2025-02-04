@@ -4,12 +4,22 @@ import { MdFileDownload } from "react-icons/md";
 import { FaShareSquare } from "react-icons/fa";
 
 import Loading from "../../../utils/loading/Loading";
+import EVPTollgate4Popup from "./EVPTollgate4Popup";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function EVPTollgate4({ companyName, accessToken }) {
   const [tollgate4Data, setTollgate4Data] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const [modalData, setModalData] = useState({
+    isOpen: false,
+    tollgate_data: "",
+  });
+
+  const closeModal = () => {
+    setModalData({ isOpen: false, tollgate_data: "" });
+  };
 
   const handleCreateClick = async () => {
     setIsLoading(true);
@@ -29,6 +39,7 @@ function EVPTollgate4({ companyName, accessToken }) {
       }
       const data = await response.json();
       setTollgate4Data(data);
+      setModalData({ isOpen: true });
     } catch (error) {
       console.log(error);
     } finally {
@@ -71,7 +82,11 @@ function EVPTollgate4({ companyName, accessToken }) {
           </p>
         </div>
       </div>
-      <div>{tollgate4Data.tollgate4_data}</div>
+      <EVPTollgate4Popup
+        isOpen={modalData.isOpen}
+        onClose={closeModal}
+        tollgate_data={tollgate4Data.tollgate4_data}
+      />
     </div>
   );
 }

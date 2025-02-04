@@ -194,14 +194,14 @@ function EVP() {
                   >
                     Audience Wise Messaging
                   </div>
-                  <div
+                  {/* <div
                     className={`evp-left-bar-subTabs-tab ${
                       activeSubTab === "Talent Insights" ? "active-sub" : ""
                     }`}
                     onClick={() => setActiveSubTab("Talent Insights")}
                   >
                     Talent Insights
-                  </div>
+                  </div> */}
                   <div
                     className={`evp-left-bar-subTabs-tab ${
                       activeSubTab === "Tollgate 2" ? "active-sub" : ""
@@ -412,7 +412,7 @@ function EVP() {
             {activeSubTab === "Audience Wise Messaging" ? (
               <AudienceWiseMessaging />
             ) : null}
-            {activeSubTab === "Talent Insights" ? <TalentInsights /> : null}
+            {/* {activeSubTab === "Talent Insights" ? <TalentInsights /> : null} */}
             {activeSubTab === "Tollgate 2" ? (
               <EVPTollgate2
                 companyName={companyName}
