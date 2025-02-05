@@ -56,3 +56,8 @@
   transform: rotate(90deg);
   transition: transform 0.3s ease;
 }
+
+.evp-designPrinciples-delete-button {
+  margin-top: 2rem;
+  text-align: center;
+}

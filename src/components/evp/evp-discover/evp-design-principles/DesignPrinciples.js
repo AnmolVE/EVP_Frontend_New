@@ -149,6 +149,29 @@ function DesignPrinciples({ companyName, accessToken }) {
     }
   };
 
+  const handleDelete = async () => {
+    try {
+      setIsLoading(true);
+      const response = fetch(
+        `${REACT_APP_BASE_URL}/design-principles/${companyName}/`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      if (response.ok) {
+        setIsLoading(false);
+        alert("Design Principles deleted successfully");
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   if (isLoading) {
     return <Loading />;
   }
@@ -193,33 +216,40 @@ function DesignPrinciples({ companyName, accessToken }) {
           </div>
         </div>
       </div>
-      <div className="upload-box">
-        <p className="custom_para2">Upload Documents</p>
-        <div>
-          <input
-            type="file"
-            style={{ display: "none" }}
-            multiple
-            onChange={handleFileChange}
-            ref={fileInputRef}
-          />
-          <div className="upload-area">
-            <div className="upload-svg" onClick={handleSVGClick}>
-              <BsPaperclip />
-              <p>add documents</p>
+      <div>
+        <div className="upload-box">
+          <p className="custom_para2">Upload Documents</p>
+          <div>
+            <input
+              type="file"
+              style={{ display: "none" }}
+              multiple
+              onChange={handleFileChange}
+              ref={fileInputRef}
+            />
+            <div className="upload-area">
+              <div className="upload-svg" onClick={handleSVGClick}>
+                <BsPaperclip />
+                <p>add documents</p>
+              </div>
+            </div>
+            <div className="uploaded-files">
+              {fileNames.map((name, index) => (
+                <div key={index} className="uploaded-file-name">
+                  {name}
+                </div>
+              ))}
             </div>
           </div>
-          <div className="uploaded-files">
-            {fileNames.map((name, index) => (
-              <div key={index} className="uploaded-file-name">
-                {name}
-              </div>
-            ))}
+          <div className="upload-box-button">
+            <button className="default-btn" onClick={handleFileSubmit}>
+              Upload
+            </button>
           </div>
         </div>
-        <div className="upload-box-button">
-          <button className="default-btn" onClick={handleFileSubmit}>
-            Upload
+        <div className="evp-designPrinciples-delete-button">
+          <button className="default-btn" onClick={() => handleDelete()}>
+            Delete
           </button>
         </div>
       </div>

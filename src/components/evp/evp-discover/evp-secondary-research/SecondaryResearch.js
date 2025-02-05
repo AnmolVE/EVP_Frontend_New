@@ -14,6 +14,7 @@ function SecondaryResearch({ companyName, accessToken }) {
   const fileInputRef = useRef(null);
 
   const [isLoading, setIsLoading] = useState(false);
+  console.log("Loading", isLoading);
 
   const handleFileChange = (event) => {
     const selectedFiles = Array.from(event.target.files);
@@ -36,6 +37,7 @@ function SecondaryResearch({ companyName, accessToken }) {
     });
 
     try {
+      setIsLoading(true);
       const response = await fetch(
         `${REACT_APP_BASE_URL}/save-secondary-documents/`,
         {
@@ -48,7 +50,8 @@ function SecondaryResearch({ companyName, accessToken }) {
       );
       if (response.ok) {
         const responseData = await response.json();
-        alert("Documents added successfully!!!");
+        setIsLoading(false);
+        alert("Documents Added Successfully");
         console.log(responseData);
       }
     } catch (error) {
