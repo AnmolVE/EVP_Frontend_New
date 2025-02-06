@@ -150,9 +150,9 @@ function DesignPrinciples({ companyName, accessToken }) {
   };
 
   const handleDelete = async () => {
+    setIsLoading(true);
     try {
-      setIsLoading(true);
-      const response = fetch(
+      const response = await fetch(
         `${REACT_APP_BASE_URL}/design-principles/${companyName}/`,
         {
           method: "DELETE",
@@ -248,7 +248,7 @@ function DesignPrinciples({ companyName, accessToken }) {
           </div>
         </div>
         <div className="evp-designPrinciples-delete-button">
-          <button className="default-btn" onClick={() => handleDelete()}>
+          <button className="default-btn" onClick={handleDelete}>
             Delete
           </button>
         </div>
