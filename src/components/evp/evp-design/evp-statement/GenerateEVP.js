@@ -20,8 +20,7 @@ function GenerateEVP({
 
   if (!isOpen) return null;
 
-  console.log(generatedStatement.tagline);
-  console.log(generatedStatement.tagline_desc);
+  console.log(generatedStatement.main_theme);
 
   const regenerateEVPStatement = async () => {
     setIsLoading(true);
@@ -41,8 +40,41 @@ function GenerateEVP({
       const responseData = await response.json();
       setGeneratedStatement(responseData);
     } catch (error) {
+      console.error("Error regenerating evp statement:", error);
+      alert("An error occurred while regenerating evp statement.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSaveClick = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(`${REACT_APP_BASE_URL}/generate-evp/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({
+          company_name: companyName,
+          main_theme: generatedStatement.main_theme,
+          pillar_1: generatedStatement.pillar_1,
+          pillar_2: generatedStatement.pillar_2,
+          pillar_3: generatedStatement.pillar_3,
+          tagline: generatedStatement.tagline,
+          tagline_desc: generatedStatement.tagline_desc,
+        }),
+      });
+
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log(responseData);
+        setGeneratedStatement(responseData);
+      }
+    } catch (error) {
       console.error("Error regenerating theme:", error);
-      alert("An error occurred while regenerating the theme.");
+      alert("An error occurred while saving evp statement.");
     } finally {
       setIsLoading(false);
     }
@@ -61,6 +93,11 @@ function GenerateEVP({
           >
             <GrRefresh />
           </span>
+        </div>
+        <div className="generateEvp-save-button">
+          <button className="default-btn" onClick={handleSaveClick}>
+            Save EVP
+          </button>
         </div>
         <button className="generateEvp-closeButton" onClick={onClose}>
           &times;
