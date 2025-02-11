@@ -22,8 +22,6 @@ const apiEndpoints = {
     "EVP Audit": `${REACT_APP_BASE_URL}/evp-audit/`,
   },
   deliver: {
-    "EVP Handbook": `${REACT_APP_BASE_URL}/evp-handbook/`,
-    "EVP Calendar": `${REACT_APP_BASE_URL}/evp-calendar/`,
     "EVP Execution Plan": `${REACT_APP_BASE_URL}/evp-execution-plan/`,
     "EVP Statement & Pillars": `${REACT_APP_BASE_URL}/evp-statement-and-pillars/`,
   },
@@ -64,9 +62,7 @@ export const fetchDataForSelectedItem = createAsyncThunk(
       selectedItem === "Creative Direction" ||
       selectedItem === "EVP Definition" ||
       selectedItem === "EVP Promise" ||
-      selectedItem === "EVP Audit" ||
-      selectedItem === "EVP Handbook" ||
-      selectedItem === "EVP Calendar"
+      selectedItem === "EVP Audit"
     ) {
       try {
         const response = await fetch(apiUrl, {

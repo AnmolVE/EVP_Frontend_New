@@ -7,9 +7,9 @@ import "./ContentButtons.css";
 function ContentButtons() {
   return (
     <div className="download-contentButtons">
-      <button>
+      {/* <button>
         <FaRegEye />
-      </button>
+      </button> */}
       <button>
         <IoCloudDownloadOutline />
       </button>

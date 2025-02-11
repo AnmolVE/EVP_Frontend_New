@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
 
 import { BsJournalBookmark } from "react-icons/bs";
 import { MdWorkspacePremium } from "react-icons/md";
@@ -10,10 +9,11 @@ import "./EVPCalendar.css";
 import Loading from "../../../utils/loading/Loading";
 import CalendarPopup from "./CalendarPopup";
 
-function EVPCalendar() {
-  const { data, loading } = useSelector((store) => store.inputField);
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
+function EVPCalendar({ companyName, accessToken }) {
   const [calendarData, setCalendarData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [modalData, setModalData] = useState({
     isOpen: false,
@@ -24,14 +24,36 @@ function EVPCalendar() {
     setModalData({ isOpen: false, calendar_data: "" });
   };
 
-  useEffect(() => {
-    if (data) {
-      setCalendarData(data);
-      setModalData({ isOpen: true });
-    }
-  }, [data]);
+  const handleCalendarCreate = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(`${REACT_APP_BASE_URL}/evp-calendar/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({
+          company_name: companyName,
+        }),
+      });
 
-  if (loading) {
+      if (!response.ok) {
+        throw new Error("Failed to generate calendar");
+      }
+
+      const responseData = await response.json();
+      setCalendarData(responseData);
+    } catch (error) {
+      console.error("Error generating calendar:", error);
+      alert("An error occurred while generating calendar.");
+    } finally {
+      setIsLoading(false);
+    }
+    setModalData({ isOpen: true });
+  };
+
+  if (isLoading) {
     return <Loading />;
   }
 
@@ -47,7 +69,9 @@ function EVPCalendar() {
             <span>
               <BsJournalBookmark />
             </span>
-            <button className="default-btn">Basic Plan</button>
+            <button className="default-btn" onClick={handleCalendarCreate}>
+              Basic Plan
+            </button>
           </div>
           <div className="evp-calendar-buttons-tab">
             <span>

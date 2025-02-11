@@ -53,7 +53,7 @@ function TalentInsights() {
               ))}
           </tbody>
         </table>
-        <button className="talentInsightsAddButton">+</button>
+        {/* <button className="talentInsightsAddButton">+</button> */}
       </div>
       <ContentButtons />
     </div>

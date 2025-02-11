@@ -20,7 +20,7 @@ function GenerateEVP({
 
   if (!isOpen) return null;
 
-  console.log(generatedStatement.main_theme);
+  console.log(generatedStatement);
 
   const regenerateEVPStatement = async () => {
     setIsLoading(true);
@@ -34,6 +34,9 @@ function GenerateEVP({
             "Content-Type": "application/json",
             Authorization: `Bearer ${accessToken}`,
           },
+          body: JSON.stringify({
+            evp_statement_to_update: generatedStatement,
+          }),
         }
       );
 
@@ -94,10 +97,14 @@ function GenerateEVP({
             <GrRefresh />
           </span>
         </div>
-        <div className="generateEvp-save-button">
+        <div className="generateEvp-save-button tooltip-container">
           <button className="default-btn" onClick={handleSaveClick}>
             Save EVP
           </button>
+          <span className="tooltip-text">
+            Clicking on 'save' finalises the EVP and you won't be able to
+            regenerate the statement or explanation any more
+          </span>
         </div>
         <button className="generateEvp-closeButton" onClick={onClose}>
           &times;
