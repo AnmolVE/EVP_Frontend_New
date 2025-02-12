@@ -10,7 +10,7 @@ export const fieldNames = {
     "Key Themes",
     "Attributes of an Attractive Workplace",
     "Audience Wise Messaging",
-    // "Talent Insights",
+    "Talent Insights",
     "Tollgate 2",
   ],
   DISSECT: ["Analysis", "Alignment", "Tollgate 3"],

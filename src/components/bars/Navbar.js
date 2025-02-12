@@ -40,9 +40,9 @@ function Navbar() {
       <div id="navbar" className="navbar-area fixed-top">
         <nav className="navbar navbar-expand-md navbar-light">
           <div className="container">
-            <Link href="/" className="navbar-brand">
+            <Link href="/" className="">
               <img
-                style={{ marginLeft: "4rem" }}
+                // style={{ marginLeft: "4rem" }}
                 src={NavbarStimulaiImage}
                 alt="logo"
                 width={200}
@@ -74,52 +74,16 @@ function Navbar() {
                     className="nav-link"
                     onClick={(e) => e.preventDefault()}
                   >
-                    Modules <i className="bx bx-chevron-down"></i>
+                    EVP <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/">Employee Value Proposition</Link>
+                      <Link href="/">About EVP</Link>
                     </li>
 
                     <li className="nav-item">
-                      <Link href="/index-2/">Content and Creative</Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link href="/index-3/">Internal Comms</Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link href="/index-4/">Employer Brand Index</Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link href="/index-5/">Leadership Branding</Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link href="/index-5/">Recruitment Campaign</Link>
-                    </li>
-                  </ul>
-                </li>
-
-                {/* <li className="nav-item">
-                  <Link
-                    href="#"
-                    className="nav-link"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    About <i className="bx bx-chevron-down"></i>
-                  </Link>
-
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link href="/about/">About Style One</Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link href="/about-2/">About Style Two</Link>
+                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
                     </li>
                   </ul>
                 </li>
@@ -130,32 +94,16 @@ function Navbar() {
                     className="nav-link"
                     onClick={(e) => e.preventDefault()}
                   >
-                    Services <i className="bx bx-chevron-down"></i>
+                    Create <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/services/">Services Style One</Link>
+                      <Link href="/">About Create</Link>
                     </li>
 
                     <li className="nav-item">
-                      <Link href="/services/style-2/">Services Style Two</Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link href="/services/style-3/">
-                        Services Style Three
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link href="/services/style-4/">Services Style Four</Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link href="/services/service-details/">
-                        Service Details
-                      </Link>
+                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
                     </li>
                   </ul>
                 </li>
@@ -166,19 +114,77 @@ function Navbar() {
                     className="nav-link"
                     onClick={(e) => e.preventDefault()}
                   >
-                    Contact <i className="bx bx-chevron-down"></i>
+                    Measure <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/contact/">Contact Style One</Link>
+                      <Link href="/">About Measure</Link>
                     </li>
 
                     <li className="nav-item">
-                      <Link href="/contact-2/">Contact Style Two</Link>
+                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
                     </li>
                   </ul>
-                </li> */}
+                </li>
+
+                <li className="nav-item">
+                  <Link
+                    href="#"
+                    className="nav-link"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Engage<i className="bx bx-chevron-down"></i>
+                  </Link>
+
+                  <ul className="dropdown-menu">
+                    <li className="nav-item">
+                      <Link href="/">About Engage</Link>
+                    </li>
+
+                    <li className="nav-item">
+                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
+                    </li>
+                  </ul>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    href="#"
+                    className="nav-link"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Amplify <i className="bx bx-chevron-down"></i>
+                  </Link>
+
+                  <ul className="dropdown-menu">
+                    <li className="nav-item">
+                      <Link href="/">About Amplify</Link>
+                    </li>
+
+                    <li className="nav-item">
+                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
+                    </li>
+                  </ul>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    href="#"
+                    className="nav-link"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Attract <i className="bx bx-chevron-down"></i>
+                  </Link>
+
+                  <ul className="dropdown-menu">
+                    <li className="nav-item">
+                      <Link href="/">About Attract</Link>
+                    </li>
+
+                    <li className="nav-item">
+                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
+                    </li>
+                  </ul>
+                </li>
               </ul>
 
               {/* <div className="others-options">

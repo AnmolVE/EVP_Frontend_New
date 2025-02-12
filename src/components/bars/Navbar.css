@@ -12,6 +12,10 @@
     transition: var(--transition);
     background-color: #0b0b5c;
 
+    .container {
+      margin-left: 55px;
+    }
+
     .navbar-brand {
       .logo {
         color: #ffffff;
