@@ -12,6 +12,7 @@ const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 function EVPToolgate1({ companyName, accessToken }) {
   const [tollgate1Data, setTollgate1Data] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   const [modalData, setModalData] = useState({
     isOpen: false,
@@ -38,11 +39,43 @@ function EVPToolgate1({ companyName, accessToken }) {
       if (!response.ok) {
         throw new Error("Failed to generate data");
       }
-      const data = await response.json();
-      setTollgate1Data(data);
+      const responseData = await response.json();
+      setTollgate1Data(responseData.data);
+      setIsChecked(responseData.data.tollgate1_is_check);
       setModalData({ isOpen: true });
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleCheckboxChange = async (e) => {
+    const checked = e.target.checked;
+    setIsLoading(true);
+    try {
+      const response = await fetch(`${REACT_APP_BASE_URL}/evp-tollgate1/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({
+          company_name: companyName,
+          is_check: checked,
+        }),
+      });
+      const responseData = await response.json();
+      if (!response.ok) {
+        throw new Error(
+          responseData.error || "Failed to update verification status"
+        );
+      }
+      alert(responseData.message);
+      setIsChecked(true);
+    } catch (error) {
+      alert(error.message);
+      e.target.checked = false;
     } finally {
       setIsLoading(false);
     }
@@ -76,7 +109,12 @@ function EVPToolgate1({ companyName, accessToken }) {
           </div>
         </div>
         <div className="tollgate-boxes-bottom">
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={isChecked}
+            onChange={handleCheckboxChange}
+            // disabled={isChecked}
+          />
           <p className="custom_para2">
             I confirm that this section has been validated and approved by key
             stakeholders.
@@ -86,7 +124,7 @@ function EVPToolgate1({ companyName, accessToken }) {
       <EVPTollgate1Popup
         isOpen={modalData.isOpen}
         onClose={closeModal}
-        tollgate_data={tollgate1Data.tollgate_data}
+        tollgate_data={tollgate1Data.tollgate1_basic}
       />
     </div>
   );
