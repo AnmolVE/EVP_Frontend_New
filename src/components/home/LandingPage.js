@@ -20,9 +20,9 @@ import Navbar from "../bars/Navbar";
 const servicesData = [
   {
     iconName: "flaticon-chip",
-    title: "EVP",
+    title: "Position",
     shortText:
-      "Your EVP is the core of your employer brand—the promise that sets you apart in attracting and retaining top talent. Organisations with a clear, well-defined EVP see bottom-line impact.",
+      "Your Position is the core of your employer brand—the promise that sets you apart in attracting and retaining top talent. Organisations with a clear, well-defined Position see bottom-line impact.",
     viewDetails: "/evp",
     aosDelay: "100",
   },
@@ -30,13 +30,13 @@ const servicesData = [
     iconName: "flaticon-vr",
     title: "Create",
     shortText:
-      "Content fuels every module, transforming strategy into compelling storytelling. Seamlessly embedded across the platform, it ensures your employer brand is consistent, engaging, and impactful at every touchpoint.",
-    viewDetails: "/evp-embedment",
+      "Content fuels every module, transforming strategy into storytelling. Seamlessly embedded across the platform, it ensures your employer brand is consistent, engaging, and impactful.",
+    viewDetails: "",
     aosDelay: "200",
   },
   {
     iconName: "flaticon-blockchain",
-    title: "Measure",
+    title: "Engage",
     shortText:
       "Your employer brand isn’t just external—it’s how your employees experience it daily. We ensure internal touchpoints reflect your true brand identity, building alignment and engagement.",
     viewDetails: "",
@@ -44,7 +44,7 @@ const servicesData = [
   },
   {
     iconName: "flaticon-target",
-    title: "Engage",
+    title: "Influence",
     shortText:
       "Measuring employer brand is both an art and a science. Our proprietary algorithm distils key metrics into a single composite score, delivering actionable insights in a comprehensive report.",
     viewDetails: "",
@@ -52,7 +52,7 @@ const servicesData = [
   },
   {
     iconName: "flaticon-choice",
-    title: "Amplify",
+    title: "Attract",
     shortText:
       "Leaders define your brand. We help them communicate with clarity, consistency, and authenticity, shaping their voice as inspirational and approachable.",
     viewDetails: "",
@@ -60,7 +60,7 @@ const servicesData = [
   },
   {
     iconName: "flaticon-deep-learning",
-    title: "Attract",
+    title: "Measure",
     shortText:
       "Attracting AI talent? Positioning your brand around a key theme? Our AI-powered campaigns deliver the right message to the right audience—backed by data and research.",
     viewDetails: "",

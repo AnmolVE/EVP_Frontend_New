@@ -74,12 +74,12 @@ function Navbar() {
                     className="nav-link"
                     onClick={(e) => e.preventDefault()}
                   >
-                    EVP <i className="bx bx-chevron-down"></i>
+                    Position <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/">About EVP</Link>
+                      <Link href="/">About Position</Link>
                     </li>
 
                     <li className="nav-item">
@@ -114,26 +114,6 @@ function Navbar() {
                     className="nav-link"
                     onClick={(e) => e.preventDefault()}
                   >
-                    Measure <i className="bx bx-chevron-down"></i>
-                  </Link>
-
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link href="/">About Measure</Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
-                    </li>
-                  </ul>
-                </li>
-
-                <li className="nav-item">
-                  <Link
-                    href="#"
-                    className="nav-link"
-                    onClick={(e) => e.preventDefault()}
-                  >
                     Engage<i className="bx bx-chevron-down"></i>
                   </Link>
 
@@ -147,18 +127,19 @@ function Navbar() {
                     </li>
                   </ul>
                 </li>
+
                 <li className="nav-item">
                   <Link
                     href="#"
                     className="nav-link"
                     onClick={(e) => e.preventDefault()}
                   >
-                    Amplify <i className="bx bx-chevron-down"></i>
+                    Influence <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/">About Amplify</Link>
+                      <Link href="/">About Influence</Link>
                     </li>
 
                     <li className="nav-item">
@@ -166,6 +147,7 @@ function Navbar() {
                     </li>
                   </ul>
                 </li>
+
                 <li className="nav-item">
                   <Link
                     href="#"
@@ -178,6 +160,26 @@ function Navbar() {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link href="/">About Attract</Link>
+                    </li>
+
+                    <li className="nav-item">
+                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
+                    </li>
+                  </ul>
+                </li>
+
+                <li className="nav-item">
+                  <Link
+                    href="#"
+                    className="nav-link"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Measure <i className="bx bx-chevron-down"></i>
+                  </Link>
+
+                  <ul className="dropdown-menu">
+                    <li className="nav-item">
+                      <Link href="/">About Measure</Link>
                     </li>
 
                     <li className="nav-item">
