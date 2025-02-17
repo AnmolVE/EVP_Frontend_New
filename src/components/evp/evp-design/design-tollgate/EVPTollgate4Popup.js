@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 import "../../../common/Tollgate.css";
 
 function EVPTollgate4Popup({ isOpen, onClose, tollgate_data }) {
-    if (!isOpen) return null;
+  if (!isOpen) return null;
 
   return (
     <div className="tollgatePopup-overlay">
@@ -17,4 +17,4 @@ function EVPTollgate4Popup({ isOpen, onClose, tollgate_data }) {
   );
 }
 
-export default EVPTollgate4Popup
+export default EVPTollgate4Popup;
