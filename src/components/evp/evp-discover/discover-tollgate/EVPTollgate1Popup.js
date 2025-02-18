@@ -1,4 +1,6 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 import "../../../common/Tollgate.css";
 
@@ -11,7 +13,11 @@ function EVPTollgate1Popup({ isOpen, onClose, tollgate_data }) {
         <button className="tollgatePopup-close-button" onClick={onClose}>
           &times;
         </button>
-        <p className="custom_para2 tollgatePopup-para">{tollgate_data}</p>
+        <p className="custom_para2 tollgatePopup-para">
+          <ReactMarkdown remarkPlugins={[[remarkGfm, { singleTidle: false }]]}>
+            {tollgate_data}
+          </ReactMarkdown>
+        </p>
       </div>
     </div>
   );
