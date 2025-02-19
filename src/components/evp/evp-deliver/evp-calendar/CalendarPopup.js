@@ -1,4 +1,6 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 function CalendarPopup({ isOpen, onClose, calendar_data }) {
   if (!isOpen) return null;
@@ -9,7 +11,11 @@ function CalendarPopup({ isOpen, onClose, calendar_data }) {
         <button className="calendarPopup-close-button" onClick={onClose}>
           &times;
         </button>
-        <p className="custom_para2 calendarPopup-para">{calendar_data}</p>
+        <p className="custom_para2 calendarPopup-para">
+          <ReactMarkdown remarkPlugins={[[remarkGfm, { singleTidle: false }]]}>
+            {calendar_data}
+          </ReactMarkdown>
+        </p>
       </div>
     </div>
   );

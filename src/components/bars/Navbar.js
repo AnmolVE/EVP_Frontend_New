@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,6 +13,8 @@ import {
 } from "../../assets/images/images";
 
 function Navbar() {
+  const [activeModule, setActiveModule] = useState("Position");
+
   const [menu, setMenu] = React.useState(true);
   const toggleNavbar = () => {
     setMenu(!menu);
@@ -71,8 +73,10 @@ function Navbar() {
                 <li className="nav-item">
                   <Link
                     href="#"
-                    className="nav-link"
-                    onClick={(e) => e.preventDefault()}
+                    className={`nav-link ${
+                      activeModule === "Position" ? "activeModule" : ""
+                    }`}
+                    onClick={() => setActiveModule("Position")}
                   >
                     Position <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -91,8 +95,10 @@ function Navbar() {
                 <li className="nav-item">
                   <Link
                     href="#"
-                    className="nav-link"
-                    onClick={(e) => e.preventDefault()}
+                    className={`nav-link ${
+                      activeModule === "Create" ? "activeModule" : ""
+                    }`}
+                    onClick={() => setActiveModule("Create")}
                   >
                     Create <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -111,8 +117,10 @@ function Navbar() {
                 <li className="nav-item">
                   <Link
                     href="#"
-                    className="nav-link"
-                    onClick={(e) => e.preventDefault()}
+                    className={`nav-link ${
+                      activeModule === "Engage" ? "activeModule" : ""
+                    }`}
+                    onClick={() => setActiveModule("Engage")}
                   >
                     Engage<i className="bx bx-chevron-down"></i>
                   </Link>
@@ -131,8 +139,10 @@ function Navbar() {
                 <li className="nav-item">
                   <Link
                     href="#"
-                    className="nav-link"
-                    onClick={(e) => e.preventDefault()}
+                    className={`nav-link ${
+                      activeModule === "Influence" ? "activeModule" : ""
+                    }`}
+                    onClick={() => setActiveModule("Influence")}
                   >
                     Influence <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -151,8 +161,10 @@ function Navbar() {
                 <li className="nav-item">
                   <Link
                     href="#"
-                    className="nav-link"
-                    onClick={(e) => e.preventDefault()}
+                    className={`nav-link ${
+                      activeModule === "Attract" ? "activeModule" : ""
+                    }`}
+                    onClick={() => setActiveModule("Attract")}
                   >
                     Attract <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -171,8 +183,10 @@ function Navbar() {
                 <li className="nav-item">
                   <Link
                     href="#"
-                    className="nav-link"
-                    onClick={(e) => e.preventDefault()}
+                    className={`nav-link ${
+                      activeModule === "Measure" ? "activeModule" : ""
+                    }`}
+                    onClick={() => setActiveModule("Measure")}
                   >
                     Measure <i className="bx bx-chevron-down"></i>
                   </Link>
