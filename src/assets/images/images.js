@@ -11,6 +11,8 @@ import LandingFour from "./evp/landing-page/landing_four.png";
 import LandingFive from "./evp/landing-page/landing_five.png";
 import LandingSix from "./evp/landing-page/landing_six.png";
 
+import ModuleFlow from "./evp/ModuleFlow.png";
+
 import keyThemesImg from "./keyThemes.png";
 import EVPJourneyImage from "./evp-journey.png";
 import evp_handbook_thumbnail from "./handbook_thumbnail.png";
@@ -57,6 +59,7 @@ export {
   LandingFour,
   LandingFive,
   LandingSix,
+  ModuleFlow,
   evp_handbook_thumbnail,
   evpStatementThumbnailImage,
   Attribute1,

@@ -43,7 +43,7 @@ function EVPHandbook({ companyName, accessToken }) {
       }
 
       const responseData = await response.json();
-      setHandbookData(responseData);
+      setHandbookData(responseData.data);
     } catch (error) {
       console.error("Error generating handbook:", error);
       alert("An error occurred while generating handbook.");

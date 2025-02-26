@@ -6,6 +6,17 @@
   background-color: #fbfbfb;
 }
 
+.evp-module-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.evp-module-flow img {
+  width: 50%;
+}
+
 .evp-container {
   width: 100%;
   padding: 2rem 5rem 2rem 5rem;
@@ -72,8 +83,8 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 1rem;
-  background-color: #0b0b5c;
-  color: white;
+  border-left: 1px solid #dadada;
+  border-right: 1px solid #dadada;
 }
 
 .evp-left-bar-subTabs-tab.evp-embedment.active-sub {
@@ -86,6 +97,10 @@
   display: flex;
   justify-content: flex-end;
   font-size: 25px;
+}
+
+.evp-embedment-box span {
+  color: #000;
 }
 
 .evp-backButton {

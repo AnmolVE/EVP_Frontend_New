@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+import generatePDF from "../../../common-js/pdfGenerator";
+
 function CalendarPopup({ isOpen, onClose, calendar_data }) {
+  const pdfRef = useRef();
+
   if (!isOpen) return null;
+
+  const handleDownloadPDF = () => {
+    const fileName = "Calender_Report.pdf";
+    generatePDF(pdfRef.current, fileName);
+  };
 
   return (
     <div className="calendarPopup-overlay">
@@ -11,11 +20,14 @@ function CalendarPopup({ isOpen, onClose, calendar_data }) {
         <button className="calendarPopup-close-button" onClick={onClose}>
           &times;
         </button>
-        <p className="custom_para2 calendarPopup-para">
+        <div ref={pdfRef} className="custom_para2 calendarPopup-para">
           <ReactMarkdown remarkPlugins={[[remarkGfm, { singleTidle: false }]]}>
             {calendar_data}
           </ReactMarkdown>
-        </p>
+        </div>
+        <button className="default-btn" onClick={handleDownloadPDF}>
+          Download as PDF
+        </button>
       </div>
     </div>
   );

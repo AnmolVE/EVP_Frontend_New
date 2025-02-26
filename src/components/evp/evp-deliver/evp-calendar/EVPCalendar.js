@@ -43,7 +43,7 @@ function EVPCalendar({ companyName, accessToken }) {
       }
 
       const responseData = await response.json();
-      setCalendarData(responseData);
+      setCalendarData(responseData.data);
     } catch (error) {
       console.error("Error generating calendar:", error);
       alert("An error occurred while generating calendar.");

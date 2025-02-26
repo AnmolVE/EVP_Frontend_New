@@ -7,6 +7,8 @@ import { FaRegEye } from "react-icons/fa";
 import { IoCloudDownloadOutline } from "react-icons/io5";
 import { fetchDataForSelectedItem } from "../../features/inputfields/inputfieldsSlice";
 
+import { ModuleFlow } from "../../assets/images/images";
+
 import "./EVP.css";
 
 import Navbar from "../bars/Navbar";
@@ -91,6 +93,9 @@ function EVP() {
     <>
       <Navbar />
       <div className="evp-mainContainer">
+        <div className="evp-module-flow">
+          <img src={ModuleFlow} alt="image" />
+        </div>
         <div className="evp-container">
           <div className="evp-left-bar">
             <div className="evp-left-bar-tabs">
@@ -357,15 +362,12 @@ function EVP() {
                     }`}
                     onClick={() => setActiveSubTab("EVP Embedment")}
                   >
-                    <div className="evp-embedment-icon">
-                      <FaCrown />
-                    </div>
-                    <div>
-                      <p className="custom_para">EVP Embedment</p>
-                      <p className="custom_para2">
-                        Launch the Campaign & Content module to embed the EVP
-                        across key touchpoints
-                      </p>
+                    <div className="evp-embedment-box">
+                      <span className="custom_para2">Next Step:</span> Bring
+                      Your EVP to Life! You've defined your Positioning
+                      statement. Now it's time to embed it across key talent
+                      touchpoints ➡️{" "}
+                      <span className="custom_para2">move to Create</span>.
                     </div>
                   </div>
                 </div>
