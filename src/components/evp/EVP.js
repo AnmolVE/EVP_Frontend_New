@@ -463,7 +463,12 @@ function EVP() {
                 accessToken={accessToken}
               />
             ) : null}
-            {activeSubTab === "Tollgate 5" ? <EVPTollgate5 /> : null}
+            {activeSubTab === "Tollgate 5" ? (
+              <EVPTollgate5
+                companyName={companyName}
+                accessToken={accessToken}
+              />
+            ) : null}
             {activeSubTab === "EVP Embedment" ? (
               <EVPEmbedment
                 companyName={companyName}
