@@ -10,8 +10,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   margin-top: 1rem;
 }
+
+.evp-module-flow-module {
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.evp-module-flow-module-firstIcon {
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #efe2e4;
+}
+
+.activeModuleMain {
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  border-radius: 0.2rem;
+  background-color: #0dcaf0;
+  color: white;
+}
+
+/* .evp-module-flow-module-secondIcon {
+  font-size: 2rem;
+} */
 
 .evp-module-flow img {
   width: 50%;

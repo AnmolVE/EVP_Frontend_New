@@ -5,6 +5,8 @@ import { AiOutlineLeft } from "react-icons/ai";
 import { FaCrown } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 import { IoCloudDownloadOutline } from "react-icons/io5";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { HiArrowLongRight } from "react-icons/hi2";
 import { fetchDataForSelectedItem } from "../../features/inputfields/inputfieldsSlice";
 
 import { ModuleFlow } from "../../assets/images/images";
@@ -48,6 +50,8 @@ function EVP() {
 
   const [activeTab, setActiveTab] = useState("DISCOVER");
   const [activeSubTab, setActiveSubTab] = useState("Design Principles");
+
+  const [activeModule, setActiveModule] = useState("Position");
 
   useEffect(() => {
     dispatch(fetchDataForSelectedItem(activeSubTab));
@@ -94,7 +98,111 @@ function EVP() {
       <Navbar />
       <div className="evp-mainContainer">
         <div className="evp-module-flow">
-          <img src={ModuleFlow} alt="image" />
+          <div
+            className="evp-module-flow-module"
+            onClick={() => {
+              setActiveModule("Position");
+            }}
+          >
+            <span
+              className={`evp-module-flow-module-firstIcon ${
+                activeModule === "Position" ? "activeModuleMain" : ""
+              }`}
+            >
+              {activeModule === "Position" && <FaLongArrowAltRight />}
+            </span>
+            <div className="custom_para2">Position</div>
+            <span className="evp-module-flow-module-secondIcon">
+              <HiArrowLongRight />
+            </span>
+          </div>
+          <div
+            className="evp-module-flow-module"
+            onClick={() => {
+              setActiveModule("Create");
+            }}
+          >
+            <span
+              className={`evp-module-flow-module-firstIcon ${
+                activeModule === "Create" ? "activeModuleMain" : ""
+              }`}
+            >
+              {activeModule === "Create" && <FaLongArrowAltRight />}
+            </span>
+            <div className="custom_para2">Create</div>
+            <span>
+              <HiArrowLongRight />
+            </span>
+          </div>
+          <div
+            className="evp-module-flow-module"
+            onClick={() => {
+              setActiveModule("Engage");
+            }}
+          >
+            <span
+              className={`evp-module-flow-module-firstIcon ${
+                activeModule === "Engage" ? "activeModuleMain" : ""
+              }`}
+            >
+              {activeModule === "Engage" && <FaLongArrowAltRight />}
+            </span>
+            <div className="custom_para2">Engage</div>
+            <span>
+              <HiArrowLongRight />
+            </span>
+          </div>
+          <div
+            className="evp-module-flow-module"
+            onClick={() => {
+              setActiveModule("Influence");
+            }}
+          >
+            <span
+              className={`evp-module-flow-module-firstIcon ${
+                activeModule === "Influence" ? "activeModuleMain" : ""
+              }`}
+            >
+              {activeModule === "Influence" && <FaLongArrowAltRight />}
+            </span>
+            <div className="custom_para2">Influence</div>
+            <span>
+              <HiArrowLongRight />
+            </span>
+          </div>
+          <div
+            className="evp-module-flow-module"
+            onClick={() => {
+              setActiveModule("Attract");
+            }}
+          >
+            <span
+              className={`evp-module-flow-module-firstIcon ${
+                activeModule === "Attract" ? "activeModuleMain" : ""
+              }`}
+            >
+              {activeModule === "Attract" && <FaLongArrowAltRight />}
+            </span>
+            <div className="custom_para2">Attract</div>
+            <span>
+              <HiArrowLongRight />
+            </span>
+          </div>
+          <div
+            className="evp-module-flow-module"
+            onClick={() => {
+              setActiveModule("Measure");
+            }}
+          >
+            <span
+              className={`evp-module-flow-module-firstIcon ${
+                activeModule === "Measure" ? "activeModuleMain" : ""
+              }`}
+            >
+              {activeModule === "Measure" && <FaLongArrowAltRight />}
+            </span>
+            <div className="custom_para2">Measure</div>
+          </div>
         </div>
         <div className="evp-container">
           <div className="evp-left-bar">
