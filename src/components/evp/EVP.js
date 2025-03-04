@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { AiOutlineRight } from "react-icons/ai";
 import { AiOutlineLeft } from "react-icons/ai";
-import { FaCrown } from "react-icons/fa";
-import { FaRegEye } from "react-icons/fa";
-import { IoCloudDownloadOutline } from "react-icons/io5";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { HiArrowLongRight } from "react-icons/hi2";
+import { FaCheckCircle } from "react-icons/fa";
 import { fetchDataForSelectedItem } from "../../features/inputfields/inputfieldsSlice";
-
-import { ModuleFlow } from "../../assets/images/images";
 
 import "./EVP.css";
 
@@ -41,6 +37,8 @@ import EVPEmbedment from "./evp-deliver/evp-embedment/EVPEmbedment";
 
 import { fieldNames } from "./evpFields";
 
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
+
 function EVP() {
   const dispatch = useDispatch();
 
@@ -52,10 +50,49 @@ function EVP() {
   const [activeSubTab, setActiveSubTab] = useState("Design Principles");
 
   const [activeModule, setActiveModule] = useState("Position");
+  const [finishedModules, setFinishedModules] = useState([]);
+
+  const modules = [
+    "Position",
+    "Create",
+    "Engage",
+    "Influence",
+    "Attract",
+    "Measure",
+  ];
 
   useEffect(() => {
     dispatch(fetchDataForSelectedItem(activeSubTab));
   }, [activeSubTab]);
+
+  useEffect(() => {
+    const fetchFinishedModules = async () => {
+      try {
+        const response = await fetch(
+          `${REACT_APP_BASE_URL}/finished-modules/?company_name=${encodeURIComponent(
+            companyName
+          )}`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const responseData = await response.json();
+        console.log(responseData);
+        setFinishedModules(
+          responseData.data.map((module) => module.module_name)
+        );
+      } catch (error) {
+        console.error("Error fetching finished modules:", error);
+      }
+    };
+    fetchFinishedModules();
+  }, []);
 
   const handleNextClick = () => {
     const subTabs = fieldNames[activeTab];
@@ -98,111 +135,29 @@ function EVP() {
       <Navbar />
       <div className="evp-mainContainer">
         <div className="evp-module-flow">
-          <div
-            className="evp-module-flow-module"
-            onClick={() => {
-              setActiveModule("Position");
-            }}
-          >
-            <span
-              className={`evp-module-flow-module-firstIcon ${
-                activeModule === "Position" ? "activeModuleMain" : ""
-              }`}
+          {modules.map((module) => (
+            <div
+              key={module}
+              className="evp-module-flow-module"
+              onClick={() => setActiveModule(module)}
             >
-              {activeModule === "Position" && <FaLongArrowAltRight />}
-            </span>
-            <div className="custom_para2">Position</div>
-            <span className="evp-module-flow-module-secondIcon">
-              <HiArrowLongRight />
-            </span>
-          </div>
-          <div
-            className="evp-module-flow-module"
-            onClick={() => {
-              setActiveModule("Create");
-            }}
-          >
-            <span
-              className={`evp-module-flow-module-firstIcon ${
-                activeModule === "Create" ? "activeModuleMain" : ""
-              }`}
-            >
-              {activeModule === "Create" && <FaLongArrowAltRight />}
-            </span>
-            <div className="custom_para2">Create</div>
-            <span>
-              <HiArrowLongRight />
-            </span>
-          </div>
-          <div
-            className="evp-module-flow-module"
-            onClick={() => {
-              setActiveModule("Engage");
-            }}
-          >
-            <span
-              className={`evp-module-flow-module-firstIcon ${
-                activeModule === "Engage" ? "activeModuleMain" : ""
-              }`}
-            >
-              {activeModule === "Engage" && <FaLongArrowAltRight />}
-            </span>
-            <div className="custom_para2">Engage</div>
-            <span>
-              <HiArrowLongRight />
-            </span>
-          </div>
-          <div
-            className="evp-module-flow-module"
-            onClick={() => {
-              setActiveModule("Influence");
-            }}
-          >
-            <span
-              className={`evp-module-flow-module-firstIcon ${
-                activeModule === "Influence" ? "activeModuleMain" : ""
-              }`}
-            >
-              {activeModule === "Influence" && <FaLongArrowAltRight />}
-            </span>
-            <div className="custom_para2">Influence</div>
-            <span>
-              <HiArrowLongRight />
-            </span>
-          </div>
-          <div
-            className="evp-module-flow-module"
-            onClick={() => {
-              setActiveModule("Attract");
-            }}
-          >
-            <span
-              className={`evp-module-flow-module-firstIcon ${
-                activeModule === "Attract" ? "activeModuleMain" : ""
-              }`}
-            >
-              {activeModule === "Attract" && <FaLongArrowAltRight />}
-            </span>
-            <div className="custom_para2">Attract</div>
-            <span>
-              <HiArrowLongRight />
-            </span>
-          </div>
-          <div
-            className="evp-module-flow-module"
-            onClick={() => {
-              setActiveModule("Measure");
-            }}
-          >
-            <span
-              className={`evp-module-flow-module-firstIcon ${
-                activeModule === "Measure" ? "activeModuleMain" : ""
-              }`}
-            >
-              {activeModule === "Measure" && <FaLongArrowAltRight />}
-            </span>
-            <div className="custom_para2">Measure</div>
-          </div>
+              <span
+                className={`evp-module-flow-module-firstIcon ${
+                  activeModule === module ? "activeModuleMain" : ""
+                }`}
+              >
+                {finishedModules.includes(module) ? (
+                  <FaCheckCircle style={{ color: "green" }} />
+                ) : activeModule === module ? (
+                  <FaLongArrowAltRight />
+                ) : null}
+              </span>
+              <div className="custom_para2">{module}</div>
+              <span className="evp-module-flow-module-secondIcon">
+                <HiArrowLongRight />
+              </span>
+            </div>
+          ))}
         </div>
         <div className="evp-container">
           <div className="evp-left-bar">
