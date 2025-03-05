@@ -142,14 +142,18 @@ function EVP() {
               onClick={() => setActiveModule(module)}
             >
               <span
-                className={`evp-module-flow-module-firstIcon ${
-                  activeModule === module ? "activeModuleMain" : ""
+                className={`${
+                  activeModule === module
+                    ? "activeModuleMain"
+                    : finishedModules.includes(module)
+                    ? "fetchModule"
+                    : "evp-module-flow-module-firstIcon"
                 }`}
               >
-                {finishedModules.includes(module) ? (
-                  <FaCheckCircle style={{ color: "green" }} />
-                ) : activeModule === module ? (
+                {activeModule === module ? (
                   <FaLongArrowAltRight />
+                ) : finishedModules.includes(module) ? (
+                  <FaCheckCircle />
                 ) : null}
               </span>
               <div className="custom_para2">{module}</div>
