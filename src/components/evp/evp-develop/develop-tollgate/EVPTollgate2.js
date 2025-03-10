@@ -5,6 +5,7 @@ import { FaShareSquare } from "react-icons/fa";
 
 import Loading from "../../../utils/loading/Loading";
 import EVPTollgate2Popup from "./EVPTollgate2Popup";
+import "../../../common/common-css/Tollgate.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 

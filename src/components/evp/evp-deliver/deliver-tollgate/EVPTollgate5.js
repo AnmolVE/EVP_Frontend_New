@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { MdFileDownload } from "react-icons/md";
 import { FaShareSquare } from "react-icons/fa";
 
-import "../../../common/Tollgate.css";
+import "../../../common/common-css/Tollgate.css";
 import Loading from "../../../utils/loading/Loading";
 import EVPTollgate5Popup from "./EVPTollgate5Popup";
 
