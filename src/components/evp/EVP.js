@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { AiOutlineRight } from "react-icons/ai";
 import { AiOutlineLeft } from "react-icons/ai";
-import { FaLongArrowAltRight } from "react-icons/fa";
-import { HiArrowLongRight } from "react-icons/hi2";
-import { FaCheckCircle } from "react-icons/fa";
 import { fetchDataForSelectedItem } from "../../features/inputfields/inputfieldsSlice";
 
 import "./EVP.css";
 
 import Navbar from "../bars/Navbar";
 import Footer from "../bars/Footer";
+import ModuleFlow from "../common/common-components/module-flow/ModuleFlow";
 import DesignPrinciples from "./evp-discover/evp-design-principles/DesignPrinciples";
 import PrimaryResearch from "./evp-discover/evp-primary-research/PrimaryResearch";
 import SecondaryResearch from "./evp-discover/evp-secondary-research/SecondaryResearch";
@@ -50,49 +48,10 @@ function EVP() {
   const [activeSubTab, setActiveSubTab] = useState("Design Principles");
 
   const [activeModule, setActiveModule] = useState("Position");
-  const [finishedModules, setFinishedModules] = useState([]);
-
-  const modules = [
-    "Position",
-    "Create",
-    "Engage",
-    "Influence",
-    "Attract",
-    "Measure",
-  ];
 
   useEffect(() => {
     dispatch(fetchDataForSelectedItem(activeSubTab));
   }, [activeSubTab]);
-
-  useEffect(() => {
-    const fetchFinishedModules = async () => {
-      try {
-        const response = await fetch(
-          `${REACT_APP_BASE_URL}/finished-modules/?company_name=${encodeURIComponent(
-            companyName
-          )}`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${accessToken}`,
-            },
-          }
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const responseData = await response.json();
-        console.log(responseData);
-        setFinishedModules(
-          responseData.data.map((module) => module.module_name)
-        );
-      } catch (error) {
-        console.error("Error fetching finished modules:", error);
-      }
-    };
-    fetchFinishedModules();
-  }, []);
 
   const handleNextClick = () => {
     const subTabs = fieldNames[activeTab];
@@ -134,35 +93,12 @@ function EVP() {
     <>
       <Navbar />
       <div className="evp-mainContainer">
-        <div className="evp-module-flow">
-          {modules.map((module) => (
-            <div
-              key={module}
-              className="evp-module-flow-module"
-              onClick={() => setActiveModule(module)}
-            >
-              <span
-                className={`${
-                  activeModule === module
-                    ? "activeModuleMain"
-                    : finishedModules.includes(module)
-                    ? "fetchModule"
-                    : "evp-module-flow-module-firstIcon"
-                }`}
-              >
-                {activeModule === module ? (
-                  <FaLongArrowAltRight />
-                ) : finishedModules.includes(module) ? (
-                  <FaCheckCircle />
-                ) : null}
-              </span>
-              <div className="custom_para2">{module}</div>
-              <span className="evp-module-flow-module-secondIcon">
-                <HiArrowLongRight />
-              </span>
-            </div>
-          ))}
-        </div>
+        <ModuleFlow
+          companyName={companyName}
+          accessToken={accessToken}
+          activeModule={activeModule}
+          setActiveModule={setActiveModule}
+        />
         <div className="evp-container">
           <div className="evp-left-bar">
             <div className="evp-left-bar-tabs">

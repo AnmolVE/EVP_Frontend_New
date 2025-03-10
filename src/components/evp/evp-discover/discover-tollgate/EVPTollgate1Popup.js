@@ -2,9 +2,9 @@ import React, { useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-import generatePDF from "../../../common-js/pdfGenerator";
+import generatePDF from "../../../common/common-js/pdfGenerator";
 
-import "../../../common/Tollgate.css";
+import "../../../common/common-css/Tollgate.css";
 
 function EVPTollgate1Popup({ isOpen, onClose, tollgate_data }) {
   const pdfRef = useRef();

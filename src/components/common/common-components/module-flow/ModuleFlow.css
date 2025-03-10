@@ -1,0 +1,38 @@
+.moduleFlow-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.moduleFlow {
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.defaultModuleFlow {
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #efe2e4;
+}
+
+.activeModuleFlow {
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  border-radius: 0.2rem;
+  background-color: #0dcaf0;
+  color: white;
+}
+
+.fetchModuleFlow {
+  color: green;
+}
+
+/* .moduleFlow-secondIcon {
+  font-size: 2rem;
+} */
