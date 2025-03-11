@@ -13,7 +13,7 @@ import {
 } from "../../assets/images/images";
 
 function Navbar() {
-  const [activeModule, setActiveModule] = useState("Position");
+  const [activeModule, setActiveModule] = useState("Home");
 
   const [menu, setMenu] = React.useState(true);
   const toggleNavbar = () => {
@@ -74,20 +74,16 @@ function Navbar() {
                   <Link
                     href="#"
                     className={`nav-link ${
-                      activeModule === "Position" ? "activeModule" : ""
+                      activeModule === "Home" ? "activeModule" : ""
                     }`}
-                    onClick={() => setActiveModule("Position")}
+                    onClick={() => setActiveModule("Home")}
                   >
-                    Position <i className="bx bx-chevron-down"></i>
+                    Home <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/">About Position</Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
+                      <Link href="/">Home</Link>
                     </li>
                   </ul>
                 </li>
@@ -96,20 +92,31 @@ function Navbar() {
                   <Link
                     href="#"
                     className={`nav-link ${
-                      activeModule === "Create" ? "activeModule" : ""
+                      activeModule === "Modules" ? "activeModule" : ""
                     }`}
-                    onClick={() => setActiveModule("Create")}
+                    onClick={() => setActiveModule("Modules")}
                   >
-                    Create <i className="bx bx-chevron-down"></i>
+                    Modules <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/">About Create</Link>
+                      <Link href="/">Position</Link>
                     </li>
-
                     <li className="nav-item">
-                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
+                      <Link href="/">Create</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link href="/">Engage</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link href="/">Influence</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link href="/">Attract</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link href="/">Measure</Link>
                     </li>
                   </ul>
                 </li>
@@ -118,20 +125,16 @@ function Navbar() {
                   <Link
                     href="#"
                     className={`nav-link ${
-                      activeModule === "Engage" ? "activeModule" : ""
+                      activeModule === "About" ? "activeModule" : ""
                     }`}
-                    onClick={() => setActiveModule("Engage")}
+                    onClick={() => setActiveModule("About")}
                   >
-                    Engage<i className="bx bx-chevron-down"></i>
+                    About<i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/">About Engage</Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
+                      <Link href="/">About</Link>
                     </li>
                   </ul>
                 </li>
@@ -140,20 +143,16 @@ function Navbar() {
                   <Link
                     href="#"
                     className={`nav-link ${
-                      activeModule === "Influence" ? "activeModule" : ""
+                      activeModule === "Help" ? "activeModule" : ""
                     }`}
-                    onClick={() => setActiveModule("Influence")}
+                    onClick={() => setActiveModule("Help")}
                   >
-                    Influence <i className="bx bx-chevron-down"></i>
+                    Help <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/">About Influence</Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
+                      <Link href="/">Help</Link>
                     </li>
                   </ul>
                 </li>
@@ -162,43 +161,21 @@ function Navbar() {
                   <Link
                     href="#"
                     className={`nav-link ${
-                      activeModule === "Attract" ? "activeModule" : ""
+                      activeModule === "Insights" ? "activeModule" : ""
                     }`}
-                    onClick={() => setActiveModule("Attract")}
+                    onClick={() => setActiveModule("Insights")}
                   >
-                    Attract <i className="bx bx-chevron-down"></i>
+                    Insights <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/">About Attract</Link>
+                      <Link href="/">Insights</Link>
                     </li>
 
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <p style={{ marginLeft: "15px" }}>Launch Module</p>
-                    </li>
-                  </ul>
-                </li>
-
-                <li className="nav-item">
-                  <Link
-                    href="#"
-                    className={`nav-link ${
-                      activeModule === "Measure" ? "activeModule" : ""
-                    }`}
-                    onClick={() => setActiveModule("Measure")}
-                  >
-                    Measure <i className="bx bx-chevron-down"></i>
-                  </Link>
-
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link href="/">About Measure</Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <p style={{ marginLeft: "15px" }}>Launch Module</p>
-                    </li>
+                    </li> */}
                   </ul>
                 </li>
               </ul>
