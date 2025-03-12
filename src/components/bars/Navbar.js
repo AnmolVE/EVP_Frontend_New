@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -13,6 +13,8 @@ import {
 } from "../../assets/images/images";
 
 function Navbar() {
+  const navigate = useNavigate();
+
   const [activeModule, setActiveModule] = useState("Home");
 
   const [menu, setMenu] = React.useState(true);
@@ -101,16 +103,16 @@ function Navbar() {
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/">Position</Link>
+                      <Link to="/evp">Position</Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/">Create</Link>
+                      <Link to="/create">Create</Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/">Engage</Link>
+                      <Link to="/engage">Engage</Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/">Influence</Link>
+                      <Link to="/influence">Influence</Link>
                     </li>
                     <li className="nav-item">
                       <Link href="/">Attract</Link>

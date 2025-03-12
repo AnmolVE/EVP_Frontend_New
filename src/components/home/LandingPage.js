@@ -31,7 +31,7 @@ const servicesData = [
     title: "Create",
     shortText:
       "Content fuels every module, transforming strategy into storytelling. Seamlessly embedded across the platform, it ensures your employer brand is consistent, engaging, and impactful.",
-    viewDetails: "",
+    viewDetails: "/create",
     aosDelay: "200",
   },
   {
@@ -39,7 +39,7 @@ const servicesData = [
     title: "Engage",
     shortText:
       "Your employer brand isn’t just external—it’s how your employees experience it daily. We ensure internal touchpoints reflect your true brand identity, building alignment and engagement.",
-    viewDetails: "",
+    viewDetails: "/engage",
     aosDelay: "300",
   },
   {
@@ -47,7 +47,7 @@ const servicesData = [
     title: "Influence",
     shortText:
       "Measuring employer brand is both an art and a science. Our proprietary algorithm distils key metrics into a single composite score, delivering actionable insights in a comprehensive report.",
-    viewDetails: "",
+    viewDetails: "/influence",
     aosDelay: "400",
   },
   {

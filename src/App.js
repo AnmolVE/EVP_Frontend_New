@@ -17,6 +17,9 @@ import InternalCommunications from "./components/internal-communications/Interna
 import EVP from "./components/evp/EVP";
 import ListingEvp from "./components/evp/edit-evps/ListingEvp";
 import EVPEmbedment from "./components/evp-embedment/EVPEmbedment";
+import Create from "./components/create/Create";
+import Engage from "./components/engage/Engage";
+import Influence from "./components/influence/Influence";
 
 function App() {
   return (
@@ -43,6 +46,9 @@ function App() {
           <Route element={<IndustryTrends />} path="/industry-trends" />
           <Route element={<EVPJourney />} path="/evp-journey" />
           <Route element={<EVP />} path="/evp" />
+          <Route element={<Create />} path="/create" />
+          <Route element={<Engage />} path="/engage" />
+          <Route element={<Influence />} path="/influence" />
           <Route element={<EVPEmbedment />} path="/evp-embedment" />
           <Route
             element={<InternalCommunications />}
