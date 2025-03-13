@@ -55,7 +55,7 @@ const servicesData = [
     title: "Attract",
     shortText:
       "Leaders define your brand. We help them communicate with clarity, consistency, and authenticity, shaping their voice as inspirational and approachable.",
-    viewDetails: "",
+    viewDetails: "/attract",
     aosDelay: "500",
   },
   {
@@ -63,7 +63,7 @@ const servicesData = [
     title: "Measure",
     shortText:
       "Attracting AI talent? Positioning your brand around a key theme? Our AI-powered campaigns deliver the right message to the right audience—backed by data and research.",
-    viewDetails: "",
+    viewDetails: "/measure",
     aosDelay: "600",
   },
 ];

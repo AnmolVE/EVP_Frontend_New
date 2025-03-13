@@ -115,10 +115,10 @@ function Navbar() {
                       <Link to="/influence">Influence</Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/">Attract</Link>
+                      <Link to="/attract">Attract</Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/">Measure</Link>
+                      <Link to="/measure">Measure</Link>
                     </li>
                   </ul>
                 </li>

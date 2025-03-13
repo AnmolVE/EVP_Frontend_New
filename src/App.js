@@ -20,6 +20,8 @@ import EVPEmbedment from "./components/evp-embedment/EVPEmbedment";
 import Create from "./components/create/Create";
 import Engage from "./components/engage/Engage";
 import Influence from "./components/influence/Influence";
+import Attract from "./components/attract/Attract";
+import Measure from "./components/measure/Measure";
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
           <Route element={<Create />} path="/create" />
           <Route element={<Engage />} path="/engage" />
           <Route element={<Influence />} path="/influence" />
+          <Route element={<Attract />} path="/attract" />
+          <Route element={<Measure />} path="/measure" />
           <Route element={<EVPEmbedment />} path="/evp-embedment" />
           <Route
             element={<InternalCommunications />}
